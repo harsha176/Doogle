@@ -25,7 +25,14 @@ public interface ICommunicationService {
 	 * @param ResponseQueue
 	 */
 	public void initialize(String BootStrapServer,
-			IPublishHandler aPublishHandler);
+			IPublishHandler aPublishHandler) throws Exception;
+
+	/**
+	 * Checks if the communication server is connected to bootstrap server.
+	 * 
+	 * @return
+	 */
+	public boolean isConnected();
 
 	/**
 	 * This method allows peer to send a request to BootStrap server and get
@@ -78,5 +85,5 @@ public interface ICommunicationService {
 	 * 
 	 * 
 	 */
-	public void close();
+	public void close()throws Exception;
 }
