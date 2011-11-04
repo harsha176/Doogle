@@ -50,9 +50,8 @@ public class ClientHandler implements Runnable {
 			StringBuffer sb = new StringBuffer();
 			int c;
 			int charCount = 0;
-			while ((c = br.read()) != -1 && charCount < 10) {
+			while ((c = br.read()) != -1 && sb.indexOf("</request>") == -1) {
 				sb.append((char) c);
-				charCount++;
 			}
 			logger.info("Request from client is : " + sb.toString());
 			PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(

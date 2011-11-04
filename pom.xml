@@ -33,7 +33,8 @@
 	</dependencies>
 	<build>
 		<plugins>
-			<!-- <plugin>
+		<!-- 
+			<plugin>
 				<groupId>com.sun.tools.xjc.maven2</groupId>
 				<artifactId>maven-jaxb-plugin</artifactId>
 				<executions>
@@ -47,16 +48,12 @@
 					<generatePackage>edu.ncsu.csc573.project.common.schema</generatePackage>
 					<generateDirectory>src/main/java</generateDirectory>
 				</configuration>
-			</plugin> -->
-<<<<<<< HEAD
-			<!--  <plugin>
-=======
-			<plugin>
->>>>>>> fd748224cd0d032c07f354a11c5cd0ed0ebc26d9
+				</plugin> -->
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
+				<configuration
+							<source>1.7</source>
 				</configuration>
 			</plugin>-->
 		</plugins>

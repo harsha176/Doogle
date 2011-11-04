@@ -4,9 +4,6 @@
 package edu.ncsu.csc573.project.doogle.test.commlayer;
 
 import static org.junit.Assert.*;
-
-import java.net.UnknownHostException;
-
 import junit.framework.Assert;
 
 import org.junit.After;

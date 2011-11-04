@@ -60,6 +60,7 @@ public abstract class RequestMessage implements IRequest {
 		return params;
 	}
 
+	// 
 	public String getXML(Request req) throws Exception{
 		logger = Logger.getLogger(RequestMessage.class);
 		StringWriter reqXMLWriter = new StringWriter();

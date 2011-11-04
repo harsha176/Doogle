@@ -3,7 +3,7 @@ package edu.ncsu.csc573.project.common.messages;
 import java.math.BigInteger;
 import org.apache.log4j.Logger;
 
-import edu.ncsu.csc573.project.common.schema.CommandType;
+import edu.ncsu.csc573.project.common.schema.CommandRequestType;
 import edu.ncsu.csc573.project.common.schema.RegisterParamsType;
 import edu.ncsu.csc573.project.common.schema.RegisterType;
 import edu.ncsu.csc573.project.common.schema.Request;
@@ -17,7 +17,7 @@ public class RegisterRequestMessage extends RequestMessage {
 
 		Request req = new Request();
 		req.setId(BigInteger.valueOf(System.currentTimeMillis()));
-		CommandType register = new CommandType();
+		CommandRequestType register = new CommandRequestType();
 		RegisterType rt = new RegisterType();
 		RegisterParamsType rpt = new RegisterParamsType();
 		
@@ -26,7 +26,7 @@ public class RegisterRequestMessage extends RequestMessage {
 		rpt.setPassword(getParameter().getParamValue(EnumParamsType.PASSWORD).toString());
 		rpt.setDesignation(getParameter().getParamValue(EnumParamsType.DESIGNATION).toString());
 
-		rt.setParmas(rpt);
+		rt.setParams(rpt);
 		register.setRegister(rt);
 		req.setCommand(register);
 
@@ -38,9 +38,9 @@ public class RegisterRequestMessage extends RequestMessage {
 		try {
 			Request req = getRequest(XML);
 			
-			CommandType command = req.getCommand();
+			CommandRequestType command = req.getCommand();
 			RegisterType regType = command.getRegister();
-			RegisterParamsType regparams = regType.getParmas();
+			RegisterParamsType regparams = regType.getParams();
 			IParameter param = new Parameter();
 			param.add(EnumParamsType.USERNAME, regparams.getUsername());
 			param.add(EnumParamsType.PASSWORD, regparams.getPassword());

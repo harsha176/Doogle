@@ -11,7 +11,6 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
@@ -223,7 +222,7 @@ public class CommunicationService implements ICommunicationService {
 				}
 				int ch;
 				int charCount = 0;
-				while ((ch = br.read()) != -1 && charCount < 10) {
+				while ((ch = br.read()) != -1 && sb.indexOf("</response>") == -1) {
 					sb.append((char)ch);
 					charCount++;
 				}
