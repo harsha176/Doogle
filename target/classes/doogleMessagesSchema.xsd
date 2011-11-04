@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.doogle.project.csc573.csc.ncsu.edu" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu"
 	elementFormDefault="qualified">
-	<xs:complexType name="Request">
+	<xs:complexType name="Request" >
 		<xs:sequence>
 			<xs:element name="Command" type="CommandType"></xs:element>
 		</xs:sequence>

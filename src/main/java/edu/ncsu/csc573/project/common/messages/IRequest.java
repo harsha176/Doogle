@@ -17,32 +17,27 @@ public interface IRequest {
 	void createRequest(EnumOperationType opType, IParameter parameter);
 	
 	/**
-	 * This method allows to configure parameters in the request. 
+	 * This method retrieves operation type of the the request.
 	 * 
-	 * @param paramType paramType to be configured 
-	 * @param value paramType value
+	 * @return operation type
 	 */
-	void setParam(EnumParamsType paramType, String value);
+	EnumOperationType getOperationType();
 	
 	/**
-	 * This method get value of the parameter based on the parameter type
-	 * 
-	 * @param paramType parameter for which value will be fetched
-	 * @return
+	 * This method retrieves the parameters object configured for the request.
 	 */
-	String getParam(EnumParamsType paramType);
-	
-	/**
-	 * This method gets the list of all the parameters configured in the request.
-	 * 
-	 * @return
-	 */
-	String getAllParams();
+	IParameter getParameter();
 	
 	/**
 	 * This method allows user to get configured request in XML.
 	 *  
 	 * @return
+	 * @throws Exception 
 	 */
-	public String getRequestInXML();
+	public String getRequestInXML() throws Exception;
+	
+	/**
+	 * This method parses XML and creates a request object out of it. 
+	 */
+	public void parseXML(String XML);
 }

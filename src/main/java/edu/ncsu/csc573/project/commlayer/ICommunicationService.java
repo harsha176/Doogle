@@ -46,11 +46,12 @@ public interface ICommunicationService {
 	 * @param request
 	 *            object to be sent
 	 * @return response object from BootStrapServer
+	 * @throws Exception 
 	 * 
 	 * @see IRequest
 	 * @see IResponse
 	 */
-	public IResponse executeRequest(IRequest request);
+	public IResponse executeRequest(IRequest request) throws Exception;
 
 	/**
 	 * This method allows peer to send a request to BootStrap server and call
@@ -78,6 +79,13 @@ public interface ICommunicationService {
 	 */
 	public void subscribeRequestTopic(EnumOperationType operationType,
 			IRequestListener reqListener);
+	
+	/**
+	 * This method checks if the peer server is running.
+	 * 
+	 * @return true if it is running otherwise false
+	 */
+	public boolean isPeerServerRunning();
 
 	/**
 	 * This method closes the communication layer ports and releases all the

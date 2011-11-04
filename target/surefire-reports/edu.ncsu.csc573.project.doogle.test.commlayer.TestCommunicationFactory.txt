@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: edu.ncsu.csc573.project.doogle.test.commlayer.TestCommunicationFactory
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec <<< FAILURE!
-test(edu.ncsu.csc573.project.doogle.test.commlayer.TestCommunicationFactory)  Time elapsed: 0.01 sec  <<< FAILURE!
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.136 sec <<< FAILURE!
+test(edu.ncsu.csc573.project.doogle.test.commlayer.TestCommunicationFactory)  Time elapsed: 0.003 sec  <<< FAILURE!
 java.lang.AssertionError: Not yet implemented
 	at org.junit.Assert.fail(Assert.java:93)
 	at edu.ncsu.csc573.project.doogle.test.commlayer.TestCommunicationFactory.test(TestCommunicationFactory.java:21)

@@ -11,9 +11,11 @@ import junit.framework.Assert;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
 import edu.ncsu.csc573.project.commlayer.ICommunicationService;
+import edu.ncsu.csc573.project.doogle.test.schema.TestRequestMessages;
 
 /**
  * @author doogle-dev
@@ -21,16 +23,23 @@ import edu.ncsu.csc573.project.commlayer.ICommunicationService;
  */
 public class TestCommunicationService {
 
-	//private ICommunicationService CommService;
+	//private static ICommunicationService CommService;
 	/**
 	 * @throws java.lang.Exception
+	 *
 	 */
+	
+	@BeforeClass 
+	public static void classSetup () throws Exception {
+		
+	}
+	
 	@Before
 	public void setUp() throws Exception {
 		//CommService = CommunicationServiceFactory.getInstance();
 	}
 
-	@Test
+	/*@Test
 	public void testInitializeForUnknownHost() {
 		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
 		try {
@@ -42,24 +51,28 @@ public class TestCommunicationService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
+	}*/
+	/*
 	@Test
 	public void testInitializeForKnownHost() {
-		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
+		
 		try {
-			CommService.initialize("127.0.0.1", null);
+			
 			Assert.assertTrue("Connected to google.com", true);
 		} catch (UnknownHostException e) {
 			Assert.assertFalse("Unable to connect to google.com", true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}*/
 	
 	@Test
-	public void testExecuteRequest() {
-		//Assert.fail("Execute request functionality not implemented");
+	public void testExecuteRequest() throws Exception{
+		//Assert.fail("Execute request functionality not implemented"); 
+		//ICommunicationService commService = CommunicationServiceFactory.getInstance();
+		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
+		CommService.initialize("localhost", null);
+		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
 	}
 	
 	@Test

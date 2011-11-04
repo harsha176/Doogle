@@ -3,23 +3,23 @@
  */
 package edu.ncsu.csc573.project.commlayer;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
 import org.apache.log4j.Logger;
 import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
-import edu.ncsu.csc573.project.common.schema.Request;
 
 /**
  * @author doogle-dev
@@ -30,7 +30,7 @@ public class CommunicationService implements ICommunicationService {
 	private Socket clientSocket;
 	private InetAddress BSSAddress;
 	private static Logger logger;
-	
+	private PeerServer server;
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -53,7 +53,9 @@ public class CommunicationService implements ICommunicationService {
 				logger.info("Already initialized");
 				return;
 			}
-			
+
+			logger.info("Start server");
+			server = new PeerServer();
 			try {
 				BSSAddress = InetAddress.getByName(BootStrapServer);
 			} catch (UnknownHostException excpByHostName) {
@@ -66,33 +68,50 @@ public class CommunicationService implements ICommunicationService {
 				} catch (UnknownHostException excpByIpAddress) {
 					logger.info("Unable to find the address of host: "
 							+ BootStrapServer + " even by ip address");
-					logger.error("Unable to initialize Communication layer exiting");
+					cleanUp();
 					throw excpByIpAddress;
 				}
 			}
 
 			int BSSport = ConfigurationManager.getInstance().getServerPort();
 			int timeOut = ConfigurationManager.getInstance().getTimeOut();
-			
+
 			clientSocket = new Socket();
-			InetSocketAddress serverSocket = new InetSocketAddress(BSSAddress, BSSport);
+			InetSocketAddress serverSocket = new InetSocketAddress(BSSAddress,
+					BSSport);
 			clientSocket.setKeepAlive(true);
+			clientSocket.setTcpNoDelay(true);
+			
 			logger.debug("Enabled Keepalive socket option");
 			try {
 				clientSocket.connect(serverSocket, timeOut);
 			} catch (SocketTimeoutException e) {
 				logger.error("Connection timed out", e);
+				cleanUp();
 				throw e;
 			} catch (IOException exp) {
 				logger.error("Connection refused", exp);
+				cleanUp();
 				throw exp;
-			}
-			
-			logger.info("Succesfully initialized communication layer");
+			} 
 		}
 
 	}
 
+	private void cleanUp() throws Exception{
+		
+		if(server != null) {
+			server.stop();
+		}
+		while(!server.isServerRunning()) {
+			logger.info("Waiting for peer server to close");
+			Thread.sleep(100);
+		}
+		if(clientSocket != null) {
+			clientSocket.close();
+		}
+		logger.error("Unable to initialize Communication layer. Exiting from Application");
+	}
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -100,8 +119,21 @@ public class CommunicationService implements ICommunicationService {
 	 * edu.ncsu.csc573.project.commlayer.ICommunicationService#executeRequest
 	 * (edu.ncsu.csc573.project.common.messages.IRequest)
 	 */
-	public IResponse executeRequest(IRequest request) {
-		
+	public IResponse executeRequest(IRequest request) throws Exception{
+		BlockingThread bt = new BlockingThread(clientSocket, request);
+		bt.start();
+		try {
+			Thread.currentThread().join(ConfigurationManager.getInstance().getCLITimeOut());
+			if(!bt.isResponseReady()) {
+				logger.info("Failed to get response for the request : " + request.getOperationType());
+				throw new Exception();
+			} else {
+				logger.info("Received response : " + bt.getResponse());
+			}
+		} catch (InterruptedException e) {
+			
+		}
+		bt.getResponse();
 		return null;
 	}
 
@@ -138,53 +170,83 @@ public class CommunicationService implements ICommunicationService {
 	 * @see edu.ncsu.csc573.project.commlayer.ICommunicationService#close()
 	 */
 	public void close() throws Exception {
-		if(clientSocket == null) {
+		if (clientSocket == null) {
 			throw new Exception("Communication Layer is not initialized");
 		}
 		try {
-		clientSocket.close();
+			clientSocket.close();
 		} catch (Exception e) {
 			logger.error("Failed to close socket. Trying again");
 		}
+		server.stop();
 	}
 
 	public boolean isConnected() {
-		if(clientSocket == null) {
+		if (clientSocket == null) {
 			logger.info("Communication Layer is not initialized");
 			return false;
 		}
 		return clientSocket.isConnected();
 	}
-	
+
 	class BlockingThread extends Thread {
 		private Socket clientSocket;
 		private IRequest request;
+		private String response = null;
 		
 		BlockingThread(Socket clientSocket, IRequest request) {
 			super();
 			this.clientSocket = clientSocket;
 			this.request = request;
 		}
-		
+
 		public void run() {
-			
+
 			try {
 				/**
 				 * Request has to be transformed from IRequest to request object
 				 */
-				//Request = transformRequest(request);
-				
-				PrintWriter pw = new PrintWriter(new BufferedWriter( new OutputStreamWriter(clientSocket.getOutputStream())));
-				JAXBContext context = JAXBContext.newInstance(Request.class);
-				Marshaller m = context.createMarshaller();
-				m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-				m.marshal(request, pw);
+				PrintWriter pw = new PrintWriter(new BufferedWriter(
+						new OutputStreamWriter(clientSocket.getOutputStream())));
+				pw.println(request.getRequestInXML());
+				//pw.println(System.);
 				pw.flush();
+
+				BufferedReader br = new BufferedReader(new InputStreamReader(
+						clientSocket.getInputStream()));
+				StringBuffer sb = new StringBuffer();
+				//String temp;
+			
+				while(!br.ready()) {
+					logger.info("No data received from server. Trying again...");
+					Thread.sleep(1000);  // to be removed.
+				}
+				int ch;
+				int charCount = 0;
+				while ((ch = br.read()) != -1 && charCount < 10) {
+					sb.append((char)ch);
+					charCount++;
+				}
 				
+				response = sb.toString();
+				logger.info("Response is :");
+				logger.info(response);
 				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
+		
+		public String getResponse() {
+			return response;
+		}
+		
+		public boolean isResponseReady() {
+			return (response == null ? false : true);
+		}
+	}
+
+	public boolean isPeerServerRunning() {
+		return server.isServerRunning();
 	}
 }
