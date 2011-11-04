@@ -5,8 +5,6 @@ import java.math.BigInteger;
 import edu.ncsu.csc573.project.common.schema.CommandType;
 import edu.ncsu.csc573.project.common.schema.LoginParamsType;
 import edu.ncsu.csc573.project.common.schema.LoginType;
-import edu.ncsu.csc573.project.common.schema.RegisterParamsType;
-import edu.ncsu.csc573.project.common.schema.RegisterType;
 import edu.ncsu.csc573.project.common.schema.Request;
 
 public class LoginRequestMessage extends RequestMessage {
@@ -30,8 +28,7 @@ public class LoginRequestMessage extends RequestMessage {
 	}
 
 	public void parseXML(String XML) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 }

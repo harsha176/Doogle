@@ -48,7 +48,11 @@
 					<generateDirectory>src/main/java</generateDirectory>
 				</configuration>
 			</plugin> -->
+<<<<<<< HEAD
 			<!--  <plugin>
+=======
+			<plugin>
+>>>>>>> fd748224cd0d032c07f354a11c5cd0ed0ebc26d9
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
