@@ -222,7 +222,7 @@ public class CommunicationService implements ICommunicationService {
 				}
 				int ch;
 				int charCount = 0;
-				while ((ch = br.read()) != -1 && sb.indexOf("</response>") == -1) {
+				while ((ch = br.read()) != -1 && sb.indexOf("</request>") == -1) {
 					sb.append((char)ch);
 					charCount++;
 				}

@@ -15,6 +15,13 @@ public enum EnumParamsType {
 	DESIGNATION,
 	SEARCHKEY,
 	IPADDRESS,
-	CUSTOM		// Used for publish requests where field value is different. 
+        FILENAME,
+        FILESIZE,
+        ABSTRACT,
+        FILEDIGEST,
+        DELIMITER,
+	CUSTOM,
+        STATUSCODE,
+        MESSAGE                 // Used for publish requests where field value is different. 
 				// It can be used for other fields as well.
 }

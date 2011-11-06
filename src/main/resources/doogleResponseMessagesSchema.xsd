@@ -4,12 +4,18 @@
 	elementFormDefault="qualified">     
         <xs:complexType name="Response">
 		<xs:sequence>
+                        <!--<xs:element name="Status" type="StatusType"></xs:element> -->
 			<xs:element name="Command" type="CommandResponseType"></xs:element>
 		</xs:sequence>
 		<xs:attribute name="id" type="xs:integer" use="required">
 		</xs:attribute>
 	</xs:complexType>
 
+     <!--<xs:ComplexType name="StatusType">
+         <xs:attribute name="code" type="xs:integer" use="required">
+	 </xs:attribute>
+     </xs:ComplexType>-->
+     
     <xs:complexType name="CommandResponseType">
             <xs:choice>
             <xs:element name="RegisterResponse" type="RegisterResponseType"></xs:element>
@@ -17,6 +23,7 @@
 			<xs:element name="LogoutResponse" type="LogoutResponseType"></xs:element>
 			<xs:element name="ForgotPWDResponse" type="ForgotPWDResponseType"></xs:element>
 			<xs:element name="SearchResponse" type="SearchResponseType"></xs:element>
+                        <xs:element name="PublishResponse" type="PublishResponseType"></xs:element>
 			</xs:choice>
     </xs:complexType>
     
@@ -29,7 +36,7 @@
     </xs:complexType>
     <xs:complexType name="RegisterResponseParamsType">
     	<xs:sequence>
-    		<xs:element name="statuscode" type="xs:string"/>
+    		<xs:element name="statuscode" type="xs:integer"/>
     		<xs:element name="message" type="xs:string"/>
     	</xs:sequence>
     </xs:complexType>    
@@ -43,7 +50,7 @@
     </xs:complexType>
     <xs:complexType name="LoginResponseParamsType">
     	<xs:sequence>
-    		<xs:element name="statuscode" type="xs:string"/>
+    		<xs:element name="statuscode" type="xs:integer"/>
     		<xs:element name="message" type="xs:string"/>
     	</xs:sequence>
     </xs:complexType> 
@@ -57,20 +64,22 @@
     </xs:complexType>
     <xs:complexType name="LogoutResponseParamsType">
     	<xs:sequence>
-    		<xs:element name="statuscode" type="xs:string"/>
+    		<xs:element name="statuscode" type="xs:integer"/>
     	</xs:sequence>
     </xs:complexType>
     
-	<xs:complexType name="ForgotPasswdResponseType">
+    
+    
+	<xs:complexType name="ForgotPWDResponseType">
     	<xs:sequence>
     	<xs:element name="Operation" type="xs:string" fixed="ForgotPWDResponse"/>
-    	<xs:element name="params" type="ForgotPWDResponseType">	
+    	<xs:element name="params" type="ForgotPWDResponseParamsType">	
     	</xs:element>
     	</xs:sequence>
     </xs:complexType>
-    <xs:complexType name="ForgotPWDResponseType">
+    <xs:complexType name="ForgotPWDResponseParamsType">
     	<xs:sequence>
-    		<xs:element name="statuscode" type="xs:string"/>
+    		<xs:element name="statuscode" type="xs:integer"/>
     		<xs:element name="message" type="xs:string"/>
     	</xs:sequence>
     </xs:complexType>
@@ -102,7 +111,7 @@
     </xs:complexType>
     <xs:complexType name="PublishResponseTypeParams">
     	<xs:sequence>
-    		<xs:element name="statuscode" type="xs:string"/>
+    		<xs:element name="statuscode" type="xs:integer"/>
     		<xs:element name="message" type="xs:string"/>
     	</xs:sequence>
     </xs:complexType>

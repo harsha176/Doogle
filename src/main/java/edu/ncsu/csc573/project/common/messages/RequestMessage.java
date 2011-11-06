@@ -14,6 +14,7 @@ import javax.xml.bind.Unmarshaller;
 import org.apache.log4j.Logger;
 
 import edu.ncsu.csc573.project.common.schema.Request;
+import java.util.List;
 
 /**
  * @author doogle-dev
@@ -46,7 +47,6 @@ public abstract class RequestMessage implements IRequest {
 	protected void setParameter(IParameter param) {
 		params = param;
 	}
-
 	/*
 	 * (non-Javadoc)
 	 * 

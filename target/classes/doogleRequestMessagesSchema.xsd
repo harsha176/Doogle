@@ -15,8 +15,9 @@
 			<xs:element name="Register" type="RegisterType"></xs:element>
 			<xs:element name="Login" type="LoginType"></xs:element>
 			<xs:element name="Logout" type="LogoutType"></xs:element>
-			<xs:element name="ForgotPWD" type="ForgotPWDType"></xs:element>
+			<xs:element name="ForgotPWD" type="ForgotPasswdType"></xs:element>
 			<xs:element name="Search" type="SearchType"></xs:element>
+                        <xs:element name="Publish" type="PublishType"></xs:element>
 		</xs:choice>
     </xs:complexType>
     
@@ -67,16 +68,14 @@
     <xs:complexType name="ForgotPasswdType">
     	<xs:sequence>
     	<xs:element name="Operation" type="xs:string" fixed="ForgotPWD"/>
-    	<xs:element name="parmas" type="ForgotPWDType">	
+    	<xs:element name="params" type="ForgotPasswdParamsType">	
     	</xs:element>
     	</xs:sequence>
     </xs:complexType>
-    <xs:complexType name="ForgotPWDType">
+    <xs:complexType name="ForgotPasswdParamsType">
     	<xs:sequence>
     		<xs:element name="username" type="xs:string"/>
     		<xs:element name="email_id" type="xs:string"/>
-    		<xs:element name="password" type="xs:string"/>
-    		<xs:element name="designation" type="xs:string"/>
     	</xs:sequence>
     </xs:complexType>
 
