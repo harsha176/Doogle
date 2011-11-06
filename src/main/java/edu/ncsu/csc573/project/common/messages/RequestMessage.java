@@ -7,7 +7,6 @@ import java.io.StringReader;
 import java.io.StringWriter;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
@@ -78,10 +77,27 @@ public abstract class RequestMessage implements IRequest {
 		return reqXMLWriter.toString();
 	}
 
-	public Request getRequest(String XML) throws JAXBException {
+	public Request getRequest(String XML) throws Exception {
+		return getRequestFromGenXML(XML);
+	}	
+	
+	public static IRequest createRequest(String XML) throws Exception {
+		IRequest req = null;
+		
+		if(XML.indexOf("Register") != -1) {
+			req = new RegisterRequestMessage();
+			req.parseXML(XML);
+		} /*else if(XML.indexOf("Login")){
+			
+		}*/
+		return req;
+		
+	}
+	
+	private static Request getRequestFromGenXML(String XML) throws Exception {
 		JAXBContext context = JAXBContext.newInstance(Request.class);
 		Unmarshaller unMarsheller = context.createUnmarshaller();
 		Request req = (Request)unMarsheller.unmarshal(new StringReader(XML));
 		return req;
-	}	
+	}
 }

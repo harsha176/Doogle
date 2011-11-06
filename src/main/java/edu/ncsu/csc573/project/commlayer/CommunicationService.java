@@ -19,6 +19,7 @@ import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
+import edu.ncsu.csc573.project.common.messages.RequestMessage;
 
 /**
  * @author doogle-dev
@@ -47,7 +48,7 @@ public class CommunicationService implements ICommunicationService {
 		 * done and so simply exiting.
 		 */
 		synchronized (CommunicationService.class) {
-			if (clientSocket != null && clientSocket.isConnected()) {
+			if (clientSocket != null && clientSocket.isConnected() && server != null && !server.isServerRunning()) {
 				logger.debug("Already connected to bootstrapserver");
 				logger.info("Already initialized");
 				return;
@@ -122,7 +123,7 @@ public class CommunicationService implements ICommunicationService {
 		BlockingThread bt = new BlockingThread(clientSocket, request);
 		bt.start();
 		try {
-			Thread.currentThread().join(ConfigurationManager.getInstance().getCLITimeOut());
+			bt.join(ConfigurationManager.getInstance().getCLITimeOut());
 			if(!bt.isResponseReady()) {
 				logger.info("Failed to get response for the request : " + request.getOperationType());
 				throw new Exception();
@@ -222,13 +223,15 @@ public class CommunicationService implements ICommunicationService {
 				}
 				int ch;
 				int charCount = 0;
-				while ((ch = br.read()) != -1 && sb.indexOf("</response>") == -1) {
+				while ((ch = br.read()) != -1 && sb.indexOf("</request>") == -1) {
 					sb.append((char)ch);
 					charCount++;
 				}
 				
-				response = sb.toString();
-				logger.info("Response is :");
+				
+				IRequest req = RequestMessage.createRequest(sb.toString());
+				response = req.getRequestInXML();
+				logger.info("Response is : ");
 				logger.info(response);
 				
 			} catch (Exception e) {

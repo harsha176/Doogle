@@ -70,6 +70,12 @@ public class TestCommunicationService {
 		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
 		CommService.initialize("localhost", null);
 		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
+		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
+		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
+		
+		while(true) {
+			Thread.sleep(1000);
+		}
 	}
 	
 	@Test
