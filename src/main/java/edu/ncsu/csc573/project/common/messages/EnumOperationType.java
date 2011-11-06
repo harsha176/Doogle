@@ -17,4 +17,11 @@ public enum EnumOperationType {
 	LOGOUT,   // Logout message type
 	SEARCH,   // Search message type
 	PUBLISH,  // Publish message type
+        FORGOTPASSWORD, // All below message types @ added Krishna
+        REGISTERRESPONSE,
+        LOGINRESPONSE,
+        LOGOUTRESPONSE,
+        SEARCHRESPONSE,
+        PUBLISHRESPONSE,
+        FORGOTPASSWORDRESPONSE
 }

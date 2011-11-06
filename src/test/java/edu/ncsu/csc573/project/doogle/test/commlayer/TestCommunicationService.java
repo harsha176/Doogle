@@ -68,7 +68,7 @@ public class TestCommunicationService {
 		//Assert.fail("Execute request functionality not implemented"); 
 		//ICommunicationService commService = CommunicationServiceFactory.getInstance();
 		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
-		CommService.initialize("localhost", null);
+		CommService.initialize("192.168.2.6", null);
 		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
 		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
 		CommService.executeRequest(TestRequestMessages.getRegisterRequest());

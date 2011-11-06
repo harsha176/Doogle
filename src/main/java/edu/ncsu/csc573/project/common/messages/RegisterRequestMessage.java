@@ -13,7 +13,7 @@ public class RegisterRequestMessage extends RequestMessage {
 
 	public String getRequestInXML() throws Exception {
 
-		logger = Logger.getLogger(RegisterParamsType.class);
+		logger = Logger.getLogger(RegisterRequestMessage.class);
 
 		Request req = new Request();
 		req.setId(BigInteger.valueOf(System.currentTimeMillis()));
