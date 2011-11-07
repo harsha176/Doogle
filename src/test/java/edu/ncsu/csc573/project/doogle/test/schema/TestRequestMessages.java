@@ -15,6 +15,8 @@ import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.LoginRequestMessage;
 import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
+import edu.ncsu.csc573.project.common.messages.PublishSearchParameter;
+import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.common.messages.RegisterRequestMessage;
 import edu.ncsu.csc573.project.common.messages.RequestMessage;
 import edu.ncsu.csc573.project.common.messages.SearchRequestMessage;
@@ -32,7 +34,7 @@ public class TestRequestMessages {
 
 	/**
 	 * @param args
-	 * @throws Exception 
+	 * @throws Exception
 	 * @throws JAXBException
 	 */
 	@Test
@@ -47,7 +49,7 @@ public class TestRequestMessages {
 			// e.printStackTrace();
 		}
 	}
-        
+
 	public static IRequest getRegisterRequest() throws Exception {
 		IRequest regRequest = new RegisterRequestMessage();
 		IParameter Regparams = new Parameter();
@@ -56,12 +58,11 @@ public class TestRequestMessages {
 		Regparams.add(EnumParamsType.EMAIL_ID, "harsha176@gmail.com");
 		Regparams.add(EnumParamsType.DESIGNATION, "guest");
 		regRequest.createRequest(EnumOperationType.REGISTER, Regparams);
-		//System.out.println(regRequest.getRequestInXML());
+		// System.out.println(regRequest.getRequestInXML());
 		return regRequest;
 	}
-	      
-        
-        @Test
+
+	@Test
 	public void testLoginRequestMessageToXML() throws Exception {
 		IRequest loginRequest = getLoginRequest();
 
@@ -73,18 +74,18 @@ public class TestRequestMessages {
 			// e.printStackTrace();
 		}
 	}
-        
+
 	public static IRequest getLoginRequest() throws Exception {
 		IRequest loginRequest = new LoginRequestMessage();
 		IParameter Loginparams = new Parameter();
 		Loginparams.add(EnumParamsType.USERNAME, "harsha176");
 		Loginparams.add(EnumParamsType.PASSWORD, "abcdef");
 		loginRequest.createRequest(EnumOperationType.LOGIN, Loginparams);
-		//System.out.println(regRequest.getRequestInXML());
+		// System.out.println(regRequest.getRequestInXML());
 		return loginRequest;
 	}
 
-        @Test
+	@Test
 	public void testLogoutRequestMessageToXML() throws Exception {
 		IRequest logoutRequest = getLogoutRequest();
 
@@ -96,19 +97,18 @@ public class TestRequestMessages {
 			// e.printStackTrace();
 		}
 	}
-        
+
 	public static IRequest getLogoutRequest() throws Exception {
 		IRequest LogoutRequest = new LogoutRequestMessage();
 		IParameter Logoutparams = new Parameter();
 		Logoutparams.add(EnumParamsType.USERNAME, "harsha176");
-		//System.out.println(regRequest.getRequestInXML());
-                
-                LogoutRequest.createRequest(EnumOperationType.LOGOUT, Logoutparams);
+		// System.out.println(regRequest.getRequestInXML());
+
+		LogoutRequest.createRequest(EnumOperationType.LOGOUT, Logoutparams);
 		return LogoutRequest;
 	}
-	      
-     
-        @Test
+
+	@Test
 	public void testForgotPWDMessageToXML() throws Exception {
 		IRequest ForgotPWDRequest = getForgotPWDRequest();
 
@@ -116,24 +116,25 @@ public class TestRequestMessages {
 			System.out.println(ForgotPWDRequest.getRequestInXML());
 			Assert.assertTrue("Successfully parsed xml", true);
 		} catch (Exception e) {
-                        e.printStackTrace();
+			e.printStackTrace();
 			Assert.fail();
 			// e.printStackTrace();
 		}
 	}
-        public static IRequest getForgotPWDRequest() throws Exception {
+
+	public static IRequest getForgotPWDRequest() throws Exception {
 		IRequest ForgotPWDRequest = new ForgotPwdRequestMessage();
 		IParameter ForgotPWDparams = new Parameter();
 		ForgotPWDparams.add(EnumParamsType.USERNAME, "harsha176");
-                ForgotPWDparams.add(EnumParamsType.EMAIL_ID, "hmalipa@ncsu.edu");
-		//System.out.println(regRequest.getRequestInXML());
-                
-                ForgotPWDRequest.createRequest(EnumOperationType.FORGOTPASSWORD, ForgotPWDparams);
+		ForgotPWDparams.add(EnumParamsType.EMAIL_ID, "hmalipa@ncsu.edu");
+		// System.out.println(regRequest.getRequestInXML());
+
+		ForgotPWDRequest.createRequest(EnumOperationType.FORGOTPASSWORD,
+				ForgotPWDparams);
 		return ForgotPWDRequest;
 	}
-	    
-        
-        @Test
+
+	@Test
 	public void testSearchRequestMessageToXML() throws Exception {
 		IRequest SearchRequest = getSearchRequest();
 
@@ -145,23 +146,18 @@ public class TestRequestMessages {
 			// e.printStackTrace();
 		}
 	}
-            
-            
-             public static IRequest getSearchRequest() throws Exception {
+
+	public static IRequest getSearchRequest() throws Exception {
 		IRequest SearchRequest = new SearchRequestMessage();
 		IParameter Searchparams = new Parameter();
 		Searchparams.add(EnumParamsType.USERNAME, "harsha176");
-                Searchparams.add(EnumParamsType.SEARCHKEY, "12123412312");
-		//System.out.println(regRequest.getRequestInXML());
-                SearchRequest.createRequest(EnumOperationType.SEARCH, Searchparams);
+		Searchparams.add(EnumParamsType.SEARCHKEY, "12123412312");
+		// System.out.println(regRequest.getRequestInXML());
+		SearchRequest.createRequest(EnumOperationType.SEARCH, Searchparams);
 		return SearchRequest;
 	}
-        
-             
-             
-             
-             
-             
+
+
 	@Test
 	public void testRegisterRequestMessageParseXML() {
 		InputStream is = ClassLoader
@@ -195,7 +191,7 @@ public class TestRequestMessages {
 				regReq.getParameter().getParamValue(EnumParamsType.DESIGNATION)
 						.toString());
 	}
-        
+
 	@Test
 	public void testLoginRequestMessageParseXML() {
 		InputStream is = ClassLoader
@@ -224,8 +220,7 @@ public class TestRequestMessages {
 				loginReq.getParameter().getParamValue(EnumParamsType.PASSWORD)
 						.toString());
 	}
-	
-	
+
 	@Test
 	public void testLogoutRequestMessageParseXML() {
 		InputStream is = ClassLoader
@@ -247,11 +242,10 @@ public class TestRequestMessages {
 		logoutReq.parseXML(sb.toString());
 		Assert.assertEquals(EnumOperationType.LOGOUT,
 				logoutReq.getOperationType());
-		Assert.assertEquals("harsha176",
-				logoutReq.getParameter().getParamValue(EnumParamsType.USERNAME)
-						.toString());
+		Assert.assertEquals("harsha176", logoutReq.getParameter()
+				.getParamValue(EnumParamsType.USERNAME).toString());
 	}
-	
+
 	@Test
 	public void testForgotPWDRequestMessageParseXML() {
 		InputStream is = ClassLoader
@@ -265,7 +259,7 @@ public class TestRequestMessages {
 				sb.append(temp);
 			}
 		} catch (IOException e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 			Assert.fail();
 		}
 
@@ -273,13 +267,12 @@ public class TestRequestMessages {
 		forgotPWDReq.parseXML(sb.toString());
 		Assert.assertEquals(EnumOperationType.FORGOTPASSWORD,
 				forgotPWDReq.getOperationType());
-		Assert.assertEquals("harsha176",
-				forgotPWDReq.getParameter().getParamValue(EnumParamsType.USERNAME)
-						.toString());
+		Assert.assertEquals("harsha176", forgotPWDReq.getParameter()
+				.getParamValue(EnumParamsType.USERNAME).toString());
 		Assert.assertEquals("harsha176@gmail.com", forgotPWDReq.getParameter()
 				.getParamValue(EnumParamsType.EMAIL_ID).toString());
 	}
-	
+
 	@Test
 	public void testSearchRequestMessageParseXML() {
 		InputStream is = ClassLoader
@@ -300,11 +293,10 @@ public class TestRequestMessages {
 		SearchReq.parseXML(sb.toString());
 		Assert.assertEquals(EnumOperationType.SEARCH,
 				SearchReq.getOperationType());
-		Assert.assertEquals("harsha176",
-				SearchReq.getParameter().getParamValue(EnumParamsType.USERNAME)
-						.toString());
+		Assert.assertEquals("harsha176", SearchReq.getParameter()
+				.getParamValue(EnumParamsType.USERNAME).toString());
 		Assert.assertEquals("13801294803983440", SearchReq.getParameter()
 				.getParamValue(EnumParamsType.SEARCHKEY).toString());
 	}
-	
+
 }
