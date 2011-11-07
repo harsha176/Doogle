@@ -3,7 +3,6 @@
  */
 package edu.ncsu.csc573.project.doogle.test.commlayer;
 
-import static org.junit.Assert.*;
 import junit.framework.Assert;
 
 import org.junit.After;
@@ -12,6 +11,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
 import edu.ncsu.csc573.project.commlayer.ICommunicationService;
+import edu.ncsu.csc573.project.common.messages.EnumOperationType;
+import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.doogle.test.schema.TestRequestMessages;
 
 /**
@@ -67,18 +68,29 @@ public class TestCommunicationService {
 	public void testExecuteRequest() throws Exception{
 		//Assert.fail("Execute request functionality not implemented"); 
 		//ICommunicationService commService = CommunicationServiceFactory.getInstance();
-		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
-		CommService.initialize("192.168.2.6", null);
-		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
-		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
-		CommService.executeRequest(TestRequestMessages.getRegisterRequest());
 		
-		while(true) {
+		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
+		IResponse response;
+		CommService.initialize("localhost", null);
+		response = CommService.executeRequest(TestRequestMessages.getRegisterRequest());
+		Assert.assertEquals(response.getOperationType(), EnumOperationType.REGISTERRESPONSE);
+		Assert.assertEquals(response.getStatus().getErrorId(), 0);
+		
+		response = CommService.executeRequest(TestRequestMessages.getLoginRequest());
+		Assert.assertEquals(response.getOperationType(), EnumOperationType.LOGINRESPONSE);
+		Assert.assertEquals(response.getStatus().getErrorId(), 0);
+		
+		response = CommService.executeRequest(TestRequestMessages.getLogoutRequest());
+		Assert.assertEquals(response.getOperationType(), EnumOperationType.LOGOUTRESPONSE);
+		Assert.assertEquals(response.getStatus().getErrorId(), 0);
+		//CommService.executeRequest(TestRequestMessages.getSearchRequest());
+		
+		/*while(true) {
 			Thread.sleep(1000);
-		}
+		}*/
 	}
 	
-	@Test
+	/*@Test
 	public void testPublishRequest() {
 		Assert.fail("Publish request functionality not implemented");
 	}
@@ -92,7 +104,7 @@ public class TestCommunicationService {
 	@Test
 	public void testClose() {
 		Assert.fail("Close functionality not implemented");
-	}
+	}*/
 	
 	/**
 	 * @throws java.lang.Exception
@@ -101,9 +113,9 @@ public class TestCommunicationService {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
+	/*@Test
 	public void test() {
 		fail("Not yet implemented");
-	}
+	}*/
 
 }

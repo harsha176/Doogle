@@ -5,15 +5,11 @@ package edu.ncsu.csc573.project.common.messages;
 
 import java.io.StringReader;
 import java.io.StringWriter;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-
 import org.apache.log4j.Logger;
-
 import edu.ncsu.csc573.project.common.schema.Request;
-import java.util.List;
 
 /**
  * @author doogle-dev
@@ -23,7 +19,7 @@ public abstract class RequestMessage implements IRequest {
 
 	private EnumOperationType operationType;
 	private IParameter params;
-	private Logger logger;
+	private static Logger logger;
 	
 	/*
 	 * (non-Javadoc)
@@ -82,14 +78,27 @@ public abstract class RequestMessage implements IRequest {
 	}	
 	
 	public static IRequest createRequest(String XML) throws Exception {
+		logger = Logger.getLogger(RequestMessage.class);
 		IRequest req = null;
 		
 		if(XML.indexOf("Register") != -1) {
 			req = new RegisterRequestMessage();
 			req.parseXML(XML);
-		} /*else if(XML.indexOf("Login")){
-			
-		}*/
+		} else if(XML.indexOf("Login") != -1){
+			req = new LoginRequestMessage();
+			req.parseXML(XML);
+		} else if(XML.indexOf("Logout") != -1) {
+			req = new LogoutRequestMessage();
+			req.parseXML(XML);
+		} else if(XML.indexOf("Search") != -1) {
+			req = new SearchRequestMessage();
+			req.parseXML(XML);
+		} else if(XML.indexOf("ForgotPWD") != -1) {
+			req = new ForgotPwdRequestMessage();
+			req.parseXML(XML);
+		} else {
+			logger.error("Given XML " + XML + " is an invalid request");
+		}
 		return req;
 		
 	}

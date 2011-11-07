@@ -15,24 +15,26 @@ import org.apache.log4j.Logger;
 
 import edu.ncsu.csc573.project.common.schema.Response;
 import edu.ncsu.csc573.project.common.schema.Request;
+
 /**
- *
+ * 
  * @author krishna
  */
-public abstract class ResponseMessage extends RequestMessage implements IResponse {
-	private Logger logger;
+public abstract class ResponseMessage extends RequestMessage implements
+		IResponse {
+	private static Logger logger;
 	protected int errorid;
-        protected String message;
-        
-        @Override
-        public IStatus getStatus() {
-            return new Status(errorid);
-        }
-        
-        @Override 
-        public String getMessage() {
-            return message;
-        }
+	protected String message;
+
+	// @Override
+	public IStatus getStatus() {
+		return new Status(errorid);
+	}
+
+	// @Override
+	public String getMessage() {
+		return message;
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -44,21 +46,22 @@ public abstract class ResponseMessage extends RequestMessage implements IRespons
 	 */
 	public void createResponse(EnumOperationType opType, IParameter parameter) {
 		// TODO Auto-generated method stub
-            super.createRequest(opType, parameter);
+		super.createRequest(opType, parameter);
 	}
-        
-        @Override
-        public void createRequest(EnumOperationType opType, IParameter parameter) {
-            logger.warn("Create response should be called instead of create request");
-            createResponse(opType, parameter);
-        }
 
-        @Override
-        public String getXML(Request req) throws Exception{
-            throw new Exception("Invalid operation getXNL from request on response object");
-        }
-	
-	public String getXML(Response req) throws Exception{
+	@Override
+	public void createRequest(EnumOperationType opType, IParameter parameter) {
+		logger.warn("Create response should be called instead of create request");
+		createResponse(opType, parameter);
+	}
+
+	@Override
+	public String getXML(Request req) throws Exception {
+		throw new Exception(
+				"Invalid operation getXNL from request on response object");
+	}
+
+	public String getXML(Response req) throws Exception {
 		logger = Logger.getLogger(RequestMessage.class);
 		StringWriter reqXMLWriter = new StringWriter();
 		try {
@@ -67,10 +70,10 @@ public abstract class ResponseMessage extends RequestMessage implements IRespons
 			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 			m.marshal(req, reqXMLWriter);
 		} catch (Exception e) {
-				logger.error("Unable to parse request ", e);
-				throw e;
-			} finally {
-				reqXMLWriter.close();
+			logger.error("Unable to parse request ", e);
+			throw e;
+		} finally {
+			reqXMLWriter.close();
 		}
 		return reqXMLWriter.toString();
 	}
@@ -78,7 +81,33 @@ public abstract class ResponseMessage extends RequestMessage implements IRespons
 	public Response getResponse(String XML) throws JAXBException {
 		JAXBContext context = JAXBContext.newInstance(Response.class);
 		Unmarshaller unMarsheller = context.createUnmarshaller();
-		Response req = (Response)unMarsheller.unmarshal(new StringReader(XML));
+		Response req = (Response) unMarsheller.unmarshal(new StringReader(XML));
 		return req;
-	}	
+	}
+
+	public static IResponse createResponse(String XML) throws Exception {
+		logger = Logger.getLogger(RequestMessage.class);
+		IResponse res = null;
+
+		if (XML.indexOf("Register") != -1) {
+			res = new RegisterResponseMessage();
+			res.parseXML(XML);
+		} else if (XML.indexOf("Login") != -1) {
+			res = new LoginResponseMessage();
+			res.parseXML(XML);
+		} else if (XML.indexOf("Logout") != -1) {
+			res = new LogoutResponseMessage();
+			res.parseXML(XML);
+		} /*
+		 * else if(XML.indexOf("Search") != -1) { res = new
+		 * SearchResponseType(); res.parseXML(XML); }
+		 */else if (XML.indexOf("ForgotPWD") != -1) {
+			res = new ForgotPWDResponseMessage();
+			res.parseXML(XML);
+		} else {
+			logger.error("Given XML " + XML + " is an invalid request");
+		}
+		return res;
+
+	}
 }

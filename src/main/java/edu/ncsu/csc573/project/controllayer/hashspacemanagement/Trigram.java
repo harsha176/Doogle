@@ -11,7 +11,7 @@ public class Trigram {
 		Trigram t=new Trigram();
 		String store_trigram[]=new String[(int)Math.pow(36,3)];
 		int trigram_count[]=new int[(int)Math.pow(36,3)];
-		String actual_trigram[][]=new String[(int)Math.pow(36,3)][2];
+		//String actual_trigram[][]=new String[(int)Math.pow(36,3)][2];
 		File inp=new File("dict.txt");
 		FileOutputStream out;//for reading file
 		FileInputStream fin=new FileInputStream(inp);//for writing file as output

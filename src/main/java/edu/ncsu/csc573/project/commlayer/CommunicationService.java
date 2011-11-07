@@ -19,7 +19,7 @@ import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
-import edu.ncsu.csc573.project.common.messages.RequestMessage;
+import edu.ncsu.csc573.project.common.messages.ResponseMessage;
 
 /**
  * @author doogle-dev
@@ -133,8 +133,7 @@ public class CommunicationService implements ICommunicationService {
 		} catch (InterruptedException e) {
 			
 		}
-		bt.getResponse();
-		return null;
+		return bt.getResponse();
 	}
 
 	/*
@@ -192,7 +191,7 @@ public class CommunicationService implements ICommunicationService {
 	class BlockingThread extends Thread {
 		private Socket clientSocket;
 		private IRequest request;
-		private String response = null;
+		private IResponse response = null;
 		
 		BlockingThread(Socket clientSocket, IRequest request) {
 			super();
@@ -222,24 +221,21 @@ public class CommunicationService implements ICommunicationService {
 					Thread.sleep(1000);  // to be removed.
 				}
 				int ch;
-				int charCount = 0;
-				while ((ch = br.read()) != -1 && sb.indexOf("</request>") == -1) {
+				while ((ch = br.read()) != -1 && sb.indexOf("</response>") == -1) {
 					sb.append((char)ch);
-					charCount++;
 				}
 				
 				
-				IRequest req = RequestMessage.createRequest(sb.toString());
-				response = req.getRequestInXML();
-				logger.info("Response is : ");
+				response = ResponseMessage.createResponse(sb.toString());
+				logger.info("Response is : " + response.getRequestInXML());
 				logger.info(response);
 				
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.error("Unable to parse response ", e);
 			}
 		}
 		
-		public String getResponse() {
+		public IResponse getResponse() {
 			return response;
 		}
 		
