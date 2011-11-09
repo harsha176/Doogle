@@ -30,16 +30,16 @@
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
 		</dependency>
-	 <dependency>
-	  <groupId>javax.media</groupId>
-	  <artifactId>jmf</artifactId>
-	  <version>2.1.1e</version>
-	  <type>jar</type>
-	 </dependency>
+		<dependency>
+			<groupId>javax.media</groupId>
+			<artifactId>jmf</artifactId>
+			<version>2.1.1e</version>
+			<type>jar</type>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
-			<!--<plugin>
+			<!-- <plugin>
 				<groupId>com.sun.tools.xjc.maven2</groupId>
 				<artifactId>maven-jaxb-plugin</artifactId>
 				<executions>
@@ -53,14 +53,18 @@
 					<generatePackage>edu.ncsu.csc573.project.common.schema</generatePackage>
 					<generateDirectory>src/main/java</generateDirectory>
 				</configuration>
-				</plugin>-->
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration
-							<source>1.7</source>
+			</plugin> -->
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+				<configuration <source>1.7</source> </configuration> </plugin> -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
 				</configuration>
-			</plugin>-->
+			</plugin>
 		</plugins>
 	</build>
 </project>

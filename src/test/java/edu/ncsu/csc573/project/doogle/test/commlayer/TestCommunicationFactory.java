@@ -15,7 +15,6 @@ import edu.ncsu.csc573.project.commlayer.ICommunicationService;
  * 
  */
 public class TestCommunicationFactory {
-    
 	@Test
 	public void testGetInstance() {
 		ICommunicationService commService = CommunicationServiceFactory
