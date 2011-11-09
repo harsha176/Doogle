@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 
 import edu.ncsu.csc573.project.common.schema.Response;
 import edu.ncsu.csc573.project.common.schema.Request;
+import java.math.BigInteger;
 
 /**
  * 
@@ -23,17 +24,15 @@ import edu.ncsu.csc573.project.common.schema.Request;
 public abstract class ResponseMessage extends RequestMessage implements
 		IResponse {
 	private static Logger logger;
-	protected int errorid;
-	protected String message;
 
 	// @Override
 	public IStatus getStatus() {
-		return new Status(errorid);
+		return new Status ((BigInteger)(this.getParameter().getParamValue(EnumParamsType.STATUSCODE)));
 	}
 
 	// @Override
 	public String getMessage() {
-		return message;
+		return this.getParameter().getParamValue(EnumParamsType.MESSAGE).toString();
 	}
 
 	/*

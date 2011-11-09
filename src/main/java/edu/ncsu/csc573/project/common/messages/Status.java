@@ -4,18 +4,20 @@
  */
 package edu.ncsu.csc573.project.common.messages;
 
+import java.math.BigInteger;
+
 /**
  *
  * @author krishna
  */
 public class Status implements IStatus{
-    private int errorid;
+    private BigInteger errorid;
     
-    public Status(int id) {
+    public Status(BigInteger id) {
         errorid = id;
     }
     
-    public int getErrorId() {
+    public BigInteger getErrorId() {
             return errorid;
     }
 }

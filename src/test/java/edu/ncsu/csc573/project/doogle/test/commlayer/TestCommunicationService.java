@@ -74,15 +74,15 @@ public class TestCommunicationService {
 		CommService.initialize("localhost", null);
 		response = CommService.executeRequest(TestRequestMessages.getRegisterRequest());
 		Assert.assertEquals(response.getOperationType(), EnumOperationType.REGISTERRESPONSE);
-		Assert.assertEquals(response.getStatus().getErrorId(), 0);
+		Assert.assertEquals(response.getStatus().getErrorId().intValue(), 0);
 		
 		response = CommService.executeRequest(TestRequestMessages.getLoginRequest());
 		Assert.assertEquals(response.getOperationType(), EnumOperationType.LOGINRESPONSE);
-		Assert.assertEquals(response.getStatus().getErrorId(), 0);
+		Assert.assertEquals(response.getStatus().getErrorId().intValue(), 0);
 		
 		response = CommService.executeRequest(TestRequestMessages.getLogoutRequest());
 		Assert.assertEquals(response.getOperationType(), EnumOperationType.LOGOUTRESPONSE);
-		Assert.assertEquals(response.getStatus().getErrorId(), 0);
+		Assert.assertEquals(response.getStatus().getErrorId().intValue(), 0);
 		//CommService.executeRequest(TestRequestMessages.getSearchRequest());
 		
 		/*while(true) {

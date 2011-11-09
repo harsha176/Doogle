@@ -15,12 +15,7 @@ import edu.ncsu.csc573.project.commlayer.ICommunicationService;
  * 
  */
 public class TestCommunicationFactory {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
+    
 	@Test
 	public void testGetInstance() {
 		ICommunicationService commService = CommunicationServiceFactory

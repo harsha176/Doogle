@@ -45,7 +45,7 @@ public class LoginResponseMessage extends ResponseMessage {
 			IParameter param = new Parameter();
 			param.add(EnumParamsType.STATUSCODE, loginparams.getStatuscode());
 			param.add(EnumParamsType.MESSAGE, loginparams.getMessage());
-			
+                        
 			this.setOperationType(EnumOperationType.LOGINRESPONSE);
 			this.setParameter(param);
 		} catch(Exception e) {
