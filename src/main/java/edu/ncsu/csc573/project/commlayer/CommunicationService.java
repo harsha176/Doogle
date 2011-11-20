@@ -5,6 +5,8 @@ package edu.ncsu.csc573.project.commlayer;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -31,6 +33,8 @@ public class CommunicationService implements ICommunicationService {
 	private InetAddress BSSAddress;
 	private static Logger logger;
 	private PeerServer server;
+	private IPublishHandler publishHandler;
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -43,6 +47,9 @@ public class CommunicationService implements ICommunicationService {
 		// get a logger instance for this class
 		logger = Logger.getLogger(this.getClass());
 		logger.debug("Inside initialization of communication handler");
+		
+		publishHandler = aPublishHandler;
+		
 		/*
 		 * if the socket is already connected then initialization is already
 		 * done and so simply exiting.
@@ -56,22 +63,7 @@ public class CommunicationService implements ICommunicationService {
 
 			logger.info("Start server");
 			server = new PeerServer();
-			try {
-				BSSAddress = InetAddress.getByName(BootStrapServer);
-			} catch (UnknownHostException excpByHostName) {
-				try {
-					logger.info("Unable to find the address of the host: "
-							+ BootStrapServer + " by name");
-					logger.info("Trying by ip address");
-					BSSAddress = InetAddress.getByAddress(BootStrapServer
-							.trim().getBytes());
-				} catch (UnknownHostException excpByIpAddress) {
-					logger.info("Unable to find the address of host: "
-							+ BootStrapServer + " even by ip address");
-					cleanUp();
-					throw excpByIpAddress;
-				}
-			}
+			BSSAddress = getInetAddress(BootStrapServer);
 
 			int BSSport = ConfigurationManager.getInstance().getServerPort();
 			int timeOut = ConfigurationManager.getInstance().getTimeOut();
@@ -96,6 +88,28 @@ public class CommunicationService implements ICommunicationService {
 			} 
 		}
 
+	}
+
+	private InetAddress getInetAddress(String BootStrapServer) throws Exception,
+			UnknownHostException {
+		InetAddress address = null;
+		try {
+			address = InetAddress.getByName(BootStrapServer);
+		} catch (UnknownHostException excpByHostName) {
+			try {
+				logger.info("Unable to find the address of the host: "
+						+ BootStrapServer + " by name");
+				logger.info("Trying by ip address");
+				address = InetAddress.getByAddress(BootStrapServer
+						.trim().getBytes());
+			} catch (UnknownHostException excpByIpAddress) {
+				logger.info("Unable to find the address of host: "
+						+ BootStrapServer + " even by ip address");
+				cleanUp();
+				throw excpByIpAddress;
+			}
+		}
+		return address;
 	}
 
 	private void cleanUp() throws Exception{
@@ -218,7 +232,7 @@ public class CommunicationService implements ICommunicationService {
 			
 				while(!br.ready()) {
 					logger.info("No data received from server. Trying again...");
-					Thread.sleep(1000);  // to be removed.
+					Thread.sleep(1000);  // to be removed
 				}
 				int ch;
 				while ((ch = br.read()) != -1 && sb.indexOf("</response>") == -1) {
@@ -246,5 +260,68 @@ public class CommunicationService implements ICommunicationService {
 
 	public boolean isPeerServerRunning() {
 		return server.isServerRunning();
+	}
+
+	public File getFile(String IPAddress, String fileName) {
+		PrintWriter pw = null;
+		Socket ftSoc = null;
+		BufferedReader br = null;
+		PrintWriter pwFile = null;
+		File newFile = null;
+		
+		try {
+			ftSoc = new Socket(getInetAddress(IPAddress), ConfigurationManager.getInstance().getFileTransferPort());
+			pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(ftSoc.getOutputStream())));
+			logger.debug("Successfully opened socket for file transfer");
+			
+			pw.println("<request>");
+			pw.println("File:"+fileName);
+			pw.println("</request>");
+			pw.flush();
+			logger.debug("Sent request "+"File:"+fileName);
+			br = new BufferedReader(new InputStreamReader(ftSoc.getInputStream()));
+			String buff;
+			newFile = new File(ConfigurationManager.getInstance().getDownloadDirectory(),fileName.substring(0, fileName.indexOf("."))+"_"+System.currentTimeMillis()+".txt");
+			
+			pwFile = new PrintWriter(new BufferedWriter(new FileWriter(newFile)));
+			
+			while((buff = br.readLine())!=null) {
+				pwFile.println(buff);
+				pwFile.flush();
+				logger.trace("Read: " +buff);
+			}
+			pwFile.flush();
+			logger.info("Successfully saved downloaded file at " + newFile.getAbsolutePath());
+			pw.println("a");
+			pw.flush();
+		} catch (UnknownHostException e) {
+			logger.error("Unable to find host",e);
+		} catch (IOException e) {
+			logger.error("Unable to perform IO",e);
+		} catch (Exception e) {
+			logger.error("Unable to get file",e);
+		} finally {
+			if(ftSoc != null) {
+				try {
+					ftSoc.close();
+				} catch (IOException e) {
+					logger.error("Unable to close socket",e);
+				}
+			}
+			if(pw != null)
+				pw.close();
+			if(pwFile != null) 
+				pwFile.close();
+		}
+		return newFile;
+	}
+
+	public File getFileToUpload(String fileName) {
+		if(publishHandler != null) {
+			return publishHandler.getFileToUpload(fileName);
+		} else {
+			logger.error("PublishHandler is not initialized");
+			return null;
+		}
 	}
 }

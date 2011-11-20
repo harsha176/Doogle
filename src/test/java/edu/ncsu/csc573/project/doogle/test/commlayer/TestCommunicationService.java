@@ -64,7 +64,7 @@ public class TestCommunicationService {
 		}
 	}*/
 	
-	@Test
+	/*@Test
 	public void testExecuteRequest() throws Exception{
 		//Assert.fail("Execute request functionality not implemented"); 
 		//ICommunicationService commService = CommunicationServiceFactory.getInstance();
@@ -87,7 +87,19 @@ public class TestCommunicationService {
 		
 		/*while(true) {
 			Thread.sleep(1000);
-		}*/
+		//}
+	}*/
+	
+	@Test
+	public void testDownloadFile() {
+		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
+		try {
+			CommService.initialize("localhost", new DefaultPublishHandler());
+			Assert.assertNotNull(CommService.getFile("localhost", "October_revolution.txt"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/*@Test

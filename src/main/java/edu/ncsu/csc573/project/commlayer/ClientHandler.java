@@ -5,8 +5,13 @@ package edu.ncsu.csc573.project.commlayer;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -14,6 +19,7 @@ import java.net.SocketAddress;
 
 import org.apache.log4j.Logger;
 
+import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
@@ -40,7 +46,7 @@ public class ClientHandler implements Runnable {
 		SocketAddress clientAddress = conncetedSocket.getRemoteSocketAddress();
 		RequestProcessor reqProcessor = new RequestProcessor();
 		logger.info("Handling client " + clientAddress);
-
+		boolean isFileTransfer = false;
 		// Expect register or login request from the client
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(
@@ -51,24 +57,37 @@ public class ClientHandler implements Runnable {
 			IRequest req = null;
 			IResponse response = null;
 			do {
+				logger.debug("Waiting for request from client " + conncetedSocket.getRemoteSocketAddress());
 				while (!br.ready()) {
-					logger.debug("Waiting for request from client "
-							+ conncetedSocket.getRemoteSocketAddress());
+					//logger.debug("Waiting for request from client "
+					//		+ conncetedSocket.getRemoteSocketAddress());
 					try {
 						Thread.sleep(100);
 					} catch (Exception e) {
 						logger.error("Unexpected error from client" + conncetedSocket.getRemoteSocketAddress(), e);
 					}
 				}
-
+				logger.debug("Receiving request from client");
+				
 				StringBuffer sb = new StringBuffer();
 				int c;
 				while ((c = br.read()) != -1 && sb.indexOf("</request>") == -1) {
+					logger.debug(c);
 					sb.append((char) c);
 				}
 
-				//logger.debug("received data from client " + sb.toString());
+				logger.debug("received data from client " + sb.toString());
 				
+				/*
+				 * Handle file requests 
+				 */
+
+				if(sb.indexOf("File:") != -1) {
+					File toBeUploadedFile = new File(ConfigurationManager.getInstance().getPublishDirectory(),getFileName(sb));
+					transferFile(conncetedSocket.getOutputStream(), toBeUploadedFile);
+					//br.read();
+					return ;
+				}
 				PrintWriter pw = new PrintWriter(new BufferedWriter(
 						new OutputStreamWriter(
 								conncetedSocket.getOutputStream())));
@@ -83,14 +102,14 @@ public class ClientHandler implements Runnable {
 				} catch (Exception e) {
 					logger.error("Unable to parse request", e);
 				}
-				logger.info("Waiting for requests from client :" + clientAddress);
+				//logger.info("Waiting for requests from client :" + clientAddress);
 			} while (req == null || req.getOperationType() != EnumOperationType.LOGOUT);
 			logger.info("Client" + conncetedSocket +" successfully logged out.");
 		} catch (IOException e) {
 			logger.error("Failed to read data from the client " + conncetedSocket.getRemoteSocketAddress());
 		} finally {
 			String connSockAddr = conncetedSocket.toString();
-			if(conncetedSocket != null) {
+			if(conncetedSocket != null && !isFileTransfer) {
 				try {
 					conncetedSocket.close();
 					logger.info("Successfully closed connection for client " + connSockAddr);
@@ -99,5 +118,44 @@ public class ClientHandler implements Runnable {
 				}
 			}
 		}
+	}
+
+
+	private void transferFile(OutputStream os, File toBeUploadedFile) {
+		PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(os)));
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader(toBeUploadedFile));
+			String temp;
+			while((temp= br.readLine()) != null) {
+				pw.println(temp);
+				pw.flush();
+			}
+			pw.flush();
+			logger.info("Done ! Sending file contents");
+		} catch (FileNotFoundException e) {
+			logger.error("Unable to find file: " + toBeUploadedFile, e);
+		} catch (IOException e) {
+			logger.error("Unable to read file: " + toBeUploadedFile, e);
+		} finally {
+			if(pw != null) {
+				pw.close();
+			} if(br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					logger.error("Unable to close input stream reader", e);
+				}
+			}
+		}
+		
+		logger.info("Successfully transfered file");
+	}
+
+
+	public static String getFileName(StringBuffer sb) {
+		int endIndex = sb.indexOf("</request>")-1;
+		int stIndex = sb.indexOf("File:");
+		return sb.substring(stIndex+"File:".length(), endIndex);
 	}
 }
