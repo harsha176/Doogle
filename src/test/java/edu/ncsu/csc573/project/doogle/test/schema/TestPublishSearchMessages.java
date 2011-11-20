@@ -1,5 +1,6 @@
 package edu.ncsu.csc573.project.doogle.test.schema;
 
+import edu.ncsu.csc573.project.common.ConfigurationManager;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -75,7 +75,7 @@
 	<xs:complexType name="ForgotPasswdParamsType">
 		<xs:sequence>
 			<xs:element name="username" type="xs:string" />
-			<xs:element name="email_id" type="xs:string" />
+		<!--	<xs:element name="email_id" type="xs:string" /> -->
 		</xs:sequence>
 	</xs:complexType>
 

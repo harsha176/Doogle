@@ -10,6 +10,18 @@
  */
 package edu.ncsu.csc573.project.viewlayer.gui;
 
+import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
+import edu.ncsu.csc573.project.common.messages.EnumOperationType;
+import edu.ncsu.csc573.project.common.messages.EnumParamsType;
+import edu.ncsu.csc573.project.common.messages.IParameter;
+import edu.ncsu.csc573.project.common.messages.IRequest;
+import edu.ncsu.csc573.project.common.messages.IResponse;
+import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
+import edu.ncsu.csc573.project.common.messages.Parameter;
+import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
+import edu.ncsu.csc573.project.controllayer.Session;
+import org.apache.log4j.Logger;
+
 /**
  *
  * @author krishna
@@ -18,10 +30,10 @@ public class Search extends javax.swing.JFrame {
 
     /** Creates new form Search */
     public Search() {
-        
+
         initComponents();
-       // dispUsername.setText(Login.Username); 
-        
+        // dispUsername.setText(Login.Username); 
+
     }
 
     /** This method is called from within the constructor to
@@ -35,8 +47,12 @@ public class Search extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         searchText = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        dispUsername = new javax.swing.JLabel();
+        search = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Options = new javax.swing.JMenu();
+        Settings = new javax.swing.JMenuItem();
+        Publish = new javax.swing.JMenuItem();
+        Logout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(450, 250, 0, 0));
@@ -48,38 +64,65 @@ public class Search extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Search");
+        search.setText("Search");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
 
-        dispUsername.setText("Hi <username>");
+        Options.setText("Options");
+
+        Settings.setText("Settings");
+        Settings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SettingsActionPerformed(evt);
+            }
+        });
+        Options.add(Settings);
+
+        Publish.setText("Publish");
+        Publish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PublishActionPerformed(evt);
+            }
+        });
+        Options.add(Publish);
+
+        Logout.setText("Logout");
+        Logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutActionPerformed(evt);
+            }
+        });
+        Options.add(Logout);
+
+        jMenuBar1.add(Options);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(dispUsername)
-                .addContainerGap(297, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(searchText, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1)
+                        .addComponent(search)
                         .addGap(80, 80, 80)))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(dispUsername)
-                .addGap(67, 67, 67)
+                .addGap(94, 94, 94)
                 .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addComponent(search)
+                .addContainerGap(126, Short.MAX_VALUE))
         );
 
         pack();
@@ -87,9 +130,6 @@ public class Search extends javax.swing.JFrame {
 
 private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed
 // TODO add your handling code here:
-    this.setVisible(false);
-    SearchResults Results = new SearchResults();
-    Results.setVisible(true);
 }//GEN-LAST:event_searchTextActionPerformed
 
 private void publishlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publishlinkActionPerformed
@@ -105,10 +145,60 @@ private void settingslinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
 
 private void logoutlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutlinkActionPerformed
 // TODO add your handling code here:
-    loggedOut logout = new loggedOut();
-    this.setVisible(false);
-    logout.setVisible(true);
 }//GEN-LAST:event_logoutlinkActionPerformed
+
+private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+// TODO add your handling code here:
+    
+    this.setVisible(false);
+    //Search object create
+    SearchResults Results = new SearchResults();
+    Results.setVisible(true);
+}//GEN-LAST:event_searchActionPerformed
+
+private void PublishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PublishActionPerformed
+// TODO add your handling code here:
+    PublishFrame Publish = new PublishFrame();
+    //this.setVisible(false);
+    Publish.setVisible(true);
+    
+ 
+   // IRequest publishRequest = new PublishRequestMessage();
+   //     IParameter publishparams = new Parameter();
+    //Response
+    Publish.setVisible(false);
+    PublishFrame newPub = new PublishFrame();
+     newPub.setMessage("Successfully Published");
+      Publish.setVisible(false);
+      newPub.setVisible(true);
+      newPub.setVisible(false);
+      
+}//GEN-LAST:event_PublishActionPerformed
+
+private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
+// TODO add your handling code here:
+    Logger logger = Logger.getLogger(Search.class);
+    try {
+        IRequest logoutRequest = new LogoutRequestMessage();
+        IParameter Logoutparams = new Parameter();
+        logger.debug(Session.getInstance().getUsername());
+        Logoutparams.add(EnumParamsType.USERNAME, Session.getInstance().getUsername());
+        logoutRequest.createRequest(EnumOperationType.LOGOUT, Logoutparams);
+        IResponse response = CommunicationServiceFactory.getInstance().executeRequest(logoutRequest);
+        loggedOut logout = new loggedOut();
+        this.setVisible(false);
+        logout.setVisible(true);
+    } catch (Exception e) {
+        logger.error("User not logged in", e);
+    }
+}//GEN-LAST:event_LogoutActionPerformed
+
+private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
+// TODO add your handling code here:
+    SettingsFrame Settings = new SettingsFrame();
+    this.setVisible(false);
+    Settings.setVisible(true);
+}//GEN-LAST:event_SettingsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,15 +231,19 @@ private void logoutlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                
+
                 new Search().setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Logout;
+    private javax.swing.JMenu Options;
+    private javax.swing.JMenuItem Publish;
+    private javax.swing.JMenuItem Settings;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel dispUsername;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton search;
     private javax.swing.JTextField searchText;
     // End of variables declaration//GEN-END:variables
 }

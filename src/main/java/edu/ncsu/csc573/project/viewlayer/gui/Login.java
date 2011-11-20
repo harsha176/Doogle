@@ -18,6 +18,7 @@ import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LoginRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
+import edu.ncsu.csc573.project.controllayer.Session;
 import org.apache.log4j.Logger;
 
 /**
@@ -47,6 +48,8 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         registerButton = new javax.swing.JButton();
         password = new javax.swing.JPasswordField();
+        forgotPwd = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(450, 250, 0, 0));
@@ -75,35 +78,51 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        forgotPwd.setText("Forgot Pwd");
+        forgotPwd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgotPwdActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Forgot Password? Click here");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(registerButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3)
                                     .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(forgotPwd))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(registerButton)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(157, 157, 157)
+                        .addGap(170, 170, 170)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(103, 103, 103))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {password, username});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {forgotPwd, loginButton, registerButton});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,9 +144,13 @@ public class Login extends javax.swing.JFrame {
                         .addGap(46, 46, 46)))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(registerButton))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addComponent(registerButton)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(forgotPwd)
+                    .addComponent(jLabel5))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,10 +158,7 @@ public class Login extends javax.swing.JFrame {
 
 private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 // TODO add your handling code here:
-//    String Username = username.getText();    
-//    char[] Password = password.getPassword();
-    
-    // Invoke Comm layer
+ // Invoke Comm layer
     Logger logger = Logger.getLogger(Login.class);
     
     if (username.getText().isEmpty())
@@ -158,10 +178,12 @@ private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     loginRequest.createRequest(EnumOperationType.LOGIN, Loginparams);
     try {
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(loginRequest);
+        Session.createInstance(username.getText());
         Search LoggedIn = new Search();
         this.setVisible(false);
         LoggedIn.setVisible(true);
         LoggedIn.setLocationRelativeTo(this);
+        LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
         logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
         logger.info("Message is " + response.getMessage());
         } catch (Exception e) {
@@ -200,13 +222,20 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     this.setVisible(false);
     registerFrame.setVisible(true);
 }//GEN-LAST:event_registerButtonActionPerformed
-
+/*
 private void forgotpwdlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotpwdlinkActionPerformed
 // TODO add your handling code here:
      Forgotpwd Forgotpassword = new Forgotpwd();
      this.setVisible(false);
      Forgotpassword.setVisible(true);   
 }//GEN-LAST:event_forgotpwdlinkActionPerformed
+*/
+private void forgotPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPwdActionPerformed
+// TODO add your handling code here:
+     Forgotpwd Forgotpassword = new Forgotpwd();
+     this.setVisible(false);
+     Forgotpassword.setVisible(true);  
+}//GEN-LAST:event_forgotPwdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,10 +274,12 @@ private void forgotpwdlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton forgotPwd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField password;
     private javax.swing.JButton registerButton;

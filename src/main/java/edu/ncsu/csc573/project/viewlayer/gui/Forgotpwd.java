@@ -10,6 +10,15 @@
  */
 package edu.ncsu.csc573.project.viewlayer.gui;
 
+import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
+import edu.ncsu.csc573.project.common.messages.EnumOperationType;
+import edu.ncsu.csc573.project.common.messages.EnumParamsType;
+import edu.ncsu.csc573.project.common.messages.ForgotPwdRequestMessage;
+import edu.ncsu.csc573.project.common.messages.IParameter;
+import edu.ncsu.csc573.project.common.messages.IRequest;
+import edu.ncsu.csc573.project.common.messages.IResponse;
+import edu.ncsu.csc573.project.common.messages.Parameter;
+
 /**
  *
  * @author krishna
@@ -30,9 +39,10 @@ public class Forgotpwd extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         passwddRequest = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        userName = new javax.swing.JTextField();
         enter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,17 +68,14 @@ public class Forgotpwd extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(32, 32, 32)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(enter)
-                                .addGap(79, 79, 79))))
+                        .addComponent(jLabel2)
+                        .addGap(32, 32, 32)
+                        .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
+                        .addGap(121, 121, 121)
+                        .addComponent(enter))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
                         .addComponent(passwddRequest)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -80,7 +87,7 @@ public class Forgotpwd extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(enter)
                 .addContainerGap(19, Short.MAX_VALUE))
@@ -92,18 +99,23 @@ public class Forgotpwd extends javax.swing.JFrame {
 private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterActionPerformed
 // TODO add your handling code here:
     //Comm Instance..Send data to server and mail success
-    boolean isValid = true;
-    if (isValid)
+    String username = userName.getText();
+    IRequest forgotPwd = new ForgotPwdRequestMessage();
+    IParameter forgotPwdparams = new Parameter();
+    forgotPwdparams.add(EnumParamsType.USERNAME, username);
+    forgotPwd.createRequest(EnumOperationType.FORGOTPASSWORD, forgotPwdparams);
+    try {
+         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(forgotPwd);
+         ForgotpwdSuccessFailure SuccessFrame = new ForgotpwdSuccessFailure();
+         this.setVisible(false);
+         SuccessFrame.setVisible(true);
+         SuccessFrame.SuccessFrameTrue();    
+    }catch (Exception e)
     {
      ForgotpwdSuccessFailure SuccessFrame = new ForgotpwdSuccessFailure();
      this.setVisible(false);
      SuccessFrame.setVisible(true);
-     SuccessFrame.SuccessFrameTrue();
-    }    
-    else{
-     ForgotpwdSuccessFailure SuccessFrame = new ForgotpwdSuccessFailure();
-     SuccessFrame.setVisible(true);
-     SuccessFrame.SuccessFrameFalse();
+     SuccessFrame.SuccessFrameFalse(); 
     }
 }//GEN-LAST:event_enterActionPerformed
 
@@ -144,9 +156,10 @@ private void enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:e
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton enter;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel passwddRequest;
+    private javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,7 +36,7 @@ public class connect extends javax.swing.JFrame {
             } else {
                 try {
                 // initialize communication handler
-                commService.initialize(ipAddress, null);
+                 commService.initialize(ipAddress, null);
                 this.setVisible(false);
                 Login loginFrame = new Login();
                 loginFrame.setVisible(true);
@@ -79,7 +79,7 @@ public class connect extends javax.swing.JFrame {
             }
         });
 
-        dgooglelabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        dgooglelabel.setFont(new java.awt.Font("Tahoma", 1, 18));
         dgooglelabel.setText("DGOOGLE");
 
         bsrlabel.setText("Bootstrap server IP address");
@@ -119,13 +119,13 @@ public class connect extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addComponent(dgooglelabel)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bsrlabel)
                     .addComponent(ipaddtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(connectbutton)
                 .addContainerGap())
         );

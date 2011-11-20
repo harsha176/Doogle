@@ -126,7 +126,7 @@ public class TestRequestMessages {
 		IRequest ForgotPWDRequest = new ForgotPwdRequestMessage();
 		IParameter ForgotPWDparams = new Parameter();
 		ForgotPWDparams.add(EnumParamsType.USERNAME, "harsha176");
-		ForgotPWDparams.add(EnumParamsType.EMAIL_ID, "hmalipa@ncsu.edu");
+		//ForgotPWDparams.add(EnumParamsType.EMAIL_ID, "hmalipa@ncsu.edu");
 		// System.out.println(regRequest.getRequestInXML());
 
 		ForgotPWDRequest.createRequest(EnumOperationType.FORGOTPASSWORD,
@@ -269,8 +269,8 @@ public class TestRequestMessages {
 				forgotPWDReq.getOperationType());
 		Assert.assertEquals("harsha176", forgotPWDReq.getParameter()
 				.getParamValue(EnumParamsType.USERNAME).toString());
-		Assert.assertEquals("harsha176@gmail.com", forgotPWDReq.getParameter()
-				.getParamValue(EnumParamsType.EMAIL_ID).toString());
+		//Assert.assertEquals("harsha176@gmail.com", forgotPWDReq.getParameter()
+		//		.getParamValue(EnumParamsType.EMAIL_ID).toString());
 	}
 
 	@Test
