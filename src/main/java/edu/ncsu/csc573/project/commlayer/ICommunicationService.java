@@ -1,5 +1,7 @@
 package edu.ncsu.csc573.project.commlayer;
 
+import java.io.File;
+
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
@@ -81,11 +83,27 @@ public interface ICommunicationService {
 			IRequestListener reqListener);
 	
 	/**
+	 * This method retrieves the file from the remote server
+	 * 
+	 * @param IPAddress
+	 * @param fileName
+	 * @return
+	 */
+	public File getFile(String IPAddress, String fileName);
+	
+	/**
 	 * This method checks if the peer server is running.
 	 * 
 	 * @return true if it is running otherwise false
 	 */
 	public boolean isPeerServerRunning();
+	
+	/**
+	 * This method fetches file from the server
+	 * @param fileName
+	 * @return
+	 */
+	public File getFileToUpload(String fileName);
 
 	/**
 	 * This method closes the communication layer ports and releases all the
