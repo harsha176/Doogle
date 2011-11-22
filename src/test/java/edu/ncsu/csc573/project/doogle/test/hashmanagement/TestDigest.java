@@ -10,11 +10,12 @@ public class TestDigest {
 	public int sizeofchar = 1;
 	public char[] digest_bits = new char[Digest.MAX_BITS_DIGEST];
 	public int NUM_BITS_CHAR = 8;
-	@Test
+	//@Test
 	public void testquery(){
 		Digest dig = new Digest();
 		
 		if(!dig.init_digest_table()) {
+			
 			System.out.println("Fail to initialize digest utility");
 			return;
 		}

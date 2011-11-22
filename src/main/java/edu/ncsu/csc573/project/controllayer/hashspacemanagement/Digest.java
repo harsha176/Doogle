@@ -42,7 +42,7 @@ public class Digest {
 	 */
 
 	public boolean get_digest_for_file(String filename, char[] arr) {
-		logger.debug("Inside get_digest_for_file " +filename + " " + arr);
+		logger.debug("Inside get_digest_for_file " +filename + " " + new String(arr));
 		File fd;  /* fd of the master file obtained from the Aspell Dictionary*/
 		int buffer;
 		int numRead = 0;

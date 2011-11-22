@@ -16,8 +16,6 @@ import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.LoginRequestMessage;
 import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
-import edu.ncsu.csc573.project.common.messages.PublishSearchParameter;
-import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.common.messages.RegisterRequestMessage;
 import edu.ncsu.csc573.project.common.messages.RequestMessage;
 import edu.ncsu.csc573.project.common.messages.SearchRequestMessage;
@@ -367,5 +365,4 @@ public class TestRequestMessages {
 		Assert.assertEquals("13801294803983440", SearchReq.getParameter()
 				.getParamValue(EnumParamsType.SEARCHKEY).toString());
 	}
-
 }

@@ -13,7 +13,7 @@ public interface IUser {
 	/**
 	 * returns user name
 	 */
-	public String getUserName();
+	public String getUsername();
 	
 	/**
 	 * checks if the given password is valid 

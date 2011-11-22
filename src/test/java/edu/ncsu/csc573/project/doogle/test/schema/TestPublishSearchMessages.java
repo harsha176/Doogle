@@ -105,7 +105,7 @@ public class TestPublishSearchMessages {
 			publishParams.add(EnumParamsType.FILENAME, file.getName());
 			publishParams.add(EnumParamsType.FILEDIGEST, "0847");
 			publishParams.add(EnumParamsType.FILESIZE, String.valueOf(file.length()));
-			publishParams.add(EnumParamsType.IPADDRESS, localIPAddress);
+			publishParams.add(EnumParamsType.IPADDRESS, "127.0.0.1");
 			publishParams.add(EnumParamsType.ABSTRACT, getAbstract(file));
 			publishParams.add(EnumParamsType.DELIMITER, null);
 			
