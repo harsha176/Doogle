@@ -175,7 +175,7 @@ private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     IRequest loginRequest = new LoginRequestMessage();
     IParameter Loginparams = new Parameter();
     Loginparams.add(EnumParamsType.USERNAME, username.getText());
-    Loginparams.add(EnumParamsType.PASSWORD, password.getPassword());
+    Loginparams.add(EnumParamsType.PASSWORD, password.getText());
     loginRequest.createRequest(EnumOperationType.LOGIN, Loginparams);
     try {
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(loginRequest);

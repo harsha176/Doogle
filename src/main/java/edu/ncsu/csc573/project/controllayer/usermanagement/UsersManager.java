@@ -41,18 +41,18 @@ public class UsersManager extends IUsersManager {
 	private Logger logger;
 	private Map<String, IUser> users;
 	
-	public void addUser(IUser user) {
+	public void addUser(IUser user) throws UserManagementException{
 		// update user in hashmap and database file
 		// first add in file and then in database
 		if(userDataBaseFile == null) {
 			logger.error("Usermanager not initialized");
-			return ;
+			throw new UserManagementException(1, "Usermanager not initialized");
 		}
 		
 		// check if the user already exists
 		if(users.get(user.getUsername()) != null) {
 			logger.info("user: " + user.getUsername() + " is already registered");
-			return ;
+			throw new UserManagementException(2, "user: " + user.getUsername() + " is already registered");
 		}
 		PrintWriter pw = null;
 		try {
@@ -64,6 +64,7 @@ public class UsersManager extends IUsersManager {
 			pw.flush();
 		} catch (IOException e) {
 			logger.error("Unable to open userdatabase file for writing");
+			throw new UserManagementException(3, "Unable to open userdatabase file for writing");
 		}finally {
 			if(pw != null)
 				pw.close();
@@ -74,22 +75,22 @@ public class UsersManager extends IUsersManager {
 		return users.get(username);
 	}
 
-	public void userLogin(String username, String password) {
+	public void userLogin(String username, String password) throws UserManagementException{
 		User aUser = (User)users.get(username);
 		if(aUser == null || !aUser.validatePassword(password)) {
 			logger.error("Username or password is wrong");
-			//add exception
-			return ;
+			throw new UserManagementException(1, "Username or password is wrong");
 		} else {
 			aUser.setStatus(EnumStatus.LOGGED_IN);
 			logger.info(username  + " successfully logged in");
 		}
 	}
 
-	public void userLogout(String username) {
+	public void userLogout(String username) throws UserManagementException{
 		User aUser = (User)users.get(username);
 		if(aUser == null || !isUserLoggedin(username)) {
 			logger.error(username + " is not logged in or registered");
+			throw new UserManagementException(1, username + " is not logged in or registered");
 			//add exception
 		} else {
 			aUser.setStatus(EnumStatus.LOGGED_OUT);
@@ -179,12 +180,12 @@ public class UsersManager extends IUsersManager {
 	}
 
 	@Override
-	public void forgotPassword(String username) {
+	public void forgotPassword(String username) throws UserManagementException{
 		User aUser = (User)users.get(username);
 		if(aUser == null) {
 			logger.error("User not registered");
 			// add exception
-			return ;
+			throw new UserManagementException(1, username + " is not registered");
 		} 
 		String prevPassword = aUser.getPassword();
 	    aUser.setPassword(generateRandomPassword());
@@ -196,6 +197,7 @@ public class UsersManager extends IUsersManager {
 	    	logger.error("Failed to update password", e);
 	    	logger.info("restoring previous password");
 	    	aUser.setPassword(prevPassword);
+	    	throw new UserManagementException(2, "Failed to update password");
 	    }
 	}
 	
@@ -264,13 +266,18 @@ public class UsersManager extends IUsersManager {
 
 	@Override
 	public void changePassword(String username, String oldPassword,
-			String newPassword) throws Exception{
+			String newPassword) throws UserManagementException {
 		if(isUserLoggedin(username) && users.get(username).validatePassword(oldPassword)) {
 			User user = (User)users.get(username);
 			user.setPassword(newPassword);
-			updateUserDBFile();
+			try {
+				updateUserDBFile();
+			} catch (Exception e) {
+				logger.error("Unable to update user database");
+				throw new UserManagementException(2, "Unable to update user database");
+			}
 		} else {
-			throw new Exception("User is not logged in or password is invalid");
+			throw new UserManagementException(1, "User is not logged in or password is invalid");
 		}
 	}
 
@@ -278,6 +285,7 @@ public class UsersManager extends IUsersManager {
 	public void flushDatabase() {
 		try {
 			FileWriter fw = new FileWriter(getUserDBFile());
+			users.clear();
 			fw.close();
 		} catch (Exception e) {
 			logger.error("Failed to find user database file", e);

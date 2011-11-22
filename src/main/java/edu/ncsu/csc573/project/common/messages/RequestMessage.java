@@ -99,8 +99,11 @@ public abstract class RequestMessage implements IRequest {
 		} else if(XML.indexOf("Publish") != -1) {
 			req = new PublishRequestMessage();
 			req.parseXML(XML);
-                }
-                else {
+        } else if(XML.indexOf("ChangePassword") != -1) {
+			req = new ChangePasswordRequestMessage();
+			req.parseXML(XML);
+        }
+        else {
 			logger.error("Given XML " + XML + " is an invalid request");
 		}
 		return req;

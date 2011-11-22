@@ -257,7 +257,7 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     IRequest regRequest = new RegisterRequestMessage();
     IParameter Regparams = new Parameter();
     Regparams.add(EnumParamsType.USERNAME, usernameData.getText());
-    Regparams.add(EnumParamsType.PASSWORD, passwordUser.getPassword());
+    Regparams.add(EnumParamsType.PASSWORD, passwordUser.getText());
     Regparams.add(EnumParamsType.FIRSTNAME, firstname);
     Regparams.add(EnumParamsType.LASTNAME, lastname);
     Regparams.add(EnumParamsType.EMAIL_ID, emailUsers);
