@@ -15,8 +15,6 @@ import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.LoginRequestMessage;
 import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
-import edu.ncsu.csc573.project.common.messages.PublishSearchParameter;
-import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.common.messages.RegisterRequestMessage;
 import edu.ncsu.csc573.project.common.messages.RequestMessage;
 import edu.ncsu.csc573.project.common.messages.SearchRequestMessage;
@@ -126,7 +124,7 @@ public class TestRequestMessages {
 		IRequest ForgotPWDRequest = new ForgotPwdRequestMessage();
 		IParameter ForgotPWDparams = new Parameter();
 		ForgotPWDparams.add(EnumParamsType.USERNAME, "harsha176");
-		ForgotPWDparams.add(EnumParamsType.EMAIL_ID, "hmalipa@ncsu.edu");
+		//ForgotPWDparams.add(EnumParamsType.EMAIL_ID, "hmalipa@ncsu.edu");
 		// System.out.println(regRequest.getRequestInXML());
 
 		ForgotPWDRequest.createRequest(EnumOperationType.FORGOTPASSWORD,
@@ -269,8 +267,8 @@ public class TestRequestMessages {
 				forgotPWDReq.getOperationType());
 		Assert.assertEquals("harsha176", forgotPWDReq.getParameter()
 				.getParamValue(EnumParamsType.USERNAME).toString());
-		Assert.assertEquals("harsha176@gmail.com", forgotPWDReq.getParameter()
-				.getParamValue(EnumParamsType.EMAIL_ID).toString());
+		//Assert.assertEquals("harsha176@gmail.com", forgotPWDReq.getParameter()
+		//		.getParamValue(EnumParamsType.EMAIL_ID).toString());
 	}
 
 	@Test

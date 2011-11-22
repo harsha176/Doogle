@@ -28,7 +28,7 @@ public class ForgotPwdRequestMessage extends RequestMessage {
 		ForgotPasswdParamsType lpt = new ForgotPasswdParamsType();
 		
 		lpt.setUsername((getParameter().getParamValue(EnumParamsType.USERNAME).toString()));
-                lpt.setEmailId(getParameter().getParamValue(EnumParamsType.EMAIL_ID).toString());
+//                lpt.setEmailId(getParameter().getParamValue(EnumParamsType.EMAIL_ID).toString());
 
 		forgotPwdType.setParams(lpt);
 		forgotPwd.setForgotPWD(forgotPwdType);
@@ -46,7 +46,7 @@ public class ForgotPwdRequestMessage extends RequestMessage {
 			IParameter param = new Parameter();
 		
                         param.add(EnumParamsType.USERNAME, forgoPasswdparams.getUsername());
-                	param.add(EnumParamsType.EMAIL_ID, forgoPasswdparams.getEmailId());
+  //              	param.add(EnumParamsType.EMAIL_ID, forgoPasswdparams.getEmailId());
 
 			this.setOperationType(EnumOperationType.FORGOTPASSWORD);
 			this.setParameter(param);

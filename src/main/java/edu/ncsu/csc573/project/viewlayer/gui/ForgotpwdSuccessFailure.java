@@ -92,6 +92,8 @@ private void loginTryagainActionPerformed(java.awt.event.ActionEvent evt) {//GEN
     }
      else {
     this.setVisible(false);
+    Forgotpwd Forgotpassword = new Forgotpwd();
+     Forgotpassword.setVisible(true);
 }
 }//GEN-LAST:event_loginTryagainActionPerformed
 

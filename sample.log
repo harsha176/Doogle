@@ -4725,3 +4725,36 @@ File:October_revolution.txt
 1767 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
 1767 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
 1768 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+3    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+5    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53253
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53254
+10   [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+10   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+10   [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+10   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53253
+10   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53254
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53254
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+12   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53253
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+20   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+20   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321932445264.txt
+20   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53254,localport=9000]
+1289 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1289 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1291 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1497 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1498 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1498 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1499 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1499 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1499 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1500 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in

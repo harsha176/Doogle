@@ -35,7 +35,7 @@ public class SettingsFrame extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        filechoosetext = new javax.swing.JTextField();
+        publishfolder = new javax.swing.JTextField();
         filechoosebutton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         oldpwd = new javax.swing.JLabel();
@@ -46,6 +46,10 @@ public class SettingsFrame extends javax.swing.JFrame {
         newpasswd = new javax.swing.JPasswordField();
         confnewpasswd = new javax.swing.JPasswordField();
         back = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        downloadfolder = new javax.swing.JTextField();
+        filechoosebutton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(450, 250, 0, 0));
@@ -56,9 +60,9 @@ public class SettingsFrame extends javax.swing.JFrame {
 
         jLabel2.setText("Change the folder to share");
 
-        filechoosetext.addActionListener(new java.awt.event.ActionListener() {
+        publishfolder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filechoosetextActionPerformed(evt);
+                publishfolderActionPerformed(evt);
             }
         });
 
@@ -92,34 +96,57 @@ public class SettingsFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Change the download folder");
+
+        downloadfolder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                downloadfolderActionPerformed(evt);
+            }
+        });
+
+        filechoosebutton1.setText("Browse");
+        filechoosebutton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filechoosebutton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
                             .addComponent(oldpwd)
                             .addComponent(newpwd)
-                            .addComponent(confnewpwd)
-                            .addComponent(changepwd))
-                        .addGap(48, 48, 48)
+                            .addComponent(confnewpwd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(back)
+                            .addComponent(confnewpasswd, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(newpasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(oldpasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(confnewpasswd, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(downloadfolder, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(filechoosebutton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(publishfolder, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(filechoosebutton)))
+                        .addGap(12, 12, 12))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(filechoosebutton)
-                            .addComponent(filechoosetext, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                        .addComponent(changepwd)
+                        .addGap(48, 48, 48)
+                        .addComponent(back)))
+                .addContainerGap())
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {confnewpwd, newpwd, oldpwd});
@@ -128,20 +155,28 @@ public class SettingsFrame extends javax.swing.JFrame {
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {back, filechoosebutton});
 
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {downloadfolder, publishfolder});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(filechoosetext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(publishfolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filechoosebutton))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(filechoosebutton1)
+                    .addComponent(downloadfolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(filechoosebutton)
-                .addGap(10, 10, 10)
+                .addComponent(jLabel5)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(oldpwd)
                     .addComponent(oldpasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -153,11 +188,11 @@ public class SettingsFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confnewpwd)
                     .addComponent(confnewpasswd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(changepwd)
                     .addComponent(back))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {back, changepwd});
@@ -194,14 +229,14 @@ public void fileChooser() {
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-        filechoosetext.setText(chooser.getName(chooser.getSelectedFile()));
+        publishfolder.setText(chooser.getName(chooser.getSelectedFile()));
     } 
     }
 
-private void filechoosetextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filechoosetextActionPerformed
+private void publishfolderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publishfolderActionPerformed
 // TODO add your handling code here:
-    
-}//GEN-LAST:event_filechoosetextActionPerformed
+//Update the system settings    
+}//GEN-LAST:event_publishfolderActionPerformed
 
 private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
 // TODO add your handling code here:
@@ -217,6 +252,14 @@ private void filechoosebuttonActionPerformed(java.awt.event.ActionEvent evt) {//
     UpdateDoneSuccess();
     
 }//GEN-LAST:event_filechoosebuttonActionPerformed
+
+private void downloadfolderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadfolderActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_downloadfolderActionPerformed
+
+private void filechoosebutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filechoosebutton1ActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_filechoosebutton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,15 +302,19 @@ private void filechoosebuttonActionPerformed(java.awt.event.ActionEvent evt) {//
     private javax.swing.JButton changepwd;
     private javax.swing.JPasswordField confnewpasswd;
     private javax.swing.JLabel confnewpwd;
+    private javax.swing.JTextField downloadfolder;
     private javax.swing.JButton filechoosebutton;
-    private javax.swing.JTextField filechoosetext;
+    private javax.swing.JButton filechoosebutton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField newpasswd;
     private javax.swing.JLabel newpwd;
     private javax.swing.JPasswordField oldpasswd;
     private javax.swing.JLabel oldpwd;
+    private javax.swing.JTextField publishfolder;
     // End of variables declaration//GEN-END:variables
 
     private void PasswdMismatchErrors() {
