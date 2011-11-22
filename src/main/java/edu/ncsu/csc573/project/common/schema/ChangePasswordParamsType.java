@@ -15,17 +15,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for SearchTypeParams complex type.
+ * <p>Java class for ChangePasswordParamsType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SearchTypeParams">
+ * &lt;complexType name="ChangePasswordParamsType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="username" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="search" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="password" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="newpassword" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,16 +36,19 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SearchTypeParams", propOrder = {
+@XmlType(name = "ChangePasswordParamsType", propOrder = {
     "username",
-    "search"
+    "password",
+    "newpassword"
 })
-public class SearchTypeParams {
+public class ChangePasswordParamsType {
 
     @XmlElement(required = true)
     protected String username;
     @XmlElement(required = true)
-    protected String search;
+    protected String password;
+    @XmlElement(required = true)
+    protected String newpassword;
 
     /**
      * Gets the value of the username property.
@@ -71,27 +75,51 @@ public class SearchTypeParams {
     }
 
     /**
-     * Gets the value of the search property.
+     * Gets the value of the password property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSearch() {
-        return search;
+    public String getPassword() {
+        return password;
     }
 
     /**
-     * Sets the value of the search property.
+     * Sets the value of the password property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSearch(String value) {
-        this.search = value;
+    public void setPassword(String value) {
+        this.password = value;
+    }
+
+    /**
+     * Gets the value of the newpassword property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNewpassword() {
+        return newpassword;
+    }
+
+    /**
+     * Sets the value of the newpassword property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNewpassword(String value) {
+        this.newpassword = value;
     }
 
 }

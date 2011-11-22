@@ -10,7 +10,20 @@
  */
 package edu.ncsu.csc573.project.viewlayer.gui;
 
+import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
+import edu.ncsu.csc573.project.common.ConfigurationManager;
+import edu.ncsu.csc573.project.common.messages.ChangePasswordRequestMessage;
+import edu.ncsu.csc573.project.common.messages.EnumOperationType;
+import edu.ncsu.csc573.project.common.messages.EnumParamsType;
+import edu.ncsu.csc573.project.common.messages.IParameter;
+import edu.ncsu.csc573.project.common.messages.IRequest;
+import edu.ncsu.csc573.project.common.messages.IResponse;
+import edu.ncsu.csc573.project.common.messages.Parameter;
+import edu.ncsu.csc573.project.controllayer.Session;
 import java.io.File;
+import java.math.BigInteger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 
 /**
@@ -22,6 +35,9 @@ public class SettingsFrame extends javax.swing.JFrame {
     /** Creates new form SettingsFrame */
     public SettingsFrame() {
         initComponents();
+        downloadfolder.setText(ConfigurationManager.getInstance().getDownloadDirectory().getAbsolutePath());
+        publishfolder.setText(ConfigurationManager.getInstance().getPublishDirectory().getAbsolutePath());
+        
     }
 
     /** This method is called from within the constructor to
@@ -36,7 +52,7 @@ public class SettingsFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         publishfolder = new javax.swing.JTextField();
-        filechoosebutton = new javax.swing.JButton();
+        publishchoosebutton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         oldpwd = new javax.swing.JLabel();
         newpwd = new javax.swing.JLabel();
@@ -48,7 +64,7 @@ public class SettingsFrame extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         downloadfolder = new javax.swing.JTextField();
-        filechoosebutton1 = new javax.swing.JButton();
+        downloadchoosebutton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,10 +82,10 @@ public class SettingsFrame extends javax.swing.JFrame {
             }
         });
 
-        filechoosebutton.setText("Browse");
-        filechoosebutton.addActionListener(new java.awt.event.ActionListener() {
+        publishchoosebutton.setText("Browse");
+        publishchoosebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filechoosebuttonActionPerformed(evt);
+                publishchoosebuttonActionPerformed(evt);
             }
         });
 
@@ -104,10 +120,10 @@ public class SettingsFrame extends javax.swing.JFrame {
             }
         });
 
-        filechoosebutton1.setText("Browse");
-        filechoosebutton1.addActionListener(new java.awt.event.ActionListener() {
+        downloadchoosebutton.setText("Browse");
+        downloadchoosebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                filechoosebutton1ActionPerformed(evt);
+                downloadchoosebuttonActionPerformed(evt);
             }
         });
 
@@ -133,11 +149,11 @@ public class SettingsFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(downloadfolder, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(filechoosebutton1))
+                                .addComponent(downloadchoosebutton))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(publishfolder, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(filechoosebutton)))
+                                .addComponent(publishchoosebutton)))
                         .addGap(12, 12, 12))
                     .addComponent(jLabel1)
                     .addComponent(jLabel5)
@@ -153,7 +169,7 @@ public class SettingsFrame extends javax.swing.JFrame {
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {confnewpasswd, newpasswd, oldpasswd});
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {back, filechoosebutton});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {back, publishchoosebutton});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {downloadfolder, publishfolder});
 
@@ -166,11 +182,11 @@ public class SettingsFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(publishfolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(filechoosebutton))
+                    .addComponent(publishchoosebutton))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(filechoosebutton1)
+                    .addComponent(downloadchoosebutton)
                     .addComponent(downloadfolder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
@@ -216,26 +232,44 @@ private void changepwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
    }
    //Communication handler instance
    else {
-      //Comm layer instance
-            PasswdChangeSuccess();
+            try {
+                //Comm layer instance
+              IRequest changeRequest = new ChangePasswordRequestMessage();
+              IParameter Changeparams = new Parameter();
+              Changeparams.add(EnumParamsType.USERNAME, Session.getInstance().getUsername());
+              Changeparams.add(EnumParamsType.PASSWORD, oldpasswd.getPassword());
+              Changeparams.add(EnumParamsType.PASSWORD, newpasswd.getPassword());
+              changeRequest.createRequest(EnumOperationType.CHANGEPASSWORD, Changeparams);
+              IResponse response = CommunicationServiceFactory.getInstance().executeRequest(changeRequest);
+              BigInteger statusCode = response.getStatus().getErrorId();
+              System.out.println(statusCode);
+              if(statusCode.intValue() == 0)
+        {
+              PasswdChangeSuccess();
+        }
+              else{
+                  PasswdChangeFail();
+              }
+            }
+            //Comm instance to change password
+            catch (Exception ex) {
+                PasswdChangeFail();
+            }
       }
     //Comm instance to change password
 }//GEN-LAST:event_changepwdActionPerformed
 
-public void fileChooser() {
+public JFileChooser fileChooser() {
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
         chooser.setDialogTitle("Select Folder");
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         chooser.setAcceptAllFileFilterUsed(false);
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-        publishfolder.setText(chooser.getName(chooser.getSelectedFile()));
-    } 
+        return chooser;
     }
 
 private void publishfolderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publishfolderActionPerformed
-// TODO add your handling code here:
-//Update the system settings    
+
 }//GEN-LAST:event_publishfolderActionPerformed
 
 private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -245,21 +279,36 @@ private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:ev
     newSearch.setVisible(true);
 }//GEN-LAST:event_backActionPerformed
 
-private void filechoosebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filechoosebuttonActionPerformed
-    fileChooser();
-    filechoosebutton.setText("Updating");
-    //call an instance
-    UpdateDoneSuccess();
-    
-}//GEN-LAST:event_filechoosebuttonActionPerformed
+private void publishchoosebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publishchoosebuttonActionPerformed
+    JFileChooser chooser = fileChooser();
+    if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+        publishfolder.setText(chooser.getSelectedFile().getAbsolutePath());
+    } 
+    try {
+        ConfigurationManager.getInstance().setPublishDirectory(new File(publishfolder.getText()));
+         UpdateDoneSuccess();
+    } catch (Exception e) {
+        Updatefail();
+    }   
+}//GEN-LAST:event_publishchoosebuttonActionPerformed
 
 private void downloadfolderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadfolderActionPerformed
 // TODO add your handling code here:
 }//GEN-LAST:event_downloadfolderActionPerformed
 
-private void filechoosebutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filechoosebutton1ActionPerformed
+private void downloadchoosebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadchoosebuttonActionPerformed
 // TODO add your handling code here:
-}//GEN-LAST:event_filechoosebutton1ActionPerformed
+    JFileChooser chooser = fileChooser();
+    if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+        downloadfolder.setText(chooser.getSelectedFile().getAbsolutePath());
+    } 
+     try {
+        ConfigurationManager.getInstance().setDownloadDirectory(new File(downloadfolder.getText()));
+         UpdateDoneSuccess();
+    } catch (Exception e) {
+        Updatefail();
+    }   
+}//GEN-LAST:event_downloadchoosebuttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,9 +351,8 @@ private void filechoosebutton1ActionPerformed(java.awt.event.ActionEvent evt) {/
     private javax.swing.JButton changepwd;
     private javax.swing.JPasswordField confnewpasswd;
     private javax.swing.JLabel confnewpwd;
+    private javax.swing.JButton downloadchoosebutton;
     private javax.swing.JTextField downloadfolder;
-    private javax.swing.JButton filechoosebutton;
-    private javax.swing.JButton filechoosebutton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -314,6 +362,7 @@ private void filechoosebutton1ActionPerformed(java.awt.event.ActionEvent evt) {/
     private javax.swing.JLabel newpwd;
     private javax.swing.JPasswordField oldpasswd;
     private javax.swing.JLabel oldpwd;
+    private javax.swing.JButton publishchoosebutton;
     private javax.swing.JTextField publishfolder;
     // End of variables declaration//GEN-END:variables
 
@@ -333,9 +382,19 @@ private void filechoosebutton1ActionPerformed(java.awt.event.ActionEvent evt) {/
         passwdRegisterSuccess.PasswordSucess();
         passwdRegisterSuccess.setVisible(true);
     }
+       private void PasswdChangeFail() {
+        RegisterErrors passwdRegisterFail = new RegisterErrors();
+        passwdRegisterFail.PasswordFail();
+        passwdRegisterFail.setVisible(true);
+    }
      private void UpdateDoneSuccess() {
         RegisterErrors update = new RegisterErrors();
         update.UpdateSuccess();
+        update.setVisible(true);
+    }
+     private void Updatefail() {
+        RegisterErrors update = new RegisterErrors();
+        update.UpdateFail();
         update.setVisible(true);
     }
 }

@@ -19,6 +19,7 @@ import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LoginRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.controllayer.Session;
+import java.math.BigInteger;
 import org.apache.log4j.Logger;
 
 /**
@@ -178,16 +179,25 @@ private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     loginRequest.createRequest(EnumOperationType.LOGIN, Loginparams);
     try {
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(loginRequest);
-        Session.createInstance(username.getText());
-        Search LoggedIn = new Search();
-        this.setVisible(false);
-        LoggedIn.setVisible(true);
-        LoggedIn.setLocationRelativeTo(this);
-        LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
-        logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
-        logger.info("Message is " + response.getMessage());
-        } catch (Exception e) {
-             inValidComboScreen();
+        BigInteger statusCode = response.getStatus().getErrorId();
+        if(statusCode.intValue() == 0)
+        {
+            Session.createInstance(username.getText());
+            Search LoggedIn = new Search();
+            this.setVisible(false);
+            LoggedIn.setVisible(true);
+            LoggedIn.setLocationRelativeTo(this);
+            LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
+            logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
+            logger.info("Message is " + response.getMessage());
+        }
+        else
+        {
+            inValidComboScreen();
+        }
+    }
+        catch (Exception e) {
+            // inValidComboScreen();
              logger.error("Failed to perform login ", e);
         }
     }
@@ -209,7 +219,7 @@ private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     }
         private void inValidComboScreen() {
         ErrorScreen inValidScreen = new ErrorScreen();
-        inValidScreen.setMessage("Username/Password do not match");
+        inValidScreen.setMessage("Username or Password are incorrect");
         this.setVisible(false);
         inValidScreen.setVisible(true);
         inValidScreen.setLocationRelativeTo(this);

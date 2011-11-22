@@ -8,20 +8,20 @@ import org.junit.Test;
 import edu.ncsu.csc573.project.commlayer.ClientHandler;
 
 public class TestClientHandler {
-	@Test
+	/*@Test
 	public void testGetFileName() {
 		String fileName = "C:/abc/dsa.txt";
 		Assert.assertEquals(fileName, ClientHandler.getFileName(prepareGetFileRequest(fileName)));
-	}
+	}*/
 	
-	@Test
+	/*@Test
 	public void testGetFileNameInWindows() {
 		String fileName = "/tmp/dsa/dsa/bcd.txt";
 		Assert.assertEquals(fileName, ClientHandler.getFileName(prepareGetFileRequest(fileName)));
-	}
+	}*/
     
 	
-	private StringBuffer prepareGetFileRequest(String fileName) {
+	public static StringBuffer prepareGetFileRequest(String fileName) {
 		StringBuffer sb = new StringBuffer();
 		sb.append("<request>");
 		sb.append(System.lineSeparator());

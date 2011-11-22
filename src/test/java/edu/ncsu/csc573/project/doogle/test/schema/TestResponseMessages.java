@@ -1,5 +1,6 @@
 package edu.ncsu.csc573.project.doogle.test.schema;
 
+import edu.ncsu.csc573.project.common.messages.ChangePasswordResponseMessage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -94,6 +95,8 @@ public class TestResponseMessages {
 	}
         
         
+       
+        
         @Test
 	public void testPublishResponseMessageToXML() throws Exception {
 		IResponse regRequest = getPublishResponse();
@@ -143,7 +146,30 @@ public class TestResponseMessages {
 		return regRequest;
 	}
 	 
+ 
+        @Test
+	public void testChangePasswordResponseMessageToXML() throws Exception {
+		IResponse regRequest = getChangePasswordResponse();
+
+		try {
+			System.out.println(regRequest.getRequestInXML());
+			Assert.assertTrue("Successfully parsed xml", true);
+		} catch (Exception e) {
+                    e.printStackTrace();
+                    Assert.fail();
+			
+		}
+	}
         
+	public static IResponse getChangePasswordResponse() throws Exception {
+		IResponse regRequest = new ChangePasswordResponseMessage();
+		IParameter Regparams = new Parameter();
+		Regparams.add(EnumParamsType.STATUSCODE, new BigInteger(String.valueOf(0)));
+		Regparams.add(EnumParamsType.MESSAGE, "abcdef");
+		regRequest.createResponse(EnumOperationType.CHANGEPASSWORDRESPONSE, Regparams);
+		//System.out.println(regRequest.getRequestInXML());
+		return regRequest;
+	}        
         
         
         
@@ -259,6 +285,37 @@ public class TestResponseMessages {
 				.getParamValue(EnumParamsType.MESSAGE).toString());
 	}
 	
+        
+        @Test
+	public void testChangePWDResponseMessageParseXML() {
+		InputStream is = ClassLoader
+				.getSystemResourceAsStream("TestChangePasswordResponse.xml");
+		BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+		StringBuffer sb = new StringBuffer();
+		String temp;
+		try {
+			while ((temp = br.readLine()) != null) {
+				sb.append(temp);
+			}
+		} catch (IOException e) {
+			//e.printStackTrace();
+			Assert.fail();
+		}
+
+		ResponseMessage changePWDReq = new ChangePasswordResponseMessage();
+		changePWDReq.parseXML(sb.toString());
+		Assert.assertEquals(EnumOperationType.CHANGEPASSWORDRESPONSE,
+				changePWDReq.getOperationType());
+		Assert.assertEquals("0",
+				changePWDReq.getParameter().getParamValue(EnumParamsType.STATUSCODE)
+						.toString());
+		Assert.assertEquals("abcdef", changePWDReq.getParameter()
+				.getParamValue(EnumParamsType.MESSAGE).toString());
+	}
+	
+        
+        
 	@Test
 	public void testPublishResponseMessageParseXML() {
 		InputStream is = ClassLoader

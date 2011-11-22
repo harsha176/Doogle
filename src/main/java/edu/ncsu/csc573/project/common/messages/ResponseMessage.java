@@ -97,6 +97,9 @@ public abstract class ResponseMessage extends RequestMessage implements
 		} else if (XML.indexOf("Logout") != -1) {
 			res = new LogoutResponseMessage();
 			res.parseXML(XML);
+		} else if (XML.indexOf("Publish") != -1) {
+			res = new PublishResponseMessage();
+			res.parseXML(XML);
 		} /*
 		 * else if(XML.indexOf("Search") != -1) { res = new
 		 * SearchResponseType(); res.parseXML(XML); }

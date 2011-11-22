@@ -10,6 +10,15 @@
  */
 package edu.ncsu.csc573.project.viewlayer.gui;
 
+import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
+import edu.ncsu.csc573.project.common.messages.EnumOperationType;
+import edu.ncsu.csc573.project.common.messages.EnumParamsType;
+import edu.ncsu.csc573.project.common.messages.IParameter;
+import edu.ncsu.csc573.project.common.messages.IRequest;
+import edu.ncsu.csc573.project.common.messages.IResponse;
+import edu.ncsu.csc573.project.common.messages.Parameter;
+import edu.ncsu.csc573.project.common.messages.RegisterRequestMessage;
+import java.math.BigInteger;
 import java.util.regex.Pattern;
 
 /**
@@ -245,10 +254,34 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
    }
    //Communication handler instance
    else {
-      this.setVisible(false);
+    IRequest regRequest = new RegisterRequestMessage();
+    IParameter Regparams = new Parameter();
+    Regparams.add(EnumParamsType.USERNAME, usernameData.getText());
+    Regparams.add(EnumParamsType.PASSWORD, passwordUser.getPassword());
+    Regparams.add(EnumParamsType.FIRSTNAME, firstname);
+    Regparams.add(EnumParamsType.LASTNAME, lastname);
+    Regparams.add(EnumParamsType.EMAIL_ID, emailUsers);
+    Regparams.add(EnumParamsType.DESIGNATION, faculty.getText());
+       
+    regRequest.createRequest(EnumOperationType.REGISTER, Regparams);
+    try{
+      IResponse response = CommunicationServiceFactory.getInstance().executeRequest(regRequest);
+      BigInteger statusCode = response.getStatus().getErrorId();
+      if (statusCode.intValue() == 0)
+      {
+          this.setVisible(false);
+      
       Login loginFrame = new Login();
       loginFrame.setVisible(true);
       }
+      else {
+          UserErrors();
+      }
+      }
+    catch (Exception e){
+        ServerErrors();
+    }
+    }
 }//GEN-LAST:event_registerButtonActionPerformed
        
 
@@ -330,11 +363,11 @@ private void facultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         passwdRegisterErrors.passwordLengthnotMet();
         passwdRegisterErrors.setVisible(true);
     }
-   //     private void UsernameErrors() {
-   //     UsernameErrors UsernameError = new UsernameErrors();
-   //     UsernameError.passwordLengthnotMet();
-   //     UsernameError.setVisible(true);
-   // } 
+        private void UserErrors() {
+        RegisterErrors UserErrors = new RegisterErrors();
+        UserErrors.UserError();
+        UserErrors.setVisible(true);
+    } 
         private void FirstnameErrors() {
         RegisterErrors FirstnameErrors = new RegisterErrors();
         FirstnameErrors.FirstnameError();
@@ -355,4 +388,11 @@ private void facultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
         EmailErrors.EmailError();
         EmailErrors.setVisible(true);
     }
+
+    private void ServerErrors() {
+     RegisterErrors ServerErrors = new RegisterErrors();
+        ServerErrors.ServerError();
+        ServerErrors.setVisible(true);   
+    }
+
 }

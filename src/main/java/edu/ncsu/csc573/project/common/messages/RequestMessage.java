@@ -96,7 +96,11 @@ public abstract class RequestMessage implements IRequest {
 		} else if(XML.indexOf("ForgotPWD") != -1) {
 			req = new ForgotPwdRequestMessage();
 			req.parseXML(XML);
-		} else {
+		} else if(XML.indexOf("Publish") != -1) {
+			req = new PublishRequestMessage();
+			req.parseXML(XML);
+                }
+                else {
 			logger.error("Given XML " + XML + " is an invalid request");
 		}
 		return req;

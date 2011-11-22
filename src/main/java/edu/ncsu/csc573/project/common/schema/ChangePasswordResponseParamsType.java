@@ -11,25 +11,23 @@ package edu.ncsu.csc573.project.common.schema;
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Request complex type.
+ * <p>Java class for ChangePasswordResponseParamsType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Request">
+ * &lt;complexType name="ChangePasswordResponseParamsType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Command" type="{http://www.doogle.project.csc573.csc.ncsu.edu}CommandRequestType"/>
+ *         &lt;element name="statuscode" type="{http://www.w3.org/2001/XMLSchema}integer"/>
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
- *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -37,64 +35,64 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Request", propOrder = {
-    "command"
+@XmlType(name = "ChangePasswordResponseParamsType", propOrder = {
+    "statuscode",
+    "message"
 })
-public class Request {
+public class ChangePasswordResponseParamsType {
 
-    @XmlElement(name = "Command", required = true)
-    protected CommandRequestType command;
-    @XmlAttribute(required = true)
-    protected BigInteger id;
-
-    /**
-     * Gets the value of the command property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CommandRequestType }
-     *     
-     */
-    public CommandRequestType getCommand() {
-        return command;
-    }
+    @XmlElement(required = true)
+    protected BigInteger statuscode;
+    @XmlElement(required = true)
+    protected String message;
 
     /**
-     * Sets the value of the command property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CommandRequestType }
-     *     
-     */
-    public void setCommand(CommandRequestType value) {
-        this.command = value;
-    }
-
-    /**
-     * Gets the value of the id property.
+     * Gets the value of the statuscode property.
      * 
      * @return
      *     possible object is
      *     {@link BigInteger }
      *     
      */
-    public BigInteger getId() {
-        return id;
+    public BigInteger getStatuscode() {
+        return statuscode;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the statuscode property.
      * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
      *     
      */
-    public void setId(BigInteger value) {
-        this.id = value;
+    public void setStatuscode(BigInteger value) {
+        this.statuscode = value;
+    }
+
+    /**
+     * Gets the value of the message property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    /**
+     * Sets the value of the message property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMessage(String value) {
+        this.message = value;
     }
 
 }

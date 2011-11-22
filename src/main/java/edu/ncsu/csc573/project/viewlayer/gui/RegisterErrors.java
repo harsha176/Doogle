@@ -33,8 +33,16 @@ public class RegisterErrors extends javax.swing.JFrame {
         errorMsg.setText("Password changed successfully");
         jButton1.setText("Ok");
     }
+    public void PasswordFail(){
+        errorMsg.setText("Error in changing password");
+        jButton1.setText("Try Again");
+    }
     public void UpdateSuccess(){
         errorMsg.setText("Updated succesfully");
+        jButton1.setText("Ok");
+    }
+    public void UpdateFail(){
+        errorMsg.setText("Failed to update the configuration file. Enter vaild directory");
         jButton1.setText("Ok");
     }
     //public void username errors based on response
@@ -54,6 +62,14 @@ public class RegisterErrors extends javax.swing.JFrame {
         errorMsg.setText("First Name not entered");
         jButton1.setText("Try Again");
     }
+      public void UserError(){
+        errorMsg.setText("Username already exists");
+        jButton1.setText("Try Again");  
+      }
+       public void ServerError(){
+        errorMsg.setText("Server not reachable");
+        jButton1.setText("Try Again");  
+      }
     
     /** This method is called from within the constructor to
      * initialize the form.

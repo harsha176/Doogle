@@ -8,28 +8,25 @@
 
 package edu.ncsu.csc573.project.common.schema;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Request complex type.
+ * <p>Java class for ChangePasswordResponseType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Request">
+ * &lt;complexType name="ChangePasswordResponseType">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Command" type="{http://www.doogle.project.csc573.csc.ncsu.edu}CommandRequestType"/>
+ *         &lt;element name="Operation" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="params" type="{http://www.doogle.project.csc573.csc.ncsu.edu}ChangePasswordResponseParamsType"/>
  *       &lt;/sequence>
- *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}integer" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -37,64 +34,64 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Request", propOrder = {
-    "command"
+@XmlType(name = "ChangePasswordResponseType", propOrder = {
+    "operation",
+    "params"
 })
-public class Request {
+public class ChangePasswordResponseType {
 
-    @XmlElement(name = "Command", required = true)
-    protected CommandRequestType command;
-    @XmlAttribute(required = true)
-    protected BigInteger id;
+    @XmlElement(name = "Operation", required = true)
+    protected String operation;
+    @XmlElement(required = true)
+    protected ChangePasswordResponseParamsType params;
 
     /**
-     * Gets the value of the command property.
+     * Gets the value of the operation property.
      * 
      * @return
      *     possible object is
-     *     {@link CommandRequestType }
+     *     {@link String }
      *     
      */
-    public CommandRequestType getCommand() {
-        return command;
+    public String getOperation() {
+        return operation;
     }
 
     /**
-     * Sets the value of the command property.
+     * Sets the value of the operation property.
      * 
      * @param value
      *     allowed object is
-     *     {@link CommandRequestType }
+     *     {@link String }
      *     
      */
-    public void setCommand(CommandRequestType value) {
-        this.command = value;
+    public void setOperation(String value) {
+        this.operation = value;
     }
 
     /**
-     * Gets the value of the id property.
+     * Gets the value of the params property.
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link ChangePasswordResponseParamsType }
      *     
      */
-    public BigInteger getId() {
-        return id;
+    public ChangePasswordResponseParamsType getParams() {
+        return params;
     }
 
     /**
-     * Sets the value of the id property.
+     * Sets the value of the params property.
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link ChangePasswordResponseParamsType }
      *     
      */
-    public void setId(BigInteger value) {
-        this.id = value;
+    public void setParams(ChangePasswordResponseParamsType value) {
+        this.params = value;
     }
 
 }

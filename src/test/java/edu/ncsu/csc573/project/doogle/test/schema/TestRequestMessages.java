@@ -1,5 +1,6 @@
 package edu.ncsu.csc573.project.doogle.test.schema;
 
+import edu.ncsu.csc573.project.common.messages.ChangePasswordRequestMessage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,6 +56,8 @@ public class TestRequestMessages {
 		IParameter Regparams = new Parameter();
 		Regparams.add(EnumParamsType.USERNAME, "krishna");
 		Regparams.add(EnumParamsType.PASSWORD, "abcdef");
+                Regparams.add(EnumParamsType.FIRSTNAME, "sri");
+                Regparams.add(EnumParamsType.LASTNAME, "krishna");
 		Regparams.add(EnumParamsType.EMAIL_ID, "harsha176@gmail.com");
 		Regparams.add(EnumParamsType.DESIGNATION, "guest");
 		regRequest.createRequest(EnumOperationType.REGISTER, Regparams);
@@ -135,6 +138,35 @@ public class TestRequestMessages {
 	}
 
 	@Test
+	public void testchangePasswordMessageToXML() throws Exception {
+		IRequest ChangePWDRequest = getChangePassword();
+
+		try {
+			System.out.println(ChangePWDRequest.getRequestInXML());
+			Assert.assertTrue("Successfully parsed xml", true);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail();
+			// e.printStackTrace();
+		}
+	}
+
+	public static IRequest getChangePassword() throws Exception {
+		IRequest ChangePWDRequest = new ChangePasswordRequestMessage();
+		IParameter ChangePWDparams = new Parameter();
+		ChangePWDparams.add(EnumParamsType.USERNAME, "harsha176");
+		ChangePWDparams.add(EnumParamsType.PASSWORD, "hmalipa");
+                ChangePWDparams.add(EnumParamsType.NEWPASSWORD, "krishna");
+		// System.out.println(regRequest.getRequestInXML());
+
+		ChangePWDRequest.createRequest(EnumOperationType.CHANGEPASSWORD,
+				ChangePWDparams);
+		return ChangePWDRequest;
+	}
+
+        
+        
+        @Test
 	public void testSearchRequestMessageToXML() throws Exception {
 		IRequest SearchRequest = getSearchRequest();
 
@@ -181,6 +213,12 @@ public class TestRequestMessages {
 				regReq.getOperationType());
 		Assert.assertEquals("harsha176",
 				regReq.getParameter().getParamValue(EnumParamsType.USERNAME)
+						.toString());
+                Assert.assertEquals("harsha",
+				regReq.getParameter().getParamValue(EnumParamsType.FIRSTNAME)
+						.toString());
+                Assert.assertEquals("reddy",
+				regReq.getParameter().getParamValue(EnumParamsType.LASTNAME)
 						.toString());
 		Assert.assertEquals("harsha176@gmail.com", regReq.getParameter()
 				.getParamValue(EnumParamsType.EMAIL_ID).toString());
@@ -273,7 +311,38 @@ public class TestRequestMessages {
 		//		.getParamValue(EnumParamsType.EMAIL_ID).toString());
 	}
 
-	@Test
+	
+        @Test
+	public void testChangePWDRequestMessageParseXML() {
+		InputStream is = ClassLoader
+				.getSystemResourceAsStream("TestChangePasswordRequest.xml");
+		BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+		StringBuffer sb = new StringBuffer();
+		String temp;
+		try {
+			while ((temp = br.readLine()) != null) {
+				sb.append(temp);
+			}
+		} catch (IOException e) {
+			// e.printStackTrace();
+			Assert.fail();
+		}
+
+		RequestMessage changePWDReq = new ChangePasswordRequestMessage();
+		changePWDReq.parseXML(sb.toString());
+		Assert.assertEquals(EnumOperationType.CHANGEPASSWORD,
+				changePWDReq.getOperationType());
+		Assert.assertEquals("harsha176", changePWDReq.getParameter()
+				.getParamValue(EnumParamsType.USERNAME).toString());
+		Assert.assertEquals("hmalipa", changePWDReq.getParameter()
+				.getParamValue(EnumParamsType.PASSWORD).toString());
+                Assert.assertEquals("krishna", changePWDReq.getParameter()
+				.getParamValue(EnumParamsType.NEWPASSWORD).toString());                
+        }
+        
+        
+        @Test
 	public void testSearchRequestMessageParseXML() {
 		InputStream is = ClassLoader
 				.getSystemResourceAsStream("TestSearchRequest.xml");

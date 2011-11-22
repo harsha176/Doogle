@@ -23,6 +23,7 @@
 			<xs:element name="ForgotPWDResponse" type="ForgotPWDResponseType"></xs:element>
 			<xs:element name="SearchResponse" type="SearchResponseType"></xs:element>
 			<xs:element name="PublishResponse" type="PublishResponseType"></xs:element>
+                        <xs:element name="ChangePasswordResponse" type="ChangePasswordResponseType"></xs:element>
 		</xs:choice>
 	</xs:complexType>
 
@@ -84,6 +85,20 @@
 	</xs:complexType>
 
 
+<xs:complexType name="ChangePasswordResponseType">
+		<xs:sequence>
+			<xs:element name="Operation" type="xs:string" fixed="ChangePasswordResponse" />
+			<xs:element name="params" type="ChangePasswordResponseParamsType">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangePasswordResponseParamsType">
+		<xs:sequence>
+			<xs:element name="statuscode" type="xs:integer" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+        
 	<xs:complexType name="SearchResponseType">
 		<xs:sequence>
 			<xs:element name="Operation" type="xs:string" fixed="SearchResponse" />
@@ -96,6 +111,7 @@
 			<xs:element name="File" type="FileParamType" maxOccurs="100" />
 		</xs:sequence>
 	</xs:complexType>
+        
 	<xs:complexType name="PublishResponseType">
 		<xs:sequence>
 			<xs:element name="Operation" type="xs:string" fixed="PublishResponse" />

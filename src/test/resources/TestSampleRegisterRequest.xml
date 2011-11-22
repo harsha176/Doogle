@@ -4,8 +4,10 @@
         <Register>
             <params>
                 <username>harsha176</username>
-                <email_id>harsha176@gmail.com</email_id>
                 <password>abcdef</password>
+                <firstname>harsha</firstname>
+                <lastname>reddy</lastname>
+                <email_id>harsha176@gmail.com</email_id>
                 <designation>guest</designation>
             </params>
         </Register>

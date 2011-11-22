@@ -18,6 +18,7 @@
 			<xs:element name="ForgotPWD" type="ForgotPasswdType"></xs:element>
 			<xs:element name="Search" type="SearchType"></xs:element>
 			<xs:element name="Publish" type="PublishType"></xs:element>
+                        <xs:element name="ChangePassword" type="ChangePasswordType"></xs:element>
 		</xs:choice>
 	</xs:complexType>
 
@@ -31,9 +32,11 @@
 	</xs:complexType>
 	<xs:complexType name="RegisterParamsType">
 		<xs:sequence>
-			<xs:element name="username" type="xs:string" />
-			<xs:element name="email_id" type="xs:string" />
+			<xs:element name="username" type="xs:string" />			
 			<xs:element name="password" type="xs:string" />
+                        <xs:element name="firstname" type="xs:string" />
+                        <xs:element name="lastname" type="xs:string" />
+                        <xs:element name="email_id" type="xs:string" />
 			<xs:element name="designation" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
@@ -79,6 +82,22 @@
 		</xs:sequence>
 	</xs:complexType>
 
+<xs:complexType name="ChangePasswordType">
+		<xs:sequence>
+			<xs:element name="Operation" type="xs:string" fixed="ChangePassword" />
+			<xs:element name="params" type="ChangePasswordParamsType">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ChangePasswordParamsType">
+		<xs:sequence>
+			<xs:element name="username" type="xs:string" />
+			<xs:element name="password" type="xs:string" />
+                        <xs:element name="newpassword" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+
 	<xs:complexType name="SearchType">
 		<xs:sequence>
 			<xs:element name="Operation" type="xs:string" fixed="Search" />
@@ -116,4 +135,5 @@
 		</xs:sequence>
 		<xs:attribute name="id" type="xs:int" use="required"></xs:attribute>
 	</xs:complexType>
+        
 </xs:schema>

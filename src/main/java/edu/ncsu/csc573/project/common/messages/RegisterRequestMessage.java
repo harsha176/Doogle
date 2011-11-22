@@ -22,10 +22,12 @@ public class RegisterRequestMessage extends RequestMessage {
 		RegisterParamsType rpt = new RegisterParamsType();
 		
 		rpt.setUsername((getParameter().getParamValue(EnumParamsType.USERNAME).toString()));
-		rpt.setEmailId(getParameter().getParamValue(EnumParamsType.EMAIL_ID).toString());
 		rpt.setPassword(getParameter().getParamValue(EnumParamsType.PASSWORD).toString());
-		rpt.setDesignation(getParameter().getParamValue(EnumParamsType.DESIGNATION).toString());
-
+                rpt.setFirstname(getParameter().getParamValue(EnumParamsType.FIRSTNAME).toString());
+                rpt.setLastname(getParameter().getParamValue(EnumParamsType.LASTNAME).toString());
+                rpt.setEmailId(getParameter().getParamValue(EnumParamsType.EMAIL_ID).toString());
+                rpt.setDesignation(getParameter().getParamValue(EnumParamsType.DESIGNATION).toString());
+              
 		rt.setParams(rpt);
 		register.setRegister(rt);
 		req.setCommand(register);
@@ -44,6 +46,8 @@ public class RegisterRequestMessage extends RequestMessage {
 			IParameter param = new Parameter();
 			param.add(EnumParamsType.USERNAME, regparams.getUsername());
 			param.add(EnumParamsType.PASSWORD, regparams.getPassword());
+                        param.add(EnumParamsType.FIRSTNAME, regparams.getFirstname());
+                        param.add(EnumParamsType.LASTNAME, regparams.getLastname());
 			param.add(EnumParamsType.EMAIL_ID, regparams.getEmailId());
 			param.add(EnumParamsType.DESIGNATION, regparams.getDesignation());
 			

@@ -23,6 +23,9 @@ public enum EnumParamsType {
 	DELIMITER, 
 	CUSTOM, 
 	STATUSCODE, 
-	MESSAGE // Used
+	MESSAGE,
+        FIRSTNAME,
+        LASTNAME,
+        NEWPASSWORD // Used
 																																						// different.// It can be used for other fields as well.
 }

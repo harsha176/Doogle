@@ -281,7 +281,7 @@ public class CommunicationService implements ICommunicationService {
 			logger.debug("Sent request "+"File:"+fileName);
 			br = new BufferedReader(new InputStreamReader(ftSoc.getInputStream()));
 			String buff;
-			newFile = new File(ConfigurationManager.getInstance().getDownloadDirectory(),fileName.substring(0, fileName.indexOf("."))+"_"+System.currentTimeMillis()+".txt");
+			newFile = new File(ConfigurationManager.getInstance().getDownloadDirectory(),fileName.substring(0, fileName.indexOf("."))/*+"_"+System.currentTimeMillis()*/+".txt");
 			
 			pwFile = new PrintWriter(new BufferedWriter(new FileWriter(newFile)));
 			

@@ -154,7 +154,7 @@ public class ClientHandler implements Runnable {
 
 
 	public static String getFileName(StringBuffer sb) {
-		int endIndex = sb.indexOf("</request>")-1;
+		int endIndex = sb.indexOf("</request>")-System.lineSeparator().length();
 		int stIndex = sb.indexOf("File:");
 		return sb.substring(stIndex+"File:".length(), endIndex);
 	}

@@ -3,6 +3,7 @@
  */
 package edu.ncsu.csc573.project.doogle.test.commlayer;
 
+import edu.ncsu.csc573.project.commlayer.ClientHandler;
 import junit.framework.Assert;
 
 import org.junit.After;
@@ -11,9 +12,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
 import edu.ncsu.csc573.project.commlayer.ICommunicationService;
+import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.doogle.test.schema.TestRequestMessages;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 /**
  * @author doogle-dev
@@ -94,8 +100,13 @@ public class TestCommunicationService {
 	public void testDownloadFile() {
 		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
 		try {
+                      //File toBeUploadedFile = new File(ConfigurationManager.getInstance().getPublishDirectory(), ClientHandler.getFileName(TestClientHandler.prepareGetFileRequest("IMP.txt")));
+                      //Assert.assertEquals(true, toBeUploadedFile.isFile());
+                        //FileReader fw = new FileReader(toBeUploadedFile);
+                        //BufferedReader br = new BufferedReader(new FileReader(toBeUploadedFile));
+                        //fw.read();
 			CommService.initialize("localhost", new DefaultPublishHandler());
-			Assert.assertNotNull(CommService.getFile("localhost", "October_revolution.txt"));
+			Assert.assertNotNull(CommService.getFile("localhost", "IMP - Test.txt"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

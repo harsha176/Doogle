@@ -79,7 +79,8 @@ public class TestPublishSearchMessages {
 		Assert.assertNotNull(url);
 		System.out.println(url.getFile());
 		File pubDir = new File(url.getFile());
-		Assert.assertEquals(pubDir.isDirectory(), true);
+		// File pubDir = ConfigurationManager.getInstance().getPublishDirectory();
+                Assert.assertEquals(pubDir.isDirectory(), true);
 		FilenameFilter textFilter = new FilenameFilter() {
 			
 			public boolean accept(File dir, String name) {

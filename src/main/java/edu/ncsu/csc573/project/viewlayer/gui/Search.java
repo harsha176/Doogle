@@ -20,6 +20,8 @@ import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.controllayer.Session;
+import java.io.IOException;
+import java.util.logging.Level;
 import org.apache.log4j.Logger;
 
 /**
@@ -149,7 +151,7 @@ private void logoutlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
 private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
 // TODO add your handling code here:
-    
+
     this.setVisible(false);
     //Search object create
     SearchResults Results = new SearchResults();
@@ -157,22 +159,36 @@ private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 }//GEN-LAST:event_searchActionPerformed
 
 private void PublishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PublishActionPerformed
-// TODO add your handling code here:
+    try {
+        Logger logger = Logger.getLogger(Search.class);
+
+        IRequest pubRequest = PublishRequestMessage.getPublishRequest();
+        IResponse response = CommunicationServiceFactory.getInstance().executeRequest(pubRequest);
+        logger.info("Status of response is  : " + response.getStatus().getErrorId().toString());
+        logger.info("Message is " + response.getMessage());
+    } catch (IOException ex) {
+        Logger.getLogger(Search.class.getName()).error("Failed to create publish request", ex);
+    } catch (Exception e) {
+        Logger.getLogger(Search.class.getName()).error("Failed to send request to boot strap server", e);
+    }
+
+
+
     PublishFrame Publish = new PublishFrame();
     //this.setVisible(false);
     Publish.setVisible(true);
-    
- 
-   // IRequest publishRequest = new PublishRequestMessage();
-   //     IParameter publishparams = new Parameter();
+
+
+    // IRequest publishRequest = new PublishRequestMessage();
+    //     IParameter publishparams = new Parameter();
     //Response
     Publish.setVisible(false);
     PublishFrame newPub = new PublishFrame();
-     newPub.setMessage("Successfully Published");
-      Publish.setVisible(false);
-      newPub.setVisible(true);
-      newPub.setVisible(false);
-      
+    newPub.setMessage("Successfully Published");
+    Publish.setVisible(false);
+    newPub.setVisible(true);
+    newPub.setVisible(false);
+
 }//GEN-LAST:event_PublishActionPerformed
 
 private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
