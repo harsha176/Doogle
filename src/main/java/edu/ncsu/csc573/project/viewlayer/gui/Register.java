@@ -218,6 +218,11 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     String lastname = lastnameUser.getText();
     String emailUsers = emailUser.getText();
     String username = usernameData.getText();
+    String des = null;
+    if (faculty.isSelected())
+    	des = faculty.getText();
+    else
+    	des = student.getText();
     if(firstname == null)
     {
         FirstnameErrors();
@@ -261,7 +266,7 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     Regparams.add(EnumParamsType.FIRSTNAME, firstname);
     Regparams.add(EnumParamsType.LASTNAME, lastname);
     Regparams.add(EnumParamsType.EMAIL_ID, emailUsers);
-    Regparams.add(EnumParamsType.DESIGNATION, faculty.getText());
+    Regparams.add(EnumParamsType.DESIGNATION, des);
        
     regRequest.createRequest(EnumOperationType.REGISTER, Regparams);
     try{

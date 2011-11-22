@@ -22,9 +22,9 @@ import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.controllayer.Session;
 import java.io.File;
 import java.math.BigInteger;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -237,16 +237,16 @@ private void changepwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
               IRequest changeRequest = new ChangePasswordRequestMessage();
               IParameter Changeparams = new Parameter();
               Changeparams.add(EnumParamsType.USERNAME, Session.getInstance().getUsername());
-              Changeparams.add(EnumParamsType.PASSWORD, oldpasswd.getPassword());
-              Changeparams.add(EnumParamsType.PASSWORD, newpasswd.getPassword());
+              Changeparams.add(EnumParamsType.PASSWORD, oldpasswd.getText());
+              Changeparams.add(EnumParamsType.NEWPASSWORD, newpasswd.getText());
               changeRequest.createRequest(EnumOperationType.CHANGEPASSWORD, Changeparams);
               IResponse response = CommunicationServiceFactory.getInstance().executeRequest(changeRequest);
               BigInteger statusCode = response.getStatus().getErrorId();
-              System.out.println(statusCode);
+              (Logger.getLogger(SettingsFrame.class)).debug(statusCode);
               if(statusCode.intValue() == 0)
-        {
+              {
               PasswdChangeSuccess();
-        }
+              }
               else{
                   PasswdChangeFail();
               }

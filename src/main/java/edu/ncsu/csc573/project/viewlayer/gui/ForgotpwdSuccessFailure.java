@@ -84,7 +84,7 @@ public class ForgotpwdSuccessFailure extends javax.swing.JFrame {
 private void loginTryagainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginTryagainActionPerformed
 // TODO add your handling code here:
     String loginortryagain = loginTryagain.getText();
-    if ("login".equals(loginortryagain))
+    if ("Login".equals(loginortryagain))
     {
      this.setVisible(false); 
      Login newLogin = new Login();

@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import org.apache.log4j.Logger;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.EnumParamsType;
+import edu.ncsu.csc573.project.common.messages.ForgotPWDResponseMessage;
 import edu.ncsu.csc573.project.common.messages.IParameter;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
@@ -128,6 +129,29 @@ public class RequestProcessor {
 				params.add(EnumParamsType.STATUSCODE,
 						new BigInteger(String.valueOf(0)));
 				params.add(EnumParamsType.MESSAGE,
+						"Password sent to your mail account");
+			} catch (UserManagementException e1) {
+
+				params.add(EnumParamsType.STATUSCODE,
+						new BigInteger(String.valueOf(e1.getStatus())));
+				params.add(EnumParamsType.MESSAGE, e1.getMessage());
+			}
+			response.createResponse(EnumOperationType.FORGOTPASSWORD,
+					params);
+			break;
+		case FORGOTPASSWORD:
+			response = new ForgotPWDResponseMessage();
+			params = new Parameter();
+
+			try {
+				usermanager.forgotPassword(
+						req.getParameter()
+								.getParamValue(EnumParamsType.USERNAME)
+								.toString());
+
+				params.add(EnumParamsType.STATUSCODE,
+						new BigInteger(String.valueOf(0)));
+				params.add(EnumParamsType.MESSAGE,
 						"Password successfully updated");
 			} catch (UserManagementException e1) {
 
@@ -135,7 +159,7 @@ public class RequestProcessor {
 						new BigInteger(String.valueOf(e1.getStatus())));
 				params.add(EnumParamsType.MESSAGE, e1.getMessage());
 			}
-			response.createResponse(EnumOperationType.CHANGEPASSWORDRESPONSE,
+			response.createResponse(EnumOperationType.FORGOTPASSWORD,
 					params);
 			break;
 		case PUBLISH:
@@ -146,8 +170,7 @@ public class RequestProcessor {
 			params.add(EnumParamsType.MESSAGE,
 					"Successfully published folder on server");
 			response.createResponse(EnumOperationType.PUBLISHRESPONSE, params);
-			break;
-
+			break;	
 		default:
 			try {
 				logger.error("Invalid request " + req.getRequestInXML());
