@@ -116,7 +116,8 @@ public class ConfigurationManager {
 		if(configWriter != null)
 			configWriter.close();
 	}
-
+	
+	/*
 	private void setAsLong(String parameter, long value) throws Exception {
 		setAsString(parameter, String.valueOf(value));
 	}
@@ -124,6 +125,7 @@ public class ConfigurationManager {
 	private void setAsInt(String parameter, int value) throws Exception {
 		setAsString(parameter, String.valueOf(value));
 	}
+	*/
 	
 	public int getServerPort() {
 		if (serverPort == 0) {
@@ -188,9 +190,11 @@ public class ConfigurationManager {
 	
 	public void setPublishDirectory(File value) throws Exception{
 		setAsString("PUBLISH_DIRECTORY", value.getAbsolutePath());
+		publishDirectory = value;
 	}
 	
 	public void setDownloadDirectory(File value) throws Exception{
 		setAsString("DOWNLOAD_DIRECTORY", value.getAbsolutePath());
+		downloadDirectory = value;
 	}
 }

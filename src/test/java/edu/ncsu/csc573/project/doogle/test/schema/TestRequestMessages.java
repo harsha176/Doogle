@@ -298,5 +298,4 @@ public class TestRequestMessages {
 		Assert.assertEquals("13801294803983440", SearchReq.getParameter()
 				.getParamValue(EnumParamsType.SEARCHKEY).toString());
 	}
-
 }

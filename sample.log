@@ -3369,3 +3369,1359 @@ File:October_revolution.txt
 
 64307 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - ClientSocket[addr=/192.168.2.9,port=50212,localport=9000] successfully logged out.
 64307 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/192.168.2.9,port=50212,localport=9000]
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+33   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - loaded all users from database
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+10   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - loaded all users from database
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - loaded all users from database
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+7316 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - loaded all users from database
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0users from database
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+3    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Usermanager not initialized
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+7    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176successfully logged out
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+7    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176successfully logged out
+3    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176successfully logged out
+3    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+9    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+4827 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+4852 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4854 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4854 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4854 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+29093 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+6    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+2    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+6    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+7    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+7    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+7    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+10   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 2 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+3    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+6    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+6    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+6    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+7    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+7    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 2 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+3    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+7    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 2 users from database
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+6    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+6    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+6    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+6    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+2985 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Failed to update password
+java.lang.RuntimeException: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:227)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.forgotPassword(UsersManager.java:189)
+	at edu.ncsu.csc573.projcet.doogle.test.usermanagement.TestUserManager.testForgotPasswd(TestUserManager.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at javax.mail.Service.connect(Service.java:329)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:222)
+	... 25 more
+2994 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - restoring previous password
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+6    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+28856 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+395173 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Failed to update password
+java.lang.RuntimeException: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:227)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.forgotPassword(UsersManager.java:189)
+	at edu.ncsu.csc573.projcet.doogle.test.usermanagement.TestUserManager.testForgotPasswd(TestUserManager.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at javax.mail.Service.connect(Service.java:329)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:222)
+	... 25 more
+395181 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - restoring previous password
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+30438 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+96848 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Failed to update password
+java.lang.RuntimeException: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:227)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.forgotPassword(UsersManager.java:187)
+	at edu.ncsu.csc573.projcet.doogle.test.usermanagement.TestUserManager.testForgotPasswd(TestUserManager.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at javax.mail.Service.connect(Service.java:329)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:222)
+	... 25 more
+106079 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - restoring previous password
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+136  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+122825 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Failed to update password
+java.lang.RuntimeException: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:227)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.forgotPassword(UsersManager.java:187)
+	at edu.ncsu.csc573.projcet.doogle.test.usermanagement.TestUserManager.testForgotPasswd(TestUserManager.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: javax.mail.AuthenticationFailedException: failed to connect, no password specified?
+	at javax.mail.Service.connect(Service.java:329)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:222)
+	... 25 more
+123141 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - restoring previous password
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+8    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+37   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+37   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+38   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+44   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+44   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+45   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+45   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+47   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+877  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.User  - Invalid block size
+javax.crypto.IllegalBlockSizeException: Input length must be multiple of 16 when decrypting with padded cipher
+	at com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:750)
+	at com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:676)
+	at com.sun.crypto.provider.AESCipher.engineDoFinal(AESCipher.java:313)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2086)
+	at edu.ncsu.csc573.project.common.EncDecUtil.decryptMessage(EncDecUtil.java:103)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.User.validatePassword(User.java:26)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.userLogin(UsersManager.java:78)
+	at edu.ncsu.csc573.projcet.doogle.test.usermanagement.TestUserManager.testValidChangePassword(TestUserManager.java:98)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+879  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Decryption failed; using plaintext password authentication
+879  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+6    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+329  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+293  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+293  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+293  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+294  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+295  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+128353 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+210  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+211  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+211  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+211  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+211  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+303  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+304  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+304  [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+304  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+306  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+6    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+454  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1241240 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+4602 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+14988 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+875418 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+918985 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+985242 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1005132 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1010487 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1010488 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1010488 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1010489 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+4    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+435  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+436  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+437  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+437  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+437  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+438  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+438  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+441  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+2179 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+245  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+246  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+247  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+248  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+248  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+34898 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+93164 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+99514 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+110243 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+352  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+353  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+354  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+354  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+354  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+356  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+357  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+360  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+2210 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+2    [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+3    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+649  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+650  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+651  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+651  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+651  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+12944 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+12945 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+12953 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+15014 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+2    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+2    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+10   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+10   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+11   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+11   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+15   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+287  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+585  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Failed to update password
+java.lang.RuntimeException: javax.mail.MessagingException: Unknown SMTP host: smtp.gmail.com;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:237)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.forgotPassword(UsersManager.java:193)
+	at edu.ncsu.csc573.projcet.doogle.test.usermanagement.TestUserManager.testForgotPasswd(TestUserManager.java:120)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: javax.mail.MessagingException: Unknown SMTP host: smtp.gmail.com;
+  nested exception is:
+	java.net.UnknownHostException: smtp.gmail.com
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1932)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:638)
+	at javax.mail.Service.connect(Service.java:317)
+	at javax.mail.Service.connect(Service.java:176)
+	at javax.mail.Service.connect(Service.java:125)
+	at javax.mail.Transport.send0(Transport.java:194)
+	at javax.mail.Transport.send(Transport.java:124)
+	at edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager.mailPassword(UsersManager.java:232)
+	... 26 more
+Caused by: java.net.UnknownHostException: smtp.gmail.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:176)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:391)
+	at java.net.Socket.connect(Socket.java:579)
+	at java.net.Socket.connect(Socket.java:528)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:288)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:231)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:1900)
+	... 33 more
+590  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - restoring previous password
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+2    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+2    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+9    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+9    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+9    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+9    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+12   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1202 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+2    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+2    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+9    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+10   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+10   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+10   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+13   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1654 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+47   [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map krishna
+47   [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map Roger
+47   [main] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map harsha176
+47   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 3 users from database
+106  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1138 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1140 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1140 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1141 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1141 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1141 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1141 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: krishna is already registered
+1142 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1174 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: Roger is already registered
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+4    [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+33   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+33   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+34   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+34   [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+39   [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+781  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+541  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+541  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+542  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+542  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+542  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+543  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+2    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53183
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53184
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+10   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53183
+10   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53184
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53183
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53184
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+33   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+34   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+34   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53184,localport=9000]
+36   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321930401602.txt
+1968 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1969 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1970 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1971 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+1972 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1973 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+1973 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1973 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1975 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+2134 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+5    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+882  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+882  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+882  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+883  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+883  [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+883  [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+9    [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1199 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1199 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1199 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1200 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1200 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1200 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1201 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+3    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53192
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53193
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+10   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53192
+10   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53193
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53192
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53193
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+21   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+22   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+22   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53193,localport=9000]
+23   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931170183.txt
+1614 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1614 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1617 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1817 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1817 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1817 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1818 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1818 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1818 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1819 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+3    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53197
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53198
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+10   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53198
+10   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53197
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53198
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53197
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53198,localport=9000]
+20   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931365002.txt
+1052 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1052 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1053 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1053 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1057 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1266 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1266 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1266 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+2721 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+2728 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+3    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+5    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53201
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53202
+10   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+10   [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+11   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53201
+11   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53202
+11   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53201
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53202
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+33   [Thread-2] ERROR edu.ncsu.csc573.project.commlayer.ClientHandler  - Unable to find file: /home/October_revolution.txt
+java.io.FileNotFoundException: /home/October_revolution.txt (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileReader.<init>(FileReader.java:72)
+	at edu.ncsu.csc573.project.commlayer.ClientHandler.transferFile(ClientHandler.java:125)
+	at edu.ncsu.csc573.project.commlayer.ClientHandler.run(ClientHandler.java:84)
+	at java.lang.Thread.run(Thread.java:722)
+35   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+35   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931422641.txt
+35   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53202,localport=9000]
+1677 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1677 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1678 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1678 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1680 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1822 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1822 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1822 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+3194 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+3237 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+0    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+2    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+6    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53204
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53205
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+9    [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53204
+9    [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53205
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53204
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53205
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+21   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+21   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+21   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53205,localport=9000]
+61   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931490560.txt
+2088 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+2088 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+2089 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+2089 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+2090 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+2296 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+2296 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+2296 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+6496 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+6533 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+0    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+2    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+6    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53207
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53208
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+10   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53207
+10   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53208
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53207
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53208
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+15   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+17   [Thread-2] ERROR edu.ncsu.csc573.project.commlayer.ClientHandler  - Unable to find file: /home/October_revolution.txt
+java.io.FileNotFoundException: /home/October_revolution.txt (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileReader.<init>(FileReader.java:72)
+	at edu.ncsu.csc573.project.commlayer.ClientHandler.transferFile(ClientHandler.java:125)
+	at edu.ncsu.csc573.project.commlayer.ClientHandler.run(ClientHandler.java:84)
+	at java.lang.Thread.run(Thread.java:722)
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+19   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931535106.txt
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53208,localport=9000]
+1792 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1792 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1795 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+2002 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+2002 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+2002 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+2003 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+2004 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+2004 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+2005 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+3    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53210
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53211
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+10   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53210
+10   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53211
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53210
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53211
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+13   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+14   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+19   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+20   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53211,localport=9000]
+21   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931592666.txt
+1616 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1616 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1618 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1790 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1791 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1791 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1792 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1792 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1793 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1794 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+0    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+2    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+6    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53213
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+8    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53214
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53214
+9    [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53213
+9    [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53214
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53213
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 70
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 58
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 79
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 99
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 98
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 95
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 118
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 108
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 105
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 111
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 110
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 46
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 120
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 10
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 60
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 47
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 114
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 113
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 117
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 101
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 115
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 116
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - 62
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+17   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+17   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+17   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53214,localport=9000]
+19   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931648752.txt
+1676 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1676 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1678 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1869 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1869 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1869 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1870 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1870 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1870 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1871 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+0    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+2    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+4    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+8    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53216
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53217
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+10   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53216
+10   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53217
+10   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53216
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53217
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+10   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+15   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+15   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+15   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53217,localport=9000]
+17   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321931753962.txt
+20758 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+20758 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+20761 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+40944 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+40945 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+40945 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+40945 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+40946 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+40946 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+40946 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+3    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+5    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+7    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53224
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+9    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+9    [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:53225
+10   [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:October_revolution.txt
+10   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+11   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53225
+11   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:53224
+11   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53225
+11   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:53224
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+12   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:October_revolution.txt
+</request>
+24   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+24   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+24   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /tmp/October_revolution_1321932179784.txt
+24   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=53225,localport=9000]
+1610 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+1611 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+1614 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+1766 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - user: harsha176 is already registered
+1766 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+1766 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged out
+1767 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1767 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+1767 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+1768 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in

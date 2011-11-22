@@ -9,16 +9,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketAddress;
-
 import org.apache.log4j.Logger;
-
 import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IRequest;
@@ -72,7 +69,7 @@ public class ClientHandler implements Runnable {
 				StringBuffer sb = new StringBuffer();
 				int c;
 				while ((c = br.read()) != -1 && sb.indexOf("</request>") == -1) {
-					logger.debug(c);
+					//logger.debug(c);
 					sb.append((char) c);
 				}
 

@@ -13,9 +13,20 @@ import edu.ncsu.csc573.project.common.messages.LoginResponseMessage;
 import edu.ncsu.csc573.project.common.messages.LogoutResponseMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.common.messages.RegisterResponseMessage;
+//import edu.ncsu.csc573.project.controllayer.usermanagement.IUsersManager;
+//import edu.ncsu.csc573.project.controllayer.usermanagement.User;
 
 public class RequestProcessor {
 	private Logger logger;
+	//private IUsersManager usermanager;
+	
+	public RequestProcessor() {
+		/*try {
+			usermanager = IUsersManager.getInstance();
+		} catch (Exception e) {
+			logger.error("Unable to initialize UserManager module", e);
+		}*/
+	}
 	
 	public IResponse processRequest(IRequest req) {
 		logger = Logger.getLogger(RequestProcessor.class);
@@ -24,6 +35,14 @@ public class RequestProcessor {
 		// sample responses
 		switch (req.getOperationType()) { 
 		case REGISTER: 
+			/* 
+			 * call usermanager
+			 */
+			/*User newUser = new User();
+			newUser.setUsername(req.getParameter().getParamValue(EnumParamsType.USERNAME).toString());
+			newUser.setPassword(req.getParameter().getParamValue(EnumParamsType.PASSWORD).toString());
+			newUser.setFirstName(req.getParameter().getParamValue(EnumParamsType.PASSWORD).toString());
+			usermanager.addUser(user)*/
 			response = new RegisterResponseMessage();
 			params = new Parameter();
 			params.add(EnumParamsType.STATUSCODE, new BigInteger(String.valueOf(0)));
