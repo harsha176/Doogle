@@ -18,8 +18,10 @@ import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.common.messages.RegisterRequestMessage;
+import java.awt.event.ItemEvent;
 import java.math.BigInteger;
 import java.util.regex.Pattern;
+import javax.swing.ButtonGroup;
 
 /**
  *
@@ -62,6 +64,7 @@ public class Register extends javax.swing.JFrame {
         registerButton = new javax.swing.JButton();
         faculty = new javax.swing.JRadioButton();
         student = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(450, 250, 0, 0));
@@ -100,6 +103,11 @@ public class Register extends javax.swing.JFrame {
 
         group.add(faculty);
         faculty.setText("Faculty");
+        faculty.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                facultyItemStateChanged(evt);
+            }
+        });
         faculty.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 facultyActionPerformed(evt);
@@ -108,6 +116,13 @@ public class Register extends javax.swing.JFrame {
 
         group.add(student);
         student.setText("Student");
+
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,7 +158,9 @@ public class Register extends javax.swing.JFrame {
                                 .addComponent(jLabel8)
                                 .addComponent(registerButton))
                             .addGap(18, 18, 18)
-                            .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton1)
+                                .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addGap(18, 18, 18)
@@ -156,6 +173,8 @@ public class Register extends javax.swing.JFrame {
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel2, jLabel3, jLabel4, jLabel5, jLabel6, jLabel7, jLabel8});
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {confirmPassword, emailUser, firstnameUser, lastnameUser, passwordUser, usernameData});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, registerButton});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +215,9 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(confirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(18, 18, 18)
-                .addComponent(registerButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(registerButton)
+                    .addComponent(jButton1))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -218,6 +239,17 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     String lastname = lastnameUser.getText();
     String emailUsers = emailUser.getText();
     String username = usernameData.getText();
+    String des = null;
+    if (faculty.isSelected())
+    {
+       des = faculty.getText(); 
+    }   
+    else
+    {
+       des = student.getText();
+    }
+          
+    
     if(firstname == null)
     {
         FirstnameErrors();
@@ -261,7 +293,7 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     Regparams.add(EnumParamsType.FIRSTNAME, firstname);
     Regparams.add(EnumParamsType.LASTNAME, lastname);
     Regparams.add(EnumParamsType.EMAIL_ID, emailUsers);
-    Regparams.add(EnumParamsType.DESIGNATION, faculty.getText());
+    Regparams.add(EnumParamsType.DESIGNATION, des);
        
     regRequest.createRequest(EnumOperationType.REGISTER, Regparams);
     try{
@@ -295,6 +327,19 @@ private void loginLinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 private void facultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facultyActionPerformed
 // TODO add your handling code here:
 }//GEN-LAST:event_facultyActionPerformed
+
+private void facultyItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_facultyItemStateChanged
+// TODO add your handling code here:
+  //  if(evt.getStateChange() == ItemEvent.SELECTED)
+    //    evt.getSource().
+}//GEN-LAST:event_facultyItemStateChanged
+
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+// TODO add your handling code here:
+    this.setVisible(false);
+    Login newLogin = new Login();
+    newLogin.setVisible(true);
+}//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,6 +383,7 @@ private void facultyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
     private javax.swing.JRadioButton faculty;
     private javax.swing.JTextField firstnameUser;
     private javax.swing.ButtonGroup group;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

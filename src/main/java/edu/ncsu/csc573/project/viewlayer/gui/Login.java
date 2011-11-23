@@ -188,8 +188,8 @@ private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             LoggedIn.setVisible(true);
             LoggedIn.setLocationRelativeTo(this);
             LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
-            logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
-            logger.info("Message is " + response.getMessage());
+            //logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
+            //logger.info("Message is " + response.getMessage());
         }
         else
         {

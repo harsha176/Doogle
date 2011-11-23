@@ -238,7 +238,7 @@ private void changepwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
               IParameter Changeparams = new Parameter();
               Changeparams.add(EnumParamsType.USERNAME, Session.getInstance().getUsername());
               Changeparams.add(EnumParamsType.PASSWORD, oldpasswd.getPassword());
-              Changeparams.add(EnumParamsType.PASSWORD, newpasswd.getPassword());
+              Changeparams.add(EnumParamsType.NEWPASSWORD, newpasswd.getPassword());
               changeRequest.createRequest(EnumOperationType.CHANGEPASSWORD, Changeparams);
               IResponse response = CommunicationServiceFactory.getInstance().executeRequest(changeRequest);
               BigInteger statusCode = response.getStatus().getErrorId();
