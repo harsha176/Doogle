@@ -181,9 +181,10 @@ public class RequestProcessor {
 			logger.debug("Processing search request");
 			response = new SearchResponseMessage();
 			IParameter searchResponseparams;
-			searchResponseparams = hashSpaceManager.search(new Query(req
+			String query_string = req
 					.getParameter().getParamValue(EnumParamsType.SEARCHKEY)
-					.toString()));
+					.toString();
+			searchResponseparams = hashSpaceManager.search(new Query(query_string));
 			response.createResponse(EnumOperationType.SEARCHRESPONSE,
 					searchResponseparams);
 

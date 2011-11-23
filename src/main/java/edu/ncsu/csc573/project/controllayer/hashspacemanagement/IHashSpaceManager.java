@@ -20,7 +20,7 @@ public interface IHashSpaceManager {
 	public PublishSearchParameter search(IQuery query);
 
 	/**
-	 * This method is called every time a publish request message is sent from
+	 * This method is called every time a publish request message is received from
 	 * the server.
 	 * 
 	 * @param pubRequest

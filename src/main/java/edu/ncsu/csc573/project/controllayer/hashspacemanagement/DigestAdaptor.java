@@ -2,6 +2,15 @@ package edu.ncsu.csc573.project.controllayer.hashspacemanagement;
 
 import java.io.File;
 
+/**
+ * This class act as an adaptor between provided Digest class and IDigest Interface
+ * 
+ * This is a singleton class initialized only once.
+ * 
+ * @see Digest
+ * @author doogle-dev
+ *
+ */
 public class DigestAdaptor implements IDigest {
 	private Digest digest;
 	private static DigestAdaptor digestAdaptor = null;
@@ -10,6 +19,12 @@ public class DigestAdaptor implements IDigest {
 	private DigestAdaptor() {
 		
 	}
+	
+	/**
+	 * This method should be called to retrieve an instance of Digest utility
+	 * @return
+	 * @throws Exception
+	 */
 	public static IDigest getInstance() throws Exception{
 		if(digestAdaptor == null) {
 			digestAdaptor = new DigestAdaptor();

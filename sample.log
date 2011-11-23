@@ -1,0 +1,732 @@
+0    [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+17   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+21   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+28   [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+31   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:56374
+32   [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully opened socket for file transfer
+32   [main] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Sent request File:IMP - Test.txt
+34   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+34   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:56375
+34   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+52   [Thread-2] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+53   [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+53   [Thread-2] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+53   [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+58   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:56375
+58   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:56374
+58   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56375
+58   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56374
+58   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+59   [Thread-2] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <request>
+File:IMP - Test.txt
+</request>
+59   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Done ! Sending file contents
+60   [main] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Successfully saved downloaded file at /home/doogle-dev/temp/IMP - Test.txt
+60   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully transfered file
+60   [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=56375,localport=9000]
+1779 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+5700 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 successfully logged in
+5701 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5701 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha176 not registered
+5702 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+5702 [main] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - harsha not registered
+5704 [main] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - krishna successfully logged in
+0    [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+1    [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+82   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+85   [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+86   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+88   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:56378
+91   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+111  [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+111  [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 0 users from database
+115  [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:56378
+116  [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56378
+69796 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+69882 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+69883 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087338464" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Register>
+            <params>
+                <username>karli</username>
+                <password>welc0me</password>
+                <firstname>Pratyush</firstname>
+                <lastname>Karli</lastname>
+                <email_id>pkarli@ncsu.edu</email_id>
+                <designation>Student</designation>
+            </params>
+        </Register>
+    </Command>
+</request>
+69971 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56378 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087338855" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Register>
+            <params>
+                <username>karli</username>
+                <password>welc0me</password>
+                <firstname>Pratyush</firstname>
+                <lastname>Karli</lastname>
+                <email_id>pkarli@ncsu.edu</email_id>
+                <designation>Student</designation>
+            </params>
+        </Register>
+    </Command>
+</request>
+
+69975 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+70381 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56378
+70381 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+70851 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087339746" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <RegisterResponse>
+            <params>
+                <statuscode>0</statuscode>
+                <message>karli successfully registered</message>
+            </params>
+        </RegisterResponse>
+    </Command>
+</response>
+
+70853 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.RegisterResponseMessage@2208f9fb
+70853 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.RegisterResponseMessage@2208f9fb
+80411 [Thread-4] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+80411 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087349305" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>welc0me</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+80464 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56378 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087349357" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>welc0me</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+
+80465 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - karli successfully logged in
+80488 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56378
+80488 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+81453 [Thread-4] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087350350" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <LoginResponse>
+            <params>
+                <statuscode>0</statuscode>
+                <message>karli successfully logged in</message>
+            </params>
+        </LoginResponse>
+    </Command>
+</response>
+
+81454 [Thread-4] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.LoginResponseMessage@72ced13f
+81491 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.LoginResponseMessage@72ced13f
+119923 [Thread-5] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+119951 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087388810" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Publish>
+            <params>
+                <File id="0">
+                    <filename>IMP - Test.txt</filename>
+                    <abstract>nullnull</abstract>
+                    <filesize>0</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</filedigest>
+                </File>
+                <File id="0">
+                    <filename>IMP_Test.txt</filename>
+                    <abstract>This uses a hashing function " h a s h " which is assumedto give an integer result in the range 1 to m. The resulting</abstract>
+                    <filesize>753</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>gAAAAAAQAgAAAAAAAAAAAAAAAAAAIAAAAAAABAAAAABAgAAgAAAAABAAAQoUAQiAAgAAAAQAAAAA
+AAAAAAAAAAAAAAAAAgAAAAAAAEEAAAAAAAAAAAAAABAAAAAAAAAAAAAoQAAAAEAAYAAgEIAAAAAA
+AAEAAAAAiAAAAAAEAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAE
+AAgAAAIACAAAAAAAAAAAQAAAAAAAAAAAAAAACAAgQAIAAAAAAACEAAgQACcAAAAAAAgAAAAAAAAA
+AAABAAAAAAAAAAAAAAAAgQAAAAAAgAAAACAAACABAAAAAAAQAEAAAAAAAAAAAgEAAQAAAAAAAEAA
+EAAAQAAAACAABoAAAAIgAIAAAABACEAAAAAAAACAAAAAAAAAAAAAAAAAAAgAAAAAAYAgAAAAAQAA
+AAEEAAAAAAAEAAABAxQAYAAEAAAAAAAAACAAAAgEBAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAQAAAAAAAABkAwAAAAAAAAAAAAAAAIACA
+AAAAAAAAAAAAAACAgAAABAAAAIAAAAIgAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA
+AAAAACAAFAAAAEgEAAkAAgABCBAwAAAAAAAAAAAIAAAAAAAAAAAgAAhiAAAAAACAAEAAAAQAAAAA
+AAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAACMCBoAACAAAAIgAIAIgAAAAAAAAAAAAAAAAAAAAAAAA
+AACAAAAAAAAAAAAAAAAAAAAEAAAAiAAAQAAAAAAAAAAAAAAAAAABEAIIAAAABAAAIAAEgAAAAAAA
+AgAAAAAAAAAAAAAAAAAAAAAAIAAAACBAAIAAAAAACAAAACAAEAAAAAAQAAIAAAAEQAACEEAAAAAA
+AAgAAAAAgABAAEgAECAYAAAAAACAIAAAAAAAEghAAADEQAAgDAAAAAABAAAAAAKUAAAAAAAAIAAQ
+AAAAAEAAAAAAgAAgAAAAAAAAAAAAAAAAAAABAAEAIAAEAAAAAAAAAAIAAAEAEAAAAAAAAAAAAAAA
+AAAIAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</filedigest>
+                </File>
+                <File id="0">
+                    <filename>india.txt</filename>
+                    <abstract>India (i/ˈɪndiə/), officially the Republic of India (Hindi: भारत गणराज्य, Bhārat Gaṇarājya; see also the official names of India), is a country in South Asia. It is the seventh-largest country by geographical area, the second-most populous country with over 1.2 billion people, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the south-west, and the Bay of Bengal on the south-east, it shares land borders with Pakistan to the west; China, Nepal, and Bhutan to the north-east; and Burma and Bangladesh to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives; in addition, India's Andaman and Nicobar Islands share a maritime border with Thailand and Indonesia.Home to the ancient Indus Valley Civilization and a region of historic trade routes and vast empires, the Indian subcontinent was identified with its commercial and cultural wealth for much of its long history.[8] Four of the world's major religions—Hinduism, Buddhism, Jainism, and Sikhism—originated here, whereas Zoroastrianism, Christianity, and Islam arrived in the 1st millennium CE and also helped shape the region's diverse culture. Gradually annexed by and brought under the administration of the British East India Company from the early 18th century and administered directly by the United Kingdom from the mid-19th century, India became an independent nation in 1947 after a struggle for independence which was marked by non-violent resistance and led by Mahatma Gandhi.</abstract>
+                    <filesize>18636</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>gAJiKQC8AuZiAwAEAGATICgQAABA4yEQkgAztp5eksBuuY4gghLBgB//5wtWAYyZXgAEDhUJgACM
+EGIAQCAADIowQAAkJl0pwgCUESECANUAAIClgAqCKAAAAQgHAAgAAGA6eADEQGQCoAAxEaFGHKQg
+AINQAAwz7QAAPKCmWAEcAQAAAADDiAAABwDeDvoAAACzvgToAA4hgAQFgMgAECABAAaiBgqAwBAC
+wb4BAFrIzEUhEQrGAD6RRCgBACKQAIAJnZMi6hw3WMcAEkQiArHXRztamGepcjYQCByBiMALJIgA
+QAAAEETAAAAtkiQygAALlIDSAAASkA1AAjAQABQAaVy5AAMRD2AABIGIAECBkAPQAiBEBIIAPEAA
+EBAKwACAABWN3oAAAAMhOMUAAAJwGOACAMAkIg61AASVAMAAQKAIQMGAgAwB3gkAMdLtiABFBXQd
+JpkkEIIAQDMUA90hQ31seAQVIIABAOYhODE3LgxMJ0CA4AAgQEgBgmBoCAAAAAAAAQAkAAAAAEAF
+MBAABEAhAAAQgAAiAAAAAEAAAAABCAIAAAAAAAEAAXCedoAAAAIjBBvgxxoCEAAGfwcYIAAGIhYI
+AgAMQOlRACAjAkDFgUGCTgIEAIBAAgET9rAFCgAIAAImCcAAAAHRRxAAGUAIcxTYZFIwAQAAABIh
+BAAQAhcjvkAAqxxMUV2IdzAVmJJ4ABWA1wSIAEAJBSgEAuWgAAglvsxibXQsDAFgAECiAAACGCAg
+IdyGIhKgAAARAAARQsAQAoDgAAzEkMYktHdRR5CCIAgbEM1fOKIgEGTAAARbgKAhEIAAIAEAgAAB
+MWjpAAAAGwLIAAABAQAEUAANyAAKuY7YXEABEoEQFcAAAAAAAAMAum65SAXgBEYIP9OmwAYNAID9
+h5oAMQAAogOSCOJKA+Q6/wAAaKFgCGTBFIhHAIGADAABAAFhxQAA3UAbgd9AIADESmC62NYABhZz
+AAkCxMAkkAmJCQxWWzEZwAoADIBQpziIAAABujjCAALEVkSsPGqAgsCBEA5CAIPcIAARhAgAOAGQ
+IAwAAACIoDBkgPoixAAgARAgADAAAAEIAAAFMhsHISAmWAogADEA+HqnKrVoEYmNQAAAAAAAAAAC
+jAAMhcwAAcVuAAAgggAABAAAErJAAAAsdoAB4KUQAABAhACEAyQAAEAAAAAAAAAEISBCQABCIAAA
+BmATkAAAABAUIAAAAAEABQAAAAkABACoYKAgACAAAAAAIECAAAAACAAQAAIAiAhgAAAAAAAAAQAA
+AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</filedigest>
+                </File>
+            </params>
+        </Publish>
+    </Command>
+</request>
+120017 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56378 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087388909" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Publish>
+            <params>
+                <File id="0">
+                    <filename>IMP - Test.txt</filename>
+                    <abstract>nullnull</abstract>
+                    <filesize>0</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>[B@4cc28666</filedigest>
+                </File>
+                <File id="0">
+                    <filename>IMP_Test.txt</filename>
+                    <abstract>This uses a hashing function " h a s h " which is assumedto give an integer result in the range 1 to m. The resulting</abstract>
+                    <filesize>753</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>[B@7705b9e8</filedigest>
+                </File>
+                <File id="0">
+                    <filename>india.txt</filename>
+                    <abstract>India (i/ˈɪndiə/), officially the Republic of India (Hindi: भारत गणराज्य, Bhārat Gaṇarājya; see also the official names of India), is a country in South Asia. It is the seventh-largest country by geographical area, the second-most populous country with over 1.2 billion people, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the south-west, and the Bay of Bengal on the south-east, it shares land borders with Pakistan to the west; China, Nepal, and Bhutan to the north-east; and Burma and Bangladesh to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives; in addition, India's Andaman and Nicobar Islands share a maritime border with Thailand and Indonesia.Home to the ancient Indus Valley Civilization and a region of historic trade routes and vast empires, the Indian subcontinent was identified with its commercial and cultural wealth for much of its long history.[8] Four of the world's major religions—Hinduism, Buddhism, Jainism, and Sikhism—originated here, whereas Zoroastrianism, Christianity, and Islam arrived in the 1st millennium CE and also helped shape the region's diverse culture. Gradually annexed by and brought under the administration of the British East India Company from the early 18th century and administered directly by the United Kingdom from the mid-19th century, India became an independent nation in 1947 after a struggle for independence which was marked by non-violent resistance and led by Mahatma Gandhi.</abstract>
+                    <filesize>18636</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>[B@18f06b64</filedigest>
+                </File>
+            </params>
+        </Publish>
+    </Command>
+</request>
+
+120018 [Thread-1] DEBUG edu.ncsu.csc573.project.controllayer.RequestProcessor  - Processing publish request
+120018 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.hashspacemanagement.HashSpaceManager  - Added 3 published files into database
+120018 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.hashspacemanagement.HashSpaceManager  - Total size of repository is 3
+120043 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56378
+120043 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+120970 [Thread-5] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087389867" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <PublishResponse>
+            <params>
+                <statuscode>0</statuscode>
+                <message>Successfully published folder on server</message>
+            </params>
+        </PublishResponse>
+    </Command>
+</response>
+
+120970 [Thread-5] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.PublishResponseMessage@26b9d351
+120970 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.PublishResponseMessage@26b9d351
+120971 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.viewlayer.gui.Search  - Status of response is  : 0
+120971 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.viewlayer.gui.Search  - Message is Successfully published folder on server
+146088 [Thread-6] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+146090 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087414983" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Search>
+            <params>
+                <username>DUMMY</username>
+                <search>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</search>
+            </params>
+        </Search>
+    </Command>
+</request>
+146137 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56378 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087415032" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Search>
+            <params>
+                <username>DUMMY</username>
+                <search>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</search>
+            </params>
+        </Search>
+    </Command>
+</request>
+
+146137 [Thread-1] DEBUG edu.ncsu.csc573.project.controllayer.RequestProcessor  - Processing search request
+146139 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.hashspacemanagement.HashSpaceManager  - Number of search results obtained on search is 1
+146160 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56378
+146161 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+147137 [Thread-6] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087416034" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <SearchResponse>
+            <params>
+                <File id="0">
+                    <filename>india.txt</filename>
+                    <abstract>India (i/ˈɪndiə/), officially the Republic of India (Hindi: भारत गणराज्य, Bhārat Gaṇarājya; see also the official names of India), is a country in South Asia. It is the seventh-largest country by geographical area, the second-most populous country with over 1.2 billion people, and the most populous democracy in the world. Bounded by the Indian Ocean on the south, the Arabian Sea on the south-west, and the Bay of Bengal on the south-east, it shares land borders with Pakistan to the west; China, Nepal, and Bhutan to the north-east; and Burma and Bangladesh to the east. In the Indian Ocean, India is in the vicinity of Sri Lanka and the Maldives; in addition, India's Andaman and Nicobar Islands share a maritime border with Thailand and Indonesia.Home to the ancient Indus Valley Civilization and a region of historic trade routes and vast empires, the Indian subcontinent was identified with its commercial and cultural wealth for much of its long history.[8] Four of the world's major religions—Hinduism, Buddhism, Jainism, and Sikhism—originated here, whereas Zoroastrianism, Christianity, and Islam arrived in the 1st millennium CE and also helped shape the region's diverse culture. Gradually annexed by and brought under the administration of the British East India Company from the early 18th century and administered directly by the United Kingdom from the mid-19th century, India became an independent nation in 1947 after a struggle for independence which was marked by non-violent resistance and led by Mahatma Gandhi.</abstract>
+                    <filesize>18636</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>gAJiKQC8AuZiAwAEAGATICgQAABA4yEQkgAztp5eksBuuY4gghLBgB//5wtWAYyZXgAEDhUJgACM
+EGIAQCAADIowQAAkJl0pwgCUESECANUAAIClgAqCKAAAAQgHAAgAAGA6eADEQGQCoAAxEaFGHKQg
+AINQAAwz7QAAPKCmWAEcAQAAAADDiAAABwDeDvoAAACzvgToAA4hgAQFgMgAECABAAaiBgqAwBAC
+wb4BAFrIzEUhEQrGAD6RRCgBACKQAIAJnZMi6hw3WMcAEkQiArHXRztamGepcjYQCByBiMALJIgA
+QAAAEETAAAAtkiQygAALlIDSAAASkA1AAjAQABQAaVy5AAMRD2AABIGIAECBkAPQAiBEBIIAPEAA
+EBAKwACAABWN3oAAAAMhOMUAAAJwGOACAMAkIg61AASVAMAAQKAIQMGAgAwB3gkAMdLtiABFBXQd
+JpkkEIIAQDMUA90hQ31seAQVIIABAOYhODE3LgxMJ0CA4AAgQEgBgmBoCAAAAAAAAQAkAAAAAEAF
+MBAABEAhAAAQgAAiAAAAAEAAAAABCAIAAAAAAAEAAXCedoAAAAIjBBvgxxoCEAAGfwcYIAAGIhYI
+AgAMQOlRACAjAkDFgUGCTgIEAIBAAgET9rAFCgAIAAImCcAAAAHRRxAAGUAIcxTYZFIwAQAAABIh
+BAAQAhcjvkAAqxxMUV2IdzAVmJJ4ABWA1wSIAEAJBSgEAuWgAAglvsxibXQsDAFgAECiAAACGCAg
+IdyGIhKgAAARAAARQsAQAoDgAAzEkMYktHdRR5CCIAgbEM1fOKIgEGTAAARbgKAhEIAAIAEAgAAB
+MWjpAAAAGwLIAAABAQAEUAANyAAKuY7YXEABEoEQFcAAAAAAAAMAum65SAXgBEYIP9OmwAYNAID9
+h5oAMQAAogOSCOJKA+Q6/wAAaKFgCGTBFIhHAIGADAABAAFhxQAA3UAbgd9AIADESmC62NYABhZz
+AAkCxMAkkAmJCQxWWzEZwAoADIBQpziIAAABujjCAALEVkSsPGqAgsCBEA5CAIPcIAARhAgAOAGQ
+IAwAAACIoDBkgPoixAAgARAgADAAAAEIAAAFMhsHISAmWAogADEA+HqnKrVoEYmNQAAAAAAAAAAC
+jAAMhcwAAcVuAAAgggAABAAAErJAAAAsdoAB4KUQAABAhACEAyQAAEAAAAAAAAAEISBCQABCIAAA
+BmATkAAAABAUIAAAAAEABQAAAAkABACoYKAgACAAAAAAIECAAAAACAAQAAIAiAhgAAAAAAAAAQAA
+AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</filedigest>
+                </File>
+            </params>
+        </SearchResponse>
+    </Command>
+</response>
+
+147138 [Thread-6] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.SearchResponseMessage@4bbfc699
+147138 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.SearchResponseMessage@4bbfc699
+175255 [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.viewlayer.gui.Search  - karli
+175276 [Thread-7] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+175276 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087444173" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Logout>
+            <params>
+                <username>karli</username>
+            </params>
+        </Logout>
+    </Command>
+</request>
+175317 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56378 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087444215" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Logout>
+            <params>
+                <username>karli</username>
+            </params>
+        </Logout>
+    </Command>
+</request>
+
+175317 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - karli successfully logged out
+175335 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - ClientSocket[addr=/127.0.0.1,port=56378,localport=9000] successfully logged out.
+175335 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=56378,localport=9000]
+176313 [Thread-7] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087445212" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <LogoutResponse>
+            <params>
+                <statuscode>0</statuscode>
+            </params>
+        </LogoutResponse>
+    </Command>
+</response>
+
+176313 [Thread-7] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.LogoutResponseMessage@1925fa1a
+176313 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.LogoutResponseMessage@1925fa1a
+190382 [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+190382 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+190382 [Thread-8] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+190383 [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+190383 [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:56379
+190384 [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+190384 [Thread-9] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:56379
+190389 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56379
+190390 [Thread-8] ERROR edu.ncsu.csc573.project.commlayer.PeerServer  - Unable to launch server
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:374)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at edu.ncsu.csc573.project.commlayer.PeerServer.runServer(PeerServer.java:42)
+	at edu.ncsu.csc573.project.commlayer.PeerServer$1.run(PeerServer.java:30)
+	at java.lang.Thread.run(Thread.java:722)
+190392 [Thread-8] ERROR edu.ncsu.csc573.project.commlayer.PeerServer  - Closing server thread
+198317 [Thread-10] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+198397 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+198397 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087467208" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <ForgotPWD>
+            <params>
+                <username>karli</username>
+            </params>
+        </ForgotPWD>
+    </Command>
+</request>
+198438 [Thread-9] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56379 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087467335" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <ForgotPWD>
+            <params>
+                <username>karli</username>
+            </params>
+        </ForgotPWD>
+    </Command>
+</request>
+
+199317 [Thread-10] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+200078 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56379
+200078 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+200368 [Thread-10] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087469261" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <ForgotPWDResponse>
+            <params>
+                <statuscode>0</statuscode>
+                <message>Password successfully updated</message>
+            </params>
+        </ForgotPWDResponse>
+    </Command>
+</response>
+
+200369 [Thread-10] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.ForgotPWDResponseMessage@5acba6d8
+200369 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.ForgotPWDResponseMessage@5acba6d8
+290236 [Thread-11] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+290236 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087559133" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>pOzINpf</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+290278 [Thread-9] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56379 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087559174" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>pOzINpf</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+
+290279 [Thread-9] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - karli successfully logged in
+290297 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56379
+290297 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+291270 [Thread-11] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087560172" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <LoginResponse>
+            <params>
+                <statuscode>0</statuscode>
+                <message>karli successfully logged in</message>
+            </params>
+        </LoginResponse>
+    </Command>
+</response>
+
+291271 [Thread-11] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.LoginResponseMessage@59507ecc
+291271 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.LoginResponseMessage@59507ecc
+295512 [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.viewlayer.gui.Search  - karli
+295535 [Thread-12] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+295535 [Thread-9] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087564429" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Logout>
+            <params>
+                <username>karli</username>
+            </params>
+        </Logout>
+    </Command>
+</request>
+295572 [Thread-9] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56379 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087564473" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Logout>
+            <params>
+                <username>karli</username>
+            </params>
+        </Logout>
+    </Command>
+</request>
+
+295572 [Thread-9] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - karli successfully logged out
+295591 [Thread-9] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - ClientSocket[addr=/127.0.0.1,port=56379,localport=9000] successfully logged out.
+295591 [Thread-9] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Successfully closed connection for client Socket[addr=/127.0.0.1,port=56379,localport=9000]
+296576 [Thread-12] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087565470" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <LogoutResponse>
+            <params>
+                <statuscode>0</statuscode>
+            </params>
+        </LogoutResponse>
+    </Command>
+</response>
+
+296577 [Thread-12] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.LogoutResponseMessage@1be08d65
+296578 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.LogoutResponseMessage@1be08d65
+309828 [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+309829 [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Already connected to bootstrapserver
+309829 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Already initialized
+317987 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+318987 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+319987 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+320988 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+321988 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+322988 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+323988 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+324989 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+325989 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+326989 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+327989 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+328990 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+329990 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+330990 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+331990 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+332990 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+333991 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+334991 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+335991 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+336991 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+337992 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+338992 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+339992 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+340992 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+341993 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+342993 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+343993 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+344993 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+345994 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+346994 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+347994 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+348994 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+349995 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+350995 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+351995 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+352995 [Thread-13] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+0    [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Inside initialization of communication handler
+2    [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Start server
+21   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Launching server thread...
+25   [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.commlayer.CommunicationService  - Enabled Keepalive socket option
+25   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+27   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Client connected: /127.0.0.1:56403
+30   [Thread-0] INFO  edu.ncsu.csc573.project.commlayer.PeerServer  - Waiting for clients to connet...
+49   [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Reading userdatabase file
+52   [Thread-1] DEBUG edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - added user in map karli
+52   [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Loaded 1 users from database
+57   [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Handling client /127.0.0.1:56403
+58   [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56403
+8780 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+8866 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+8867 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087644629" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>welc0me</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+8941 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56403 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087644979" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>welc0me</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+
+8945 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.User  - Loaded key successfully
+9193 [Thread-1] ERROR edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - Username or password is wrong
+9265 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56403
+9265 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+9825 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087645869" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <LoginResponse>
+            <params>
+                <statuscode>1</statuscode>
+                <message>Username or password is wrong</message>
+            </params>
+        </LoginResponse>
+    </Command>
+</response>
+
+9826 [Thread-2] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.LoginResponseMessage@a2ff0ee
+9826 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.LoginResponseMessage@a2ff0ee
+54793 [Thread-4] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+54794 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087690836" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>pOzINpf</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+54841 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56403 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087690884" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <Login>
+            <params>
+                <username>karli</username>
+                <password>pOzINpf</password>
+            </params>
+        </Login>
+    </Command>
+</request>
+
+54842 [Thread-1] INFO  edu.ncsu.csc573.project.controllayer.usermanagement.UsersManager  - karli successfully logged in
+54863 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56403
+54863 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+55835 [Thread-4] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087691880" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <LoginResponse>
+            <params>
+                <statuscode>0</statuscode>
+                <message>karli successfully logged in</message>
+            </params>
+        </LoginResponse>
+    </Command>
+</response>
+
+55835 [Thread-4] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.LoginResponseMessage@3ff5022b
+55835 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.LoginResponseMessage@3ff5022b
+69833 [Thread-5] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - No data received from server. Trying again...
+69834 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - received data from client 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087705876" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <ChangePassword>
+            <params>
+                <username>karli</username>
+                <password>pOzINpf</password>
+                <newpassword>qwerty1</newpassword>
+            </params>
+        </ChangePassword>
+    </Command>
+</request>
+69885 [Thread-1] INFO  edu.ncsu.csc573.project.commlayer.ClientHandler  - Request from client /127.0.0.1:56403 is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<request id="1322087705928" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <ChangePassword>
+            <params>
+                <username>karli</username>
+                <password>pOzINpf</password>
+                <newpassword>qwerty1</newpassword>
+            </params>
+        </ChangePassword>
+    </Command>
+</request>
+
+69908 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Waiting for request from client /127.0.0.1:56403
+69908 [Thread-1] DEBUG edu.ncsu.csc573.project.commlayer.ClientHandler  - Receiving request from client
+70878 [Thread-5] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Response is : <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1322087706925" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <ChangePasswordResponse>
+            <params>
+                <statuscode>0</statuscode>
+                <message>Password sent to your mail account</message>
+            </params>
+        </ChangePasswordResponse>
+    </Command>
+</response>
+
+70879 [Thread-5] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - edu.ncsu.csc573.project.common.messages.ChangePasswordResponseMessage@d277b49
+70879 [AWT-EventQueue-0] INFO  edu.ncsu.csc573.project.commlayer.CommunicationService  - Received response : edu.ncsu.csc573.project.common.messages.ChangePasswordResponseMessage@d277b49
+70879 [AWT-EventQueue-0] DEBUG edu.ncsu.csc573.project.viewlayer.gui.SettingsFrame  - 0

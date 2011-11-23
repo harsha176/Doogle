@@ -10,7 +10,8 @@ import org.apache.log4j.Logger;
 
 public class ConfigurationManager {
 
-    private static final String DEFAULT_HOST_INTERFACE = "127.0.0.1";
+    private static final double DEFAULT_THRESHOLD_MATCH_VALUE = 0.80;
+	private static final String DEFAULT_HOST_INTERFACE = "127.0.0.1";
 	private static final String CONFIGURATION_PROPERTIES = "configuration.properties";
     public static final int DEFAULT_SERVER_PORT = 9000;
     public static final int DEFAULT_TIME_OUT = 2;
@@ -27,6 +28,7 @@ public class ConfigurationManager {
     private int fileTrasferPort;
     private File downloadDirectory;
     private File publishDirectory;
+	private double thresholdValue = 0.0;
     private static Properties config = null;
     private static ConfigurationManager confManager = null;
     private static Logger logger;
@@ -111,6 +113,25 @@ public class ConfigurationManager {
         return timeOutPropertyVal;
     }
 
+    private double getAsDouble(String parameter, double default_value) {
+    	String timeOutPropertyVal = config.getProperty(parameter).trim();
+        if (timeOutPropertyVal == null || timeOutPropertyVal.trim().equals("")) {
+            logger.error("Unable to fetch " + parameter
+                    + "for configuration file");
+            logger.info("Using default value " + default_value + "for "
+                    + parameter);
+            return default_value;
+        }
+        try {
+            return Double.parseDouble(timeOutPropertyVal);
+        } catch (Exception e) {
+            logger.error("The given parameter " + parameter
+                    + "is not a valid integer/long");
+            logger.error("Please configure it as an integer value in configurations.xml file");
+            return default_value;
+        }
+	}
+    
     private void setAsString(String paramater, String value) throws Exception {
         config.setProperty(paramater, value);
         URL url = ClassLoader.getSystemResource(CONFIGURATION_PROPERTIES);
@@ -127,6 +148,7 @@ public class ConfigurationManager {
         }
     }
 
+    
     /*
     private void setAsLong(String parameter, long value) throws Exception {
     setAsString(parameter, String.valueOf(value));
@@ -210,4 +232,13 @@ public class ConfigurationManager {
     public String getHostInterface() {
     	return getAsString("HOST_INTERFACE", DEFAULT_HOST_INTERFACE);
     }
+    
+    public double getThresholdValue() {
+    	if(thresholdValue == 0.0) {
+    		thresholdValue =  getAsDouble("MATCH_THRESHOLD", DEFAULT_THRESHOLD_MATCH_VALUE);
+    	}
+    	return thresholdValue;
+    }
+
+	
 }
