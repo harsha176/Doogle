@@ -1,6 +1,10 @@
 package edu.ncsu.csc573.project.controllayer.usermanagement;
 
 public class UserManagementException extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int status;
 	//private String message;
 	

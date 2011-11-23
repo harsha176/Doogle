@@ -11,6 +11,7 @@
 package edu.ncsu.csc573.project.viewlayer.gui;
 
 import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
+import edu.ncsu.csc573.project.common.ByteOperationUtil;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.EnumParamsType;
 import edu.ncsu.csc573.project.common.messages.IParameter;
@@ -19,7 +20,10 @@ import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
+import edu.ncsu.csc573.project.common.messages.SearchRequestMessage;
 import edu.ncsu.csc573.project.controllayer.Session;
+import edu.ncsu.csc573.project.controllayer.hashspacemanagement.DigestAdaptor;
+
 import java.io.IOException;
 import java.util.logging.Level;
 import org.apache.log4j.Logger;
@@ -150,11 +154,27 @@ private void logoutlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 }//GEN-LAST:event_logoutlinkActionPerformed
 
 private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-// TODO add your handling code here:
 
+	try {
+        Logger logger = Logger.getLogger(Search.class);
+
+        IRequest searchRequest = new SearchRequestMessage();
+        IParameter searchParams = new Parameter();
+        searchParams.add(EnumParamsType.USERNAME, "DUMMY");
+        searchParams.add(EnumParamsType.SEARCHKEY, ByteOperationUtil.convertBytesToString(DigestAdaptor.getInstance().getDigest(searchText.getText())));
+        searchRequest.createRequest(EnumOperationType.SEARCH, searchParams);
+        
+        IResponse response = CommunicationServiceFactory.getInstance().executeRequest(searchRequest);
+        //logger.info("Status of response is  : " + response.getStatus().getErrorId().toString());
+        //logger.info("Message is " + response.getMessage());
+    } catch (IOException ex) {
+        Logger.getLogger(Search.class.getName()).error("Failed to create publish request", ex);
+    } catch (Exception e) {
+        Logger.getLogger(Search.class.getName()).error("Failed to send request to boot strap server", e);
+    }
     this.setVisible(false);
-    //Search object create
-    SearchResults Results = new SearchResults();
+    
+    Search Results = new Search();
     Results.setVisible(true);
 }//GEN-LAST:event_searchActionPerformed
 

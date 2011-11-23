@@ -31,7 +31,7 @@ public class ChangePasswordRequestMessage extends RequestMessage {
 		
 		rpt.setUsername((getParameter().getParamValue(EnumParamsType.USERNAME).toString()));
 		rpt.setPassword(getParameter().getParamValue(EnumParamsType.PASSWORD).toString());
-                rpt.setNewpassword(getParameter().getParamValue(EnumParamsType.NEWPASSWORD).toString());
+        rpt.setNewpassword(getParameter().getParamValue(EnumParamsType.NEWPASSWORD).toString());
                
 		rt.setParams(rpt);
 		changepassword.setChangePassword(rt);
@@ -51,7 +51,7 @@ public class ChangePasswordRequestMessage extends RequestMessage {
 			IParameter param = new Parameter();
 			param.add(EnumParamsType.USERNAME, regparams.getUsername());
 			param.add(EnumParamsType.PASSWORD, regparams.getPassword());
-                        param.add(EnumParamsType.NEWPASSWORD, regparams.getNewpassword());
+            param.add(EnumParamsType.NEWPASSWORD, regparams.getNewpassword());
                         
 			this.setOperationType(EnumOperationType.CHANGEPASSWORD);
 			this.setParameter(param);

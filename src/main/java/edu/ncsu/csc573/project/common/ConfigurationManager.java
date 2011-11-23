@@ -10,7 +10,8 @@ import org.apache.log4j.Logger;
 
 public class ConfigurationManager {
 
-    private static final String CONFIGURATION_PROPERTIES = "configuration.properties";
+    private static final String DEFAULT_HOST_INTERFACE = "127.0.0.1";
+	private static final String CONFIGURATION_PROPERTIES = "configuration.properties";
     public static final int DEFAULT_SERVER_PORT = 9000;
     public static final int DEFAULT_TIME_OUT = 2;
     public static final long DEFAULT_CLI_TIME_OUT = 60000;
@@ -204,5 +205,9 @@ public class ConfigurationManager {
     public void setDownloadDirectory(File value) throws Exception {
         setAsString("DOWNLOAD_DIRECTORY", value.getAbsolutePath());
         downloadDirectory = value;
+    }
+    
+    public String getHostInterface() {
+    	return getAsString("HOST_INTERFACE", DEFAULT_HOST_INTERFACE);
     }
 }

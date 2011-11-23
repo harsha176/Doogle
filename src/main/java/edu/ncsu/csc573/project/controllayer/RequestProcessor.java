@@ -5,14 +5,20 @@ import java.math.BigInteger;
 import org.apache.log4j.Logger;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.EnumParamsType;
+import edu.ncsu.csc573.project.common.messages.ForgotPWDResponseMessage;
 import edu.ncsu.csc573.project.common.messages.IParameter;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LoginResponseMessage;
 import edu.ncsu.csc573.project.common.messages.LogoutResponseMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
+import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.common.messages.PublishResponseMessage;
 import edu.ncsu.csc573.project.common.messages.RegisterResponseMessage;
+import edu.ncsu.csc573.project.common.messages.SearchResponseMessage;
+import edu.ncsu.csc573.project.controllayer.hashspacemanagement.HashSpaceManagerFactory;
+import edu.ncsu.csc573.project.controllayer.hashspacemanagement.IHashSpaceManager;
+import edu.ncsu.csc573.project.controllayer.hashspacemanagement.Query;
 import edu.ncsu.csc573.project.controllayer.usermanagement.IUsersManager;
 import edu.ncsu.csc573.project.controllayer.usermanagement.User;
 import edu.ncsu.csc573.project.controllayer.usermanagement.UserManagementException;
@@ -21,10 +27,12 @@ public class RequestProcessor {
 
 	private Logger logger;
 	private IUsersManager usermanager;
+	private IHashSpaceManager hashSpaceManager;
 
 	public RequestProcessor() {
 		try {
 			usermanager = IUsersManager.getInstance();
+			hashSpaceManager = HashSpaceManagerFactory.getInstance();
 		} catch (Exception e) {
 			logger.error("Unable to initialize UserManager module", e);
 		}
@@ -128,6 +136,26 @@ public class RequestProcessor {
 				params.add(EnumParamsType.STATUSCODE,
 						new BigInteger(String.valueOf(0)));
 				params.add(EnumParamsType.MESSAGE,
+						"Password sent to your mail account");
+			} catch (UserManagementException e1) {
+
+				params.add(EnumParamsType.STATUSCODE,
+						new BigInteger(String.valueOf(e1.getStatus())));
+				params.add(EnumParamsType.MESSAGE, e1.getMessage());
+			}
+			response.createResponse(EnumOperationType.FORGOTPASSWORD, params);
+			break;
+		case FORGOTPASSWORD:
+			response = new ForgotPWDResponseMessage();
+			params = new Parameter();
+
+			try {
+				usermanager.forgotPassword(req.getParameter()
+						.getParamValue(EnumParamsType.USERNAME).toString());
+
+				params.add(EnumParamsType.STATUSCODE,
+						new BigInteger(String.valueOf(0)));
+				params.add(EnumParamsType.MESSAGE,
 						"Password successfully updated");
 			} catch (UserManagementException e1) {
 
@@ -135,10 +163,11 @@ public class RequestProcessor {
 						new BigInteger(String.valueOf(e1.getStatus())));
 				params.add(EnumParamsType.MESSAGE, e1.getMessage());
 			}
-			response.createResponse(EnumOperationType.CHANGEPASSWORDRESPONSE,
-					params);
+			response.createResponse(EnumOperationType.FORGOTPASSWORD, params);
 			break;
 		case PUBLISH:
+			logger.debug("Processing publish request");
+			hashSpaceManager.handlePublishRequest((PublishRequestMessage) req);
 			response = new PublishResponseMessage();
 			params = new Parameter();
 			params.add(EnumParamsType.STATUSCODE,
@@ -148,6 +177,18 @@ public class RequestProcessor {
 			response.createResponse(EnumOperationType.PUBLISHRESPONSE, params);
 			break;
 
+		case SEARCH:
+			logger.debug("Processing search request");
+			response = new SearchResponseMessage();
+			IParameter searchResponseparams;
+			searchResponseparams = hashSpaceManager.search(new Query(req
+					.getParameter().getParamValue(EnumParamsType.SEARCHKEY)
+					.toString()));
+			response.createResponse(EnumOperationType.SEARCHRESPONSE,
+					searchResponseparams);
+
+			response.createResponse(EnumOperationType.SEARCHRESPONSE, searchResponseparams);
+			break;
 		default:
 			try {
 				logger.error("Invalid request " + req.getRequestInXML());

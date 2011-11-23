@@ -14,5 +14,5 @@ public interface IQuery {
 	 * This method returns the digest of the query.
 	 * @return trigram of the request.
 	 */
-	public String getQueryDigest();
+	public byte[] getQueryDigest();
 }

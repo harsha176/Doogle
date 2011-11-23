@@ -248,8 +248,6 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     {
        des = student.getText();
     }
-          
-    
     if(firstname == null)
     {
         FirstnameErrors();
