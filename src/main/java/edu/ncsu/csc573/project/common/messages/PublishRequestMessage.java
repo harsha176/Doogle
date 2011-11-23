@@ -57,10 +57,9 @@ public class PublishRequestMessage extends RequestMessage {
 
 		pubParam.resetCounter();
 
-		do {
+		while (pubParam.getParamCount() < pubParam.getSize()) {
 			FileParamType fileParamType = new FileParamType();
 
-			fileParamType.setId(pubParam.getParamCount());
 			fileParamType.setFilename(pubParam.getParamValue(
 					EnumParamsType.FILENAME).toString());
 			fileParamType.setFiledigest(pubParam.getParamValue(
@@ -73,7 +72,7 @@ public class PublishRequestMessage extends RequestMessage {
 					EnumParamsType.IPADDRESS).toString());
 			pubParam.setNextParam();
 			lpt.getFile().add(fileParamType);
-		} while (pubParam.getParamCount() < pubParam.getSize());
+		}
 
 		publishType.setParams(lpt);
 		publish.setPublish(publishType);
@@ -95,8 +94,8 @@ public class PublishRequestMessage extends RequestMessage {
 
 			for (FileParamType fileParamType : fileList) {
 				param.add(EnumParamsType.FILENAME, fileParamType.getFilename());
-				param.add(EnumParamsType.FILEDIGEST,
-						ByteOperationUtil.convertStringToBytes(fileParamType.getFiledigest()));
+				param.add(EnumParamsType.FILEDIGEST, ByteOperationUtil
+						.convertStringToBytes(fileParamType.getFiledigest()));
 				param.add(EnumParamsType.FILESIZE, fileParamType.getFilesize());
 				param.add(EnumParamsType.ABSTRACT, fileParamType.getAbstract());
 				param.add(EnumParamsType.IPADDRESS,
@@ -112,12 +111,12 @@ public class PublishRequestMessage extends RequestMessage {
 	}
 
 	public static IRequest getPublishRequest() throws Exception {
-		
+
 		Logger logger = Logger.getLogger(PublishRequestMessage.class);
 		File pubDir = ConfigurationManager.getInstance().getPublishDirectory();
-		
+
 		FilenameFilter textFilter = new FilenameFilter() {
-			
+
 			public boolean accept(File dir, String name) {
 				if (name.endsWith(".txt"))
 					return true;
@@ -126,19 +125,20 @@ public class PublishRequestMessage extends RequestMessage {
 			}
 		};
 		IDigest digestUtil = null;
-		
+
 		try {
 			digestUtil = DigestAdaptor.getInstance();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			logger.error("Unable to initialize digest utility", e);
 			return null;
 		}
-		
+
 		List<File> files = Arrays.asList(pubDir.listFiles(textFilter));
 		IRequest PublishRequest = new PublishRequestMessage();
 		PublishSearchParameter publishParams = new PublishSearchParameter();
-		String localIPAddress = ConfigurationManager.getInstance().getHostInterface();
-		
+		String localIPAddress = ConfigurationManager.getInstance()
+				.getHostInterface();
+
 		try {
 			localIPAddress = InetAddress.getLocalHost().getHostAddress();
 		} catch (UnknownHostException e) {
@@ -147,7 +147,8 @@ public class PublishRequestMessage extends RequestMessage {
 		for (File file : files) {
 
 			publishParams.add(EnumParamsType.FILENAME, file.getName());
-			publishParams.add(EnumParamsType.FILEDIGEST, ByteOperationUtil.convertBytesToString(digestUtil.getDigest(file)));
+			publishParams.add(EnumParamsType.FILEDIGEST, ByteOperationUtil
+					.convertBytesToString(digestUtil.getDigest(file)));
 			publishParams.add(EnumParamsType.FILESIZE,
 					String.valueOf(file.length()));
 			publishParams.add(EnumParamsType.IPADDRESS, localIPAddress);
