@@ -109,7 +109,10 @@ public abstract class ResponseMessage extends RequestMessage implements
 		} else if (XML.indexOf("ChangePassword") != -1) {
 			res = new ChangePasswordResponseMessage();
 			res.parseXML(XML);
-		} 
+		} else if (XML.indexOf("Search") != -1) {
+			res = new SearchResponseMessage();
+			res.parseXML(XML);
+		}
 		 else {
 			logger.error("Given XML " + XML + " is an invalid request");
 		}

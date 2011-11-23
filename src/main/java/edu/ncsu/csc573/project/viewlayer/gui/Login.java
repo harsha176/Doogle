@@ -247,6 +247,7 @@ private void forgotPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
      Forgotpassword.setVisible(true);  
 }//GEN-LAST:event_forgotPwdActionPerformed
 
+
     /**
      * @param args the command line arguments
      */

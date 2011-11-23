@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import edu.ncsu.csc573.project.common.ByteOperationUtil;
 import edu.ncsu.csc573.project.common.schema.CommandResponseType;
 import edu.ncsu.csc573.project.common.schema.FileParamType;
 import edu.ncsu.csc573.project.common.schema.Response;
@@ -19,8 +20,8 @@ public class SearchResponseMessage extends ResponseMessage {
 	    	return searchParam;
 	}
 	
-	public void createRequest(EnumOperationType opType, IParameter parameter) {
-		super.createRequest(opType, parameter);
+	public void createResponse(EnumOperationType opType, IParameter parameter) {
+		super.createResponse(opType, parameter);
 		searchParam = (PublishSearchParameter)parameter;
 	}
 	
@@ -43,18 +44,18 @@ public class SearchResponseMessage extends ResponseMessage {
 		
 		searchParam.resetCounter();
 		
-		do {
+		while(searchParam.getParamCount() < searchParam.getSize()) {
 			FileParamType fileParamType = new FileParamType();
 			
 			fileParamType.setId(searchParam.getParamCount());
 			fileParamType.setFilename(searchParam.getParamValue(EnumParamsType.FILENAME).toString());
-			fileParamType.setFiledigest(searchParam.getParamValue(EnumParamsType.FILEDIGEST).toString());
+			fileParamType.setFiledigest(ByteOperationUtil.convertBytesToString((byte[])searchParam.getParamValue(EnumParamsType.FILEDIGEST)));
 			fileParamType.setFilesize(searchParam.getParamValue(EnumParamsType.FILESIZE).toString());
 			fileParamType.setAbstract(searchParam.getParamValue(EnumParamsType.ABSTRACT).toString());
 			fileParamType.setIpaddress(searchParam.getParamValue(EnumParamsType.IPADDRESS).toString());
 			searchParam.setNextParam();
 			lpt.getFile().add(fileParamType);
-		} while(searchParam.getParamCount() < searchParam.getSize());
+		}
 	
 		publishType.setParams(lpt);
 		publish.setSearchResponse(publishType);
@@ -76,7 +77,7 @@ public class SearchResponseMessage extends ResponseMessage {
 			
 			for(FileParamType fileParamType : fileList) {
 				param.add(EnumParamsType.FILENAME, fileParamType.getFilename());
-				param.add(EnumParamsType.FILEDIGEST, fileParamType.getFiledigest());
+				param.add(EnumParamsType.FILEDIGEST, ByteOperationUtil.convertStringToBytes(fileParamType.getFiledigest()));
 				param.add(EnumParamsType.FILESIZE, fileParamType.getFilesize());
 				param.add(EnumParamsType.ABSTRACT, fileParamType.getAbstract());
 				param.add(EnumParamsType.IPADDRESS, fileParamType.getIpaddress());
