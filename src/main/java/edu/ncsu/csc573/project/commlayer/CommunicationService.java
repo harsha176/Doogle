@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import org.apache.log4j.Logger;
@@ -55,39 +56,46 @@ public class CommunicationService implements ICommunicationService {
 		 * done and so simply exiting.
 		 */
 		synchronized (CommunicationService.class) {
-			if (clientSocket != null && clientSocket.isConnected() && server != null && !server.isServerRunning()) {
+			if (clientSocket != null && !clientSocket.isClosed() && server != null && server.isServerRunning()) {
 				logger.debug("Already connected to bootstrapserver");
 				logger.info("Already initialized");
 				return;
 			}
-
-			logger.info("Start server");
-			server = new PeerServer();
-			BSSAddress = getInetAddress(BootStrapServer);
-
-			int BSSport = ConfigurationManager.getInstance().getServerPort();
-			int timeOut = ConfigurationManager.getInstance().getTimeOut();
-
-			clientSocket = new Socket();
-			InetSocketAddress serverSocket = new InetSocketAddress(BSSAddress,
-					BSSport);
-			clientSocket.setKeepAlive(true);
-			clientSocket.setTcpNoDelay(true);
-			
-			logger.debug("Enabled Keepalive socket option");
-			try {
-				clientSocket.connect(serverSocket, timeOut);
-			} catch (SocketTimeoutException e) {
-				logger.error("Connection timed out", e);
-				cleanUp();
-				throw e;
-			} catch (IOException exp) {
-				logger.error("Connection refused", exp);
-				cleanUp();
-				throw exp;
-			} 
+			if(server == null || !server.isServerRunning()) {
+				logger.info("Start server");
+				server = new PeerServer();
+			}
+			initializeConnectedSocket(BootStrapServer); 
 		}
 
+	}
+
+	private void initializeConnectedSocket(String BootStrapServer)
+			throws Exception, UnknownHostException, SocketException,
+			SocketTimeoutException, IOException {
+		BSSAddress = getInetAddress(BootStrapServer);
+
+		int BSSport = ConfigurationManager.getInstance().getServerPort();
+		int timeOut = ConfigurationManager.getInstance().getTimeOut();
+
+		clientSocket = new Socket();
+		InetSocketAddress serverSocket = new InetSocketAddress(BSSAddress,
+				BSSport);
+		clientSocket.setKeepAlive(true);
+		clientSocket.setTcpNoDelay(true);
+		
+		logger.debug("Enabled Keepalive socket option");
+		try {
+			clientSocket.connect(serverSocket, timeOut);
+		} catch (SocketTimeoutException e) {
+			logger.error("Connection timed out", e);
+			cleanUp();
+			throw e;
+		} catch (IOException exp) {
+			logger.error("Connection refused", exp);
+			cleanUp();
+			throw exp;
+		}
 	}
 
 	private InetAddress getInetAddress(String BootStrapServer) throws Exception,
@@ -146,6 +154,10 @@ public class CommunicationService implements ICommunicationService {
 			}
 		} catch (InterruptedException e) {
 			
+		} finally{
+			if(bt.getResponse().getOperationType() == EnumOperationType.LOGOUTRESPONSE) {
+				clientSocket.close();
+			}
 		}
 		return bt.getResponse();
 	}
@@ -199,7 +211,7 @@ public class CommunicationService implements ICommunicationService {
 			logger.info("Communication Layer is not initialized");
 			return false;
 		}
-		return clientSocket.isConnected();
+		return clientSocket.isClosed();
 	}
 
 	class BlockingThread extends Thread {

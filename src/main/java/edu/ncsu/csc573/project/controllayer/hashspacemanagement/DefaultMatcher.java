@@ -25,7 +25,9 @@ public class DefaultMatcher implements IMatcher {
 	 * return true if it matches
 	 */
 	public boolean isMatches(byte[] query, byte[] other) {
+		
 		byte[] result = ByteOperationUtil.and(query, other);
+		
 		int querySetBits = ByteOperationUtil.countSetBits(query);
 		int resultSetBits = ByteOperationUtil.countSetBits(result);
 		double matchFactor = ((resultSetBits * 1.0) / querySetBits);
