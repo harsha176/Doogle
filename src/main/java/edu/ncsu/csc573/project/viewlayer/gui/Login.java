@@ -11,15 +11,18 @@
 package edu.ncsu.csc573.project.viewlayer.gui;
 
 import edu.ncsu.csc573.project.commlayer.CommunicationServiceFactory;
+import edu.ncsu.csc573.project.commlayer.ICommunicationService;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.EnumParamsType;
 import edu.ncsu.csc573.project.common.messages.IParameter;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LoginRequestMessage;
+import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.controllayer.Session;
 import java.math.BigInteger;
+import java.util.logging.Level;
 import org.apache.log4j.Logger;
 
 /**
@@ -27,11 +30,13 @@ import org.apache.log4j.Logger;
  * @author krishna
  */
 public class Login extends javax.swing.JFrame {
-   // public String Username;
+    // public String Username;
+
     /** Creates new form Login */
     public Login() {
         initComponents();
     }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -51,6 +56,7 @@ public class Login extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         forgotPwd = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(450, 250, 0, 0));
@@ -88,6 +94,13 @@ public class Login extends javax.swing.JFrame {
 
         jLabel5.setText("Forgot Password? Click here");
 
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,6 +117,7 @@ public class Login extends javax.swing.JFrame {
                                     .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(back)
                                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -123,7 +137,7 @@ public class Login extends javax.swing.JFrame {
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {password, username});
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {forgotPwd, loginButton, registerButton});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {back, forgotPwd, loginButton, registerButton});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +151,9 @@ public class Login extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(loginButton))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(loginButton)
+                            .addComponent(back)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -159,94 +175,107 @@ public class Login extends javax.swing.JFrame {
 
 private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 // TODO add your handling code here:
- // Invoke Comm layer
+    // Invoke Comm layer
     Logger logger = Logger.getLogger(Login.class);
-    
-    if (username.getText().isEmpty())
-    {
+
+    if (username.getText().isEmpty()) {
         inValidUserScreen();
-    }
-    else if (password.getPassword().toString().isEmpty())
-    {
+    } else if (password.getPassword().toString().isEmpty()) {
         inValidPWDScreen();
-    }
-    else
-    {
-    IRequest loginRequest = new LoginRequestMessage();
-    IParameter Loginparams = new Parameter();
-    Loginparams.add(EnumParamsType.USERNAME, username.getText());
-    Loginparams.add(EnumParamsType.PASSWORD, password.getText());
-    loginRequest.createRequest(EnumOperationType.LOGIN, Loginparams);
-    try {
-        IResponse response = CommunicationServiceFactory.getInstance().executeRequest(loginRequest);
-        BigInteger statusCode = response.getStatus().getErrorId();
-        if(statusCode.intValue() == 0)
-        {
-            Session.createInstance(username.getText());
-            Search LoggedIn = new Search();
-            this.setVisible(false);
-            LoggedIn.setVisible(true);
-            LoggedIn.setLocationRelativeTo(this);
-            LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
-            //logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
-            //logger.info("Message is " + response.getMessage());
-        }
-        else
-        {
-            inValidComboScreen();
-        }
-    }
-        catch (Exception e) {
+    } else {
+        IRequest loginRequest = new LoginRequestMessage();
+        IParameter Loginparams = new Parameter();
+        Loginparams.add(EnumParamsType.USERNAME, username.getText());
+        Loginparams.add(EnumParamsType.PASSWORD, password.getText());
+        loginRequest.createRequest(EnumOperationType.LOGIN, Loginparams);
+        try {
+            IResponse response = CommunicationServiceFactory.getInstance().executeRequest(loginRequest);
+            BigInteger statusCode = response.getStatus().getErrorId();
+            if (statusCode.intValue() == 0) {
+                Session.createInstance(username.getText());
+                Search LoggedIn = new Search();
+                this.setVisible(false);
+                LoggedIn.setVisible(true);
+                LoggedIn.setLocationRelativeTo(this);
+                LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
+                //logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
+                //logger.info("Message is " + response.getMessage());
+            } else {
+                inValidComboScreen();
+            }
+        } catch (Exception e) {
             // inValidComboScreen();
-             logger.error("Failed to perform login ", e);
+            logger.error("Failed to perform login ", e);
         }
     }
 }//GEN-LAST:event_loginButtonActionPerformed
 
-        private void inValidUserScreen() {
+    private void inValidUserScreen() {
         ErrorScreen inValidScreen = new ErrorScreen();
         inValidScreen.setMessage("Username not entered");
         this.setVisible(false);
         inValidScreen.setVisible(true);
         inValidScreen.setLocationRelativeTo(this);
     }
-        private void inValidPWDScreen() {
+
+    private void inValidPWDScreen() {
         ErrorScreen inValidScreen = new ErrorScreen();
         inValidScreen.setMessage("Password not entered");
         this.setVisible(false);
         inValidScreen.setVisible(true);
         inValidScreen.setLocationRelativeTo(this);
     }
-        private void inValidComboScreen() {
+
+    private void inValidComboScreen() {
         ErrorScreen inValidScreen = new ErrorScreen();
         inValidScreen.setMessage("Username or Password are incorrect");
         this.setVisible(false);
         inValidScreen.setVisible(true);
         inValidScreen.setLocationRelativeTo(this);
     }
-        
-        
+
 private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
 // TODO add your handling code here:
     Register registerFrame = new Register();
     this.setVisible(false);
     registerFrame.setVisible(true);
 }//GEN-LAST:event_registerButtonActionPerformed
-/*
+    /*
 private void forgotpwdlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotpwdlinkActionPerformed
-// TODO add your handling code here:
-     Forgotpwd Forgotpassword = new Forgotpwd();
-     this.setVisible(false);
-     Forgotpassword.setVisible(true);   
+    // TODO add your handling code here:
+    Forgotpwd Forgotpassword = new Forgotpwd();
+    this.setVisible(false);
+    Forgotpassword.setVisible(true);   
 }//GEN-LAST:event_forgotpwdlinkActionPerformed
-*/
+     */
 private void forgotPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgotPwdActionPerformed
 // TODO add your handling code here:
-     Forgotpwd Forgotpassword = new Forgotpwd();
-     this.setVisible(false);
-     Forgotpassword.setVisible(true);  
+    Forgotpwd Forgotpassword = new Forgotpwd();
+    this.setVisible(false);
+    Forgotpassword.setVisible(true);
 }//GEN-LAST:event_forgotPwdActionPerformed
 
+private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    try {
+        // TODO add your handling code here:
+                /*try {
+        IRequest logoutRequest = new LogoutRequestMessage();
+        IParameter Logoutparams = new Parameter();
+        Logoutparams.add(EnumParamsType.USERNAME, "DUMMY");
+        logoutRequest.createRequest(EnumOperationType.LOGOUT, Logoutparams);
+        IResponse response = CommunicationServiceFactory.getInstance().executeRequest(logoutRequest);
+        }catch (Exception e){
+        
+        }*/
+
+        CommunicationServiceFactory.getInstance().close();
+    } catch (Exception ex) {
+    }
+    connect newConnect = new connect();
+    this.setVisible(false);
+    newConnect.setVisible(true);
+    newConnect.setLocationRelativeTo(this);
+}//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,6 +314,7 @@ private void forgotPwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JButton forgotPwd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

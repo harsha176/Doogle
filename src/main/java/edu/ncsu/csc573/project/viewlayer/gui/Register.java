@@ -239,28 +239,38 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     String lastname = lastnameUser.getText();
     String emailUsers = emailUser.getText();
     String username = usernameData.getText();
+    
     String des = null;
     if (faculty.isSelected())
     {
        des = faculty.getText(); 
     }   
-    else
+    else if (student.isSelected())
     {
        des = student.getText();
     }
-    if(firstname == null)
+    else 
+    {
+        desErrors();
+    }
+    
+    if(firstname.isEmpty())
     {
         FirstnameErrors();
     }
-    else if (lastname == null)
+    if (lastname.isEmpty())
     {
         LastnameErrors();
      }
-    else if(username == null)
+    if(username.isEmpty())
     {
       UsernameErrors();
     }
-    String EmailRegEx = ".*"+"@"+".*"+".com$";
+    String EmailRegEx = ".*"+"@"+".*"+".*";
+    //if(emailUsers.isEmpty())
+    //{
+    //  EmailErrors();
+    //}
     try {
         boolean isValid = Pattern.matches(EmailRegEx,emailUsers);
          if(!isValid) {
@@ -269,6 +279,7 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
         } catch(NullPointerException excp){
           EmailErrors();
           }  
+   
     String password = passwordUser.getText();
     String confpassword = confirmPassword.getText();
     int compare = password.compareTo(confpassword);
@@ -408,35 +419,41 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         passwdRegisterErrors.setVisible(true);
     }
         private void UserErrors() {
-        RegisterErrors UserErrors = new RegisterErrors();
-        UserErrors.UserError();
-        UserErrors.setVisible(true);
+        RegisterErrors User = new RegisterErrors();
+        User.UserError();
+        User.setVisible(true);
     } 
         private void FirstnameErrors() {
-        RegisterErrors FirstnameErrors = new RegisterErrors();
-        FirstnameErrors.FirstnameError();
-        FirstnameErrors.setVisible(true);
+        RegisterErrors First = new RegisterErrors();
+        First.FirstnameError();
+        First.setVisible(true);
     }
         private void LastnameErrors() {
-        RegisterErrors LastnameErrors = new RegisterErrors();
-        LastnameErrors.LastnameError();
-        LastnameErrors.setVisible(true);
+        RegisterErrors Last = new RegisterErrors();
+        Last.LastnameError();
+        Last.setVisible(true);
     }
         private void UsernameErrors() {
-        RegisterErrors UsernameErrors = new RegisterErrors();
-        UsernameErrors.UsernameError();
-        UsernameErrors.setVisible(true);
+        RegisterErrors Username = new RegisterErrors();
+        Username.UsernameError();
+        Username.setVisible(true);
     }
         private void EmailErrors() {
-        RegisterErrors EmailErrors = new RegisterErrors();
-        EmailErrors.EmailError();
-        EmailErrors.setVisible(true);
+        RegisterErrors Email = new RegisterErrors();
+        Email.EmailError();
+        Email.setVisible(true);
     }
 
     private void ServerErrors() {
      RegisterErrors ServerErrors = new RegisterErrors();
         ServerErrors.ServerError();
         ServerErrors.setVisible(true);   
+    }
+
+    private void desErrors() {
+        RegisterErrors desError = new RegisterErrors();
+        desError.desError();
+        desError.setVisible(true);  
     }
 
 }
