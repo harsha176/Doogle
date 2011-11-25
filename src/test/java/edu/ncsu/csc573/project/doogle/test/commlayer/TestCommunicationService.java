@@ -20,6 +20,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.net.UnknownHostException;
 
 /**
  * @author doogle-dev
@@ -56,6 +57,7 @@ public class TestCommunicationService {
 			e.printStackTrace();
 		}
 	}*/
+	
 	/*
 	@Test
 	public void testInitializeForKnownHost() {
@@ -113,6 +115,11 @@ public class TestCommunicationService {
 		}
 	}
 	
+	/*@Test
+	public void testLogoutScenarion1(){
+		// login first 
+		
+	}*/
 	/*@Test
 	public void testPublishRequest() {
 		Assert.fail("Publish request functionality not implemented");
