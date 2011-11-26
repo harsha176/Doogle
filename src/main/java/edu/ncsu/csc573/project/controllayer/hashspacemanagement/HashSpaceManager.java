@@ -99,4 +99,12 @@ public class HashSpaceManager implements IHashSpaceManager {
 		logger.info("Total size of repository is " + publishedFilesRepository.getSize());
 	}
 
+	/**
+	 * This method should remove the published files by the logged out user.
+	 */
+	public void removePublishedFiles(String username) {
+		
+		
+	}
+
 }

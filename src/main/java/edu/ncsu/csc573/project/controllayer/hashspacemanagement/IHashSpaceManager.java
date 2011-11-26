@@ -26,4 +26,11 @@ public interface IHashSpaceManager {
 	 * @param pubRequest
 	 */
 	public void handlePublishRequest(PublishRequestMessage pubRequest);
+	
+	/**
+	 * This method removes the published files for the user from repository
+	 * 
+	 * @param username
+	 */
+	public void removePublishedFiles(String username);
 }

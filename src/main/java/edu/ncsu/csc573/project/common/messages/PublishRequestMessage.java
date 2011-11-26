@@ -139,11 +139,11 @@ public class PublishRequestMessage extends RequestMessage {
 		String localIPAddress = ConfigurationManager.getInstance()
 				.getHostInterface();
 
-		try {
+		/*try {
 			localIPAddress = InetAddress.getLocalHost().getHostAddress();
 		} catch (UnknownHostException e) {
 			logger.error("Unable to get IPAddress of the host interface", e);
-		}
+		}*/
 		for (File file : files) {
 
 			publishParams.add(EnumParamsType.FILENAME, file.getName());
