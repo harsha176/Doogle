@@ -20,6 +20,7 @@ import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LoginRequestMessage;
 import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
+import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.controllayer.Session;
 import java.math.BigInteger;
 import java.util.logging.Level;
@@ -198,9 +199,10 @@ private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 LoggedIn.setVisible(true);
                 LoggedIn.setLocationRelativeTo(this);
                 LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
-                //logger.info("Status of response is  : " +response.getStatus().getErrorId().toString());
-                //logger.info("Message is " + response.getMessage());
-            } else {
+                 
+                IRequest pubRequest = PublishRequestMessage.getPublishRequest();
+                response = CommunicationServiceFactory.getInstance().executeRequest(pubRequest);
+               } else {
                 inValidComboScreen();
             }
         } catch (Exception e) {

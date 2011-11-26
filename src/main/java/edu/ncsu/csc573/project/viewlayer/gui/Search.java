@@ -20,6 +20,7 @@ import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
+import edu.ncsu.csc573.project.common.messages.PublishSearchParameter;
 import edu.ncsu.csc573.project.common.messages.SearchRequestMessage;
 import edu.ncsu.csc573.project.controllayer.Session;
 import edu.ncsu.csc573.project.controllayer.hashspacemanagement.DigestAdaptor;
@@ -163,10 +164,27 @@ private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         searchParams.add(EnumParamsType.SEARCHKEY, ByteOperationUtil.convertBytesToString(DigestAdaptor.getInstance().getDigest(searchText.getText())));
         searchRequest.createRequest(EnumOperationType.SEARCH, searchParams);
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(searchRequest);
-        this.setVisible(false);
-        Search Results = new Search();
-        Results.setVisible(true);
+        PublishSearchParameter searchResults = (PublishSearchParameter)response.getParameter();
+        searchResults.resetCounter();
+        Logger logger = Logger.getLogger(Search.class);
         
+        while (searchResults.getParamCount() < searchResults.getSize()) {
+            logger.info("File name " + searchResults.getParamValue(EnumParamsType.FILENAME).toString());
+            logger.info("Abstract " +searchResults.getParamValue(EnumParamsType.ABSTRACT).toString());
+            logger.info("IP Address" + searchResults.getParamValue(EnumParamsType.IPADDRESS).toString());
+            CommunicationServiceFactory.getInstance().getFile(searchResults.getParamValue(EnumParamsType.IPADDRESS).toString(), searchResults.getParamValue(EnumParamsType.FILENAME).toString());
+            searchResults.setNextParam();
+            
+        }
+        
+        Search Results = new Search();
+        //Results.initialize();
+        this.setVisible(false);
+        Results.setVisible(true);
+        //Search Results = new Search();
+        /*SearchResults Results = new SearchResults(searchResults);
+        this.setVisible(false);
+        Results.setVisible(true);*/
         
     } catch (IOException ex) {
         PublishFrame Searchfail = new PublishFrame();
