@@ -66,6 +66,10 @@ public class PublishSearchParameter implements IParameter {
 		}
 	}
 
+	/*public void remove(EnumPa) {
+		
+	}*/
+	
 	/**
 	 * This method should be called before iterating through this complex
 	 * parameter

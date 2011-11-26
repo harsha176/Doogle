@@ -103,12 +103,16 @@ public class RequestProcessor {
 		case LOGOUT:
 			response = new LogoutResponseMessage();
 			params = new Parameter();
+			String username = req.getParameter()
+					.getParamValue(EnumParamsType.USERNAME).toString();
 			try {
 				usermanager.userLogout(req.getParameter()
 						.getParamValue(EnumParamsType.USERNAME).toString());
+				
+				hashSpaceManager.removePublishedFiles(username);
 				params.add(EnumParamsType.STATUSCODE,
 						new BigInteger(String.valueOf(0)));
-
+				
 			} catch (UserManagementException e1) {
 				params.add(EnumParamsType.STATUSCODE,
 						new BigInteger(String.valueOf(e1.getStatus())));
