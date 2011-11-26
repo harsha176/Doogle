@@ -166,25 +166,12 @@ private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(searchRequest);
         PublishSearchParameter searchResults = (PublishSearchParameter)response.getParameter();
         searchResults.resetCounter();
-        Logger logger = Logger.getLogger(Search.class);
-        
-        while (searchResults.getParamCount() < searchResults.getSize()) {
-            logger.info("File name " + searchResults.getParamValue(EnumParamsType.FILENAME).toString());
-            logger.info("Abstract " +searchResults.getParamValue(EnumParamsType.ABSTRACT).toString());
-            logger.info("IP Address" + searchResults.getParamValue(EnumParamsType.IPADDRESS).toString());
-            CommunicationServiceFactory.getInstance().getFile(searchResults.getParamValue(EnumParamsType.IPADDRESS).toString(), searchResults.getParamValue(EnumParamsType.FILENAME).toString());
-            searchResults.setNextParam();
-            
-        }
-        
-        Search Results = new Search();
-        //Results.initialize();
+        SearchResults newResults = new SearchResults();
+        newResults.setMessage(searchResults);
         this.setVisible(false);
-        Results.setVisible(true);
-        //Search Results = new Search();
-        /*SearchResults Results = new SearchResults(searchResults);
-        this.setVisible(false);
-        Results.setVisible(true);*/
+        newResults.setVisible(true);
+        newResults.setLocationRelativeTo(this);
+        
         
     } catch (IOException ex) {
         PublishFrame Searchfail = new PublishFrame();

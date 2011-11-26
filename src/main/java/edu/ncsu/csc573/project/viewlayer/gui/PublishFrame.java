@@ -55,12 +55,12 @@ public class PublishFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton1))
+                        .addGap(30, 30, 30)
+                        .addComponent(publishsuccess))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(publishsuccess)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                        .addGap(71, 71, 71)
+                        .addComponent(jButton1)))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
