@@ -302,13 +302,24 @@ public class CommunicationService implements ICommunicationService {
 				newFile = getNewFile(newFile);
 			}
 			pwFile = new PrintWriter(new BufferedWriter(new FileWriter(newFile)));
-			
+			boolean isValidFile = false;
 			while((buff = br.readLine())!=null) {
 				pwFile.println(buff);
 				pwFile.flush();
 				logger.trace("Read: " +buff);
+				isValidFile = true;
 			}
 			pwFile.flush();
+			if(!isValidFile) {
+				pw.println("a");
+				pw.flush();
+				newFile.delete();
+				logger.info("Failed to retrieve " + fileName + " file from " + IPAddress + " peer");
+				pw.println("a");
+				pw.flush();
+				return null;
+			}
+			
 			logger.info("Successfully saved downloaded file at " + newFile.getAbsolutePath());
 			pw.println("a");
 			pw.flush();

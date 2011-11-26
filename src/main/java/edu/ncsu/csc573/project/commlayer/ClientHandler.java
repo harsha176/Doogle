@@ -145,8 +145,6 @@ public class ClientHandler implements Runnable {
 				}
 			}
 		}
-		
-		logger.info("Successfully transfered file");
 	}
 
 
