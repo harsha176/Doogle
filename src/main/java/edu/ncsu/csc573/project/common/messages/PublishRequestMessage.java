@@ -7,13 +7,9 @@ import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.math.BigInteger;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.List;
-
 import org.apache.log4j.Logger;
-
 import edu.ncsu.csc573.project.common.ByteOperationUtil;
 import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.schema.CommandRequestType;

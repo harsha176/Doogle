@@ -295,6 +295,12 @@ public class CommunicationService implements ICommunicationService {
 			String buff;
 			newFile = new File(ConfigurationManager.getInstance().getDownloadDirectory(),fileName.substring(0, fileName.indexOf("."))/*+"_"+System.currentTimeMillis()*/+".txt");
 			
+			/*
+			 * Rename file if it already exists. 
+			 */
+			if(newFile.exists()) {
+				newFile = getNewFile(newFile);
+			}
 			pwFile = new PrintWriter(new BufferedWriter(new FileWriter(newFile)));
 			
 			while((buff = br.readLine())!=null) {
@@ -324,6 +330,31 @@ public class CommunicationService implements ICommunicationService {
 				pw.close();
 			if(pwFile != null) 
 				pwFile.close();
+		}
+		return newFile;
+	}
+
+	private File getNewFile(File newFile) {
+		String oldName = newFile.getName();
+		int last_ud_char = oldName.lastIndexOf("_");
+		int suffix_start_index = oldName.indexOf(".txt");
+		String initialPart;
+		if( last_ud_char !=  -1) {
+			initialPart = oldName.substring(0, last_ud_char);
+			String file_count = oldName.substring(last_ud_char + 1, suffix_start_index);
+			try {
+				int count = Integer.parseInt(file_count) + 1;
+				String newName = initialPart + "_" + String.valueOf(count) + ".txt";
+				newFile = new File(ConfigurationManager.getInstance().getDownloadDirectory(),newName);
+			} catch(NumberFormatException e) {
+				initialPart = oldName.substring(0, suffix_start_index);
+				String newName =  initialPart + "_1" + ".txt";
+				newFile = new File(ConfigurationManager.getInstance().getDownloadDirectory(),newName);
+			}
+		} else {
+			initialPart = oldName.substring(0, suffix_start_index);
+			String newName =  initialPart + "_1" + ".txt";
+			newFile = new File(ConfigurationManager.getInstance().getDownloadDirectory(),newName);
 		}
 		return newFile;
 	}
