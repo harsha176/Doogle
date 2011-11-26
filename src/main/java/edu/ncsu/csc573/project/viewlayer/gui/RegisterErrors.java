@@ -58,8 +58,12 @@ public class RegisterErrors extends javax.swing.JFrame {
         errorMsg.setText("User Name not entered");
         jButton1.setText("Try Again");
     }
+         public void desError(){
+        errorMsg.setText("Designation not selected");
+        jButton1.setText("Try Again");
+    }
       public void EmailError(){
-        errorMsg.setText("First Name not entered");
+        errorMsg.setText("Email not entered/invalid");
         jButton1.setText("Try Again");
     }
       public void UserError(){

@@ -40,6 +40,7 @@ public class Search extends javax.swing.JFrame {
         initComponents();
         // dispUsername.setText(Login.Username); 
 
+
     }
 
     /** This method is called from within the constructor to
@@ -155,60 +156,56 @@ private void logoutlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
 private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
 
-	try {
-        Logger logger = Logger.getLogger(Search.class);
-
+    try {
         IRequest searchRequest = new SearchRequestMessage();
         IParameter searchParams = new Parameter();
-        searchParams.add(EnumParamsType.USERNAME, "DUMMY");
+        searchParams.add(EnumParamsType.USERNAME, Session.getInstance().getUsername());
         searchParams.add(EnumParamsType.SEARCHKEY, ByteOperationUtil.convertBytesToString(DigestAdaptor.getInstance().getDigest(searchText.getText())));
         searchRequest.createRequest(EnumOperationType.SEARCH, searchParams);
-        
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(searchRequest);
-        //logger.info("Status of response is  : " + response.getStatus().getErrorId().toString());
-        //logger.info("Message is " + response.getMessage());
+        this.setVisible(false);
+        Search Results = new Search();
+        Results.setVisible(true);
+        
+        
     } catch (IOException ex) {
-        Logger.getLogger(Search.class.getName()).error("Failed to create publish request", ex);
+        PublishFrame Searchfail = new PublishFrame();
+        Searchfail.setMessage("Failed to create search request");
+        Searchfail.setVisible(true);
+        Searchfail.setLocationRelativeTo(this);
+        Logger.getLogger(Search.class.getName()).error("Failed to create search request", ex);
     } catch (Exception e) {
+        PublishFrame Searchfailure = new PublishFrame();
+        Searchfailure.setMessage("Failed to send request to boot strap server");
+        Searchfailure.setVisible(true);
+        Searchfailure.setLocationRelativeTo(this);
         Logger.getLogger(Search.class.getName()).error("Failed to send request to boot strap server", e);
     }
-    this.setVisible(false);
-    
-    Search Results = new Search();
-    Results.setVisible(true);
 }//GEN-LAST:event_searchActionPerformed
 
 private void PublishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PublishActionPerformed
     try {
         Logger logger = Logger.getLogger(Search.class);
-
         IRequest pubRequest = PublishRequestMessage.getPublishRequest();
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(pubRequest);
         logger.info("Status of response is  : " + response.getStatus().getErrorId().toString());
         logger.info("Message is " + response.getMessage());
+        PublishFrame Publish = new PublishFrame();
+        Publish.setVisible(true);
+        Publish.setLocationRelativeTo(this);
     } catch (IOException ex) {
+        PublishFrame Pubfail = new PublishFrame();
+        Pubfail.setMessage("Failed to create publish request");
+        Pubfail.setVisible(true);
+        Pubfail.setLocationRelativeTo(this);
         Logger.getLogger(Search.class.getName()).error("Failed to create publish request", ex);
     } catch (Exception e) {
+        PublishFrame Publishfail = new PublishFrame();
+        Publishfail.setMessage("Failed to create search request");
+        Publishfail.setVisible(true);
+        Publishfail.setLocationRelativeTo(this);
         Logger.getLogger(Search.class.getName()).error("Failed to send request to boot strap server", e);
     }
-
-
-
-    PublishFrame Publish = new PublishFrame();
-    //this.setVisible(false);
-    Publish.setVisible(true);
-
-
-    // IRequest publishRequest = new PublishRequestMessage();
-    //     IParameter publishparams = new Parameter();
-    //Response
-    Publish.setVisible(false);
-    PublishFrame newPub = new PublishFrame();
-    newPub.setMessage("Successfully Published");
-    Publish.setVisible(false);
-    newPub.setVisible(true);
-    newPub.setVisible(false);
-
 }//GEN-LAST:event_PublishActionPerformed
 
 private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutActionPerformed
