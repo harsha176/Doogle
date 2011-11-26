@@ -108,7 +108,7 @@ public class TestCommunicationService {
                         //BufferedReader br = new BufferedReader(new FileReader(toBeUploadedFile));
                         //fw.read();
 			CommService.initialize("localhost", new DefaultPublishHandler());
-			Assert.assertNotNull(CommService.getFile("localhost", "IMP - Test.txt"));
+			Assert.assertNotNull(CommService.getFile("localhost", "ip.txt"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

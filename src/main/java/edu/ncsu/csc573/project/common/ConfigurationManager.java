@@ -18,8 +18,8 @@ public class ConfigurationManager {
     public static final long DEFAULT_CLI_TIME_OUT = 60000;
     public static final int DEFAULT_BACK_LOG_COUNT = 10;
     public static final int DEFAULT_FILE_TRANSFER_PORT = 9000;
-    private static final String DEFAULT_DOWNLOAD_DIRECTORY = System.getProperty("user.home") + "/temp";
-    private static final String DEFAULT_PUBLISH_DIRECTORY = System.getProperty("user.home") + "/temp";
+    private static final String DEFAULT_DOWNLOAD_DIRECTORY = System.getProperty("user.home") + "/publish";
+    private static final String DEFAULT_PUBLISH_DIRECTORY = System.getProperty("user.home") + "/downloads";
     private int serverPort;
     private int timeOut;
     private long cliTimeOut;
@@ -54,7 +54,7 @@ public class ConfigurationManager {
             downDir.mkdirs();
             try {
                 confManager.setDownloadDirectory(downDir);
-                confManager.setPublishDirectory(downDir);
+                confManager.setPublishDirectory(pubDir);
             } catch (Exception e) {
                 logger.error("Unable to set default values", e);
             }
