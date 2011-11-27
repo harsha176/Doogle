@@ -126,11 +126,11 @@
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               <Component id="Search" linkSize="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="abs1" alignment="0" max="32767" attributes="1"/>
-                          <Component id="abs2" alignment="0" max="32767" attributes="1"/>
-                          <Component id="abs3" alignment="0" max="32767" attributes="1"/>
-                          <Component id="abs4" alignment="0" max="32767" attributes="3"/>
-                          <Component id="abs5" alignment="0" max="32767" attributes="1"/>
+                          <Component id="abs1" alignment="0" min="-2" pref="327" max="-2" attributes="1"/>
+                          <Component id="abs2" alignment="0" min="-2" pref="321" max="-2" attributes="1"/>
+                          <Component id="abs3" alignment="0" min="-2" pref="324" max="-2" attributes="1"/>
+                          <Component id="abs4" alignment="0" min="-2" pref="325" max="-2" attributes="3"/>
+                          <Component id="abs5" alignment="0" min="-2" pref="324" max="-2" attributes="1"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">

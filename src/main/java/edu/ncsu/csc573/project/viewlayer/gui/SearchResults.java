@@ -373,11 +373,11 @@ public class SearchResults extends javax.swing.JFrame {
                                 .addComponent(newSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(56, 56, 56)
                                 .addComponent(Search))
-                            .addComponent(abs1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(abs2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(abs3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(abs4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(abs5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(abs1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(abs2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(abs3, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(abs4, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(abs5, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(134, 134, 134)
                         .addComponent(Previous)
@@ -566,11 +566,19 @@ private void SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 private void download1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_download1ActionPerformed
 // TODO add your handling code here:
     CommunicationServiceFactory.getInstance().getFile(IPAdd1.getText(), fname1.getText());
+            PublishFrame downloadsuccess = new PublishFrame();
+        downloadsuccess.setMessage("File downloaded successfully");
+        downloadsuccess.setVisible(true);
+        downloadsuccess.setLocationRelativeTo(this);
 }//GEN-LAST:event_download1ActionPerformed
 
 private void download2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_download2ActionPerformed
 // TODO add your handling code here:
         CommunicationServiceFactory.getInstance().getFile(IPAdd2.getText(), fname2.getText());
+                PublishFrame downloadsuccess = new PublishFrame();
+        downloadsuccess.setMessage("File downloaded successfully");
+        downloadsuccess.setVisible(true);
+        downloadsuccess.setLocationRelativeTo(this);
 }//GEN-LAST:event_download2ActionPerformed
 
 private void download3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_download3ActionPerformed
@@ -578,16 +586,29 @@ private void download3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
        
            
         CommunicationServiceFactory.getInstance().getFile(IPAdd3.getText(), fname3.getText());
+        PublishFrame downloadsuccess = new PublishFrame();
+        downloadsuccess.setMessage("File downloaded successfully");
+        downloadsuccess.setVisible(true);
+        downloadsuccess.setLocationRelativeTo(this);
+        
 }//GEN-LAST:event_download3ActionPerformed
 
 private void download4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_download4ActionPerformed
 // TODO add your handling code here:
         CommunicationServiceFactory.getInstance().getFile(IPAdd4.getText(), fname4.getText());
+                PublishFrame downloadsuccess = new PublishFrame();
+        downloadsuccess.setMessage("File downloaded successfully");
+        downloadsuccess.setVisible(true);
+        downloadsuccess.setLocationRelativeTo(this);
 }//GEN-LAST:event_download4ActionPerformed
 
 private void download5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_download5ActionPerformed
 // TODO add your handling code here:
         CommunicationServiceFactory.getInstance().getFile(IPAdd5.getText(), fname5.getText());
+                PublishFrame downloadsuccess = new PublishFrame();
+        downloadsuccess.setMessage("File downloaded successfully");
+        downloadsuccess.setVisible(true);
+        downloadsuccess.setLocationRelativeTo(this);
 }//GEN-LAST:event_download5ActionPerformed
 
     /**
