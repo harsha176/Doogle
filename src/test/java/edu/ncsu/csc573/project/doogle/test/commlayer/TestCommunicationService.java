@@ -98,7 +98,7 @@ public class TestCommunicationService {
 		//}
 	}*/
 	
-	@Test
+/*	@Test
 	public void testDownloadFile() {
 		ICommunicationService CommService = CommunicationServiceFactory.getInstance();
 		try {
@@ -114,7 +114,7 @@ public class TestCommunicationService {
 			e.printStackTrace();
 		}
 	}
-	
+*/	
 	/*@Test
 	public void testLogoutScenarion1(){
 		// login first 

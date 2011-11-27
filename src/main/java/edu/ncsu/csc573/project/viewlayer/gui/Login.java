@@ -193,13 +193,15 @@ private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
             IResponse response = CommunicationServiceFactory.getInstance().executeRequest(loginRequest);
             BigInteger statusCode = response.getStatus().getErrorId();
             if (statusCode.intValue() == 0) {
-                Session.createInstance(username.getText());
                 Search LoggedIn = new Search();
                 this.setVisible(false);
                 LoggedIn.setVisible(true);
                 LoggedIn.setLocationRelativeTo(this);
                 LoggedIn.setTitle("Hello " + username.getText() + " , Welcome!!");
-                 
+                
+                
+                
+                Session.createInstance(username.getText());
                 IRequest pubRequest = PublishRequestMessage.getPublishRequest();
                 response = CommunicationServiceFactory.getInstance().executeRequest(pubRequest);
                } else {
