@@ -150,9 +150,6 @@ private void publishlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 
 private void settingslinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingslinkActionPerformed
 // TODO add your handling code here:
-    SettingsFrame Settings = new SettingsFrame();
-    this.setVisible(false);
-    Settings.setVisible(true);
 }//GEN-LAST:event_settingslinkActionPerformed
 
 private void logoutlinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutlinkActionPerformed
@@ -183,6 +180,7 @@ private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         this.setVisible(false);
         newResults.setVisible(true);
         newResults.setLocationRelativeTo(this);
+        newResults.setTitle("Hello " + Session.getInstance().getUsername() + " , Welcome!!");
         
         
     } catch (IOException ex) {
@@ -246,7 +244,7 @@ private void LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
 private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
 // TODO add your handling code here:
     SettingsFrame Settings = new SettingsFrame();
-    this.setVisible(false);
+    //this.setVisible(false);
     Settings.setVisible(true);
 }//GEN-LAST:event_SettingsActionPerformed
 

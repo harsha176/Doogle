@@ -239,7 +239,11 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     String lastname = lastnameUser.getText();
     String emailUsers = emailUser.getText();
     String username = usernameData.getText();
-    
+    String password = passwordUser.getText();
+    String confpassword = confirmPassword.getText();
+    int compare = password.compareTo(confpassword);
+    int length = password.length();    
+
     String des = null;
     if (faculty.isSelected())
     {
@@ -254,38 +258,27 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
         desErrors();
     }
     
+    String EmailRegEx = ".*"+"@"+".*"+".*";
+    
+    
     if(firstname.isEmpty())
     {
         FirstnameErrors();
     }
-    if (lastname.isEmpty())
+    else if (lastname.isEmpty())
     {
         LastnameErrors();
      }
-    if(username.isEmpty())
+    else if(username.isEmpty())
     {
       UsernameErrors();
     }
-    String EmailRegEx = ".*"+"@"+".*"+".*";
-    //if(emailUsers.isEmpty())
-    //{
-    //  EmailErrors();
-    //}
-    try {
-        boolean isValid = Pattern.matches(EmailRegEx,emailUsers);
-         if(!isValid) {
-                 EmailErrors();
-            }
-        } catch(NullPointerException excp){
-          EmailErrors();
-          }  
-   
-    String password = passwordUser.getText();
-    String confpassword = confirmPassword.getText();
-    int compare = password.compareTo(confpassword);
-    int length = password.length();    
-
-   if (compare !=0)
+    
+    else if (emailUsers.isEmpty() || !Pattern.matches(EmailRegEx,emailUsers))
+    {
+        EmailErrors();
+    }
+    else if (compare !=0)
    {
         PasswdMismatchErrors();
    }

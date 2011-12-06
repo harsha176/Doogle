@@ -275,8 +275,6 @@ private void publishfolderActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
 // TODO add your handling code here:
     this.setVisible(false);
-    Search newSearch = new Search();
-    newSearch.setVisible(true);
 }//GEN-LAST:event_backActionPerformed
 
 private void publishchoosebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_publishchoosebuttonActionPerformed

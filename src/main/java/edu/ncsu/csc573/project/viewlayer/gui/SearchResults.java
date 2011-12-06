@@ -796,4 +796,8 @@ public class SearchResults extends javax.swing.JFrame {
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JTextField newSearch;
 	// End of variables declaration//GEN-END:variables
-}
+    
+//    private PublishSearchParameter searchResults;
+//    private static final int RESULTS_PER_PAGE = 5;
+//    Result[] res = new Result[5];
+ }
