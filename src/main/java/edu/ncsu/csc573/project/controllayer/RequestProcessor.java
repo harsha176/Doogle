@@ -223,6 +223,11 @@ public class RequestProcessor {
 					.convertBytesToString(((byte[]) req.getParameter()
 							.getParamValue(EnumParamsType.FILEDIGEST))));
 			logger.info("Done with unpublishing the files");
+                        response = new ACKResponse();
+			IParameter ackParam = new Parameter();
+			ackParam.add(EnumParamsType.STATUSCODE, BigInteger.ZERO);
+			ackParam.add(EnumParamsType.MESSAGE, "Successfully unpublished file");
+			response.createResponse(EnumOperationType.ACKRESPONSE, ackParam);
 		break;
 		default:
 			try {

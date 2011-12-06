@@ -20,6 +20,8 @@ public class ConfigurationManager {
     public static final int DEFAULT_FILE_TRANSFER_PORT = 9000;
     private static final String DEFAULT_DOWNLOAD_DIRECTORY = System.getProperty("user.home") + "/downloads";
     private static final String DEFAULT_PUBLISH_DIRECTORY = System.getProperty("user.home") + "/publish";
+    private static final int DEFAULT_MAX_DOWNLOADS = 100;
+    
     private int serverPort;
     private int timeOut;
     private long cliTimeOut;
@@ -31,6 +33,7 @@ public class ConfigurationManager {
 	private double thresholdValue = 0.0;
     private static Properties config = null;
     private static ConfigurationManager confManager = null;
+    private int downloadsLimit = 0;
     private static Logger logger;
 
     private ConfigurationManager() {
@@ -240,5 +243,10 @@ public class ConfigurationManager {
     	return thresholdValue;
     }
 
-	
+    public int getMaxDownloadLimit() {
+        if(downloadsLimit == 0) {
+            downloadsLimit = getAsInt("MAX_DOWNLOADS", DEFAULT_MAX_DOWNLOADS);
+        }
+        return downloadsLimit;
+    }
 }

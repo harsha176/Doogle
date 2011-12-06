@@ -31,7 +31,7 @@ public class RegisterErrors extends javax.swing.JFrame {
     }
     public void PasswordSucess(){
         errorMsg.setText("Password changed successfully");
-        jButton1.setText("Ok");
+        jButton1.setText("OK");
     }
     public void PasswordFail(){
         errorMsg.setText("Error in changing password");
@@ -39,11 +39,11 @@ public class RegisterErrors extends javax.swing.JFrame {
     }
     public void UpdateSuccess(){
         errorMsg.setText("Updated succesfully");
-        jButton1.setText("Ok");
+        jButton1.setText("OK");
     }
     public void UpdateFail(){
         errorMsg.setText("Failed to update the configuration file. Enter vaild directory");
-        jButton1.setText("Ok");
+        jButton1.setText("OK");
     }
     //public void username errors based on response
     public void FirstnameError(){
@@ -54,6 +54,17 @@ public class RegisterErrors extends javax.swing.JFrame {
         errorMsg.setText("Last Name not entered");
         jButton1.setText("Try Again");
     }
+     
+         public void Unpublishfailed(){
+        errorMsg.setText("Failed to unpubish the file. The file may not have been published / is invalid");
+        jButton1.setText("OK");
+    } 
+    
+    public void Unpublishsuccess(){
+        errorMsg.setText("File unpublished successfully");
+        jButton1.setText("OK");
+    } 
+    
      public void UsernameError(){
         errorMsg.setText("User Name not entered");
         jButton1.setText("Try Again");
@@ -172,4 +183,9 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel errorMsg;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
+
+    void DownloadSuccess() {
+        errorMsg.setText("Download Successful");
+        jButton1.setText("OK");  
+      }
 }

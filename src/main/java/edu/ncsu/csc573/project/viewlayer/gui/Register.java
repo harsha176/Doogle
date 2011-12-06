@@ -240,6 +240,7 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     String emailUsers = emailUser.getText();
     String username = usernameData.getText();
     String password = passwordUser.getText();
+    String EmailRegEx = ".*"+"@"+".*"+"."+".*";
     String confpassword = confirmPassword.getText();
     int compare = password.compareTo(confpassword);
     int length = password.length();    
@@ -258,9 +259,7 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
         desErrors();
     }
     
-    String EmailRegEx = ".*"+"@"+".*"+".*";
-    
-    
+
     if(firstname.isEmpty())
     {
         FirstnameErrors();
@@ -272,8 +271,7 @@ private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GE
     else if(username.isEmpty())
     {
       UsernameErrors();
-    }
-    
+    }    
     else if (emailUsers.isEmpty() || !Pattern.matches(EmailRegEx,emailUsers))
     {
         EmailErrors();

@@ -9,6 +9,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import edu.ncsu.csc573.project.common.ByteOperationUtil;
+import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.common.messages.PublishSearchParameter;
 import edu.ncsu.csc573.project.common.schema.DownloadFileParamType;
@@ -75,7 +76,7 @@ public class HashSpaceManager implements IHashSpaceManager {
 				mmfpt.setIpaddress(dfpt.getIpaddress());
 				mmfpt.setFilesize(dfpt.getFilesize());
 				double matchCoefficient = matcher.getMatchFactor() * 0.9
-						+ dfpt.getDownloads() * 0.1;
+						+ ((dfpt.getDownloads()/ConfigurationManager.getInstance().getMaxDownloadLimit()) * 0.1);
 				mmfpt.setMatchMetric(matchCoefficient);
 				searchResults.add(mmfpt);
 			}
@@ -115,8 +116,9 @@ public class HashSpaceManager implements IHashSpaceManager {
 	 * This method should remove the published files by the logged out user.
 	 */
 	public void removePublishedFiles(String fileName, String fileDigest) {
-		for (DownloadFileParamType dfpt : publishedFilesRepository) {
-			if (dfpt.getFilename().equals(fileName) && dfpt.getFiledigest().equals(fileDigest)) {
+		for (int i = 0; i < publishedFilesRepository.size(); i++) {
+                        DownloadFileParamType dfpt = publishedFilesRepository.get(i);
+			if (dfpt.getFilename().equals(fileName) /*&& dfpt.getFiledigest().equals(fileDigest)*/) {
 				publishedFilesRepository.remove(dfpt);
 				logger.info("Removed file from the repository " + fileName);
 				logger.info("Published files repository size is " + publishedFilesRepository.size());
@@ -126,9 +128,10 @@ public class HashSpaceManager implements IHashSpaceManager {
 
 	public void updateDownloadCount(String fileDigest, String fileName) {
 		for (DownloadFileParamType dfpt : publishedFilesRepository) {
-			if (dfpt.getFilename().equals(fileName)
-					&& dfpt.getFiledigest().equals(fileDigest)) {
-				dfpt.setDownloads(dfpt.getDownloads() + 1);
+			if (dfpt.getFilename().equals(fileName))
+					//&& dfpt.getFiledigest().equals(fileDigest)) {
+                        {
+                            dfpt.setDownloads(dfpt.getDownloads() + 1);
 				logger.info("Updated download count for file " + fileName
 						+ " to " + dfpt.getDownloads());
 			}

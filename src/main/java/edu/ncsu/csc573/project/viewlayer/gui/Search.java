@@ -64,6 +64,7 @@ public class Search extends javax.swing.JFrame {
         Options = new javax.swing.JMenu();
         Settings = new javax.swing.JMenuItem();
         Publish = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Logout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,6 +101,14 @@ public class Search extends javax.swing.JFrame {
             }
         });
         Options.add(Publish);
+
+        jMenuItem1.setText("Unpublish");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        Options.add(jMenuItem1);
 
         Logout.setText("Logout");
         Logout.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +257,15 @@ private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     Settings.setVisible(true);
 }//GEN-LAST:event_SettingsActionPerformed
 
+private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+// TODO add your handling code here:
+
+    Unpublish remove = new Unpublish();
+    remove.setVisible(true);
+    remove.setLocationRelativeTo(this);
+
+}//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -291,6 +309,7 @@ private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JMenuItem Settings;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JButton search;
     private javax.swing.JTextField searchText;
     // End of variables declaration//GEN-END:variables
