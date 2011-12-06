@@ -20,12 +20,16 @@ import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.LogoutRequestMessage;
 import edu.ncsu.csc573.project.common.messages.Parameter;
 import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
-import edu.ncsu.csc573.project.common.messages.PublishSearchParameter;
 import edu.ncsu.csc573.project.common.messages.SearchRequestMessage;
+import edu.ncsu.csc573.project.common.messages.SearchResponseMessage;
+import edu.ncsu.csc573.project.common.schema.MatchMetricFileParamType;
 import edu.ncsu.csc573.project.controllayer.Session;
 import edu.ncsu.csc573.project.controllayer.hashspacemanagement.DigestAdaptor;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.logging.Level;
 import org.apache.log4j.Logger;
 
@@ -164,10 +168,18 @@ private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         searchParams.add(EnumParamsType.SEARCHKEY, ByteOperationUtil.convertBytesToString(DigestAdaptor.getInstance().getDigest(searchText.getText())));
         searchRequest.createRequest(EnumOperationType.SEARCH, searchParams);
         IResponse response = CommunicationServiceFactory.getInstance().executeRequest(searchRequest);
-        PublishSearchParameter searchResults = (PublishSearchParameter)response.getParameter();
-        searchResults.resetCounter();
+        
+        
+        /*PublishSearchParameter searchResults = (PublishSearchParameter)response.getParameter();
+        searchResults.resetCounter();*/
         SearchResults newResults = new SearchResults();
-        newResults.setMessage(searchResults);
+        SearchResponseMessage srm = (SearchResponseMessage) response;
+        List<MatchMetricFileParamType> unSortedResults = srm.getFiles();
+        MatchMetricFileParamType[] arrResults = unSortedResults.toArray(new MatchMetricFileParamType[0]);
+        
+        Arrays.sort(arrResults, new MatchFactorComparator());
+		
+        newResults.setMessage(Arrays.asList(arrResults));
         this.setVisible(false);
         newResults.setVisible(true);
         newResults.setLocationRelativeTo(this);
@@ -284,4 +296,16 @@ private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton search;
     private javax.swing.JTextField searchText;
     // End of variables declaration//GEN-END:variables
+}
+
+class MatchFactorComparator implements Comparator<MatchMetricFileParamType> {
+	public int compare(MatchMetricFileParamType o1, MatchMetricFileParamType o2) {
+		if(o1.getMatchMetric() > o2.getMatchMetric()) {
+			return 1;
+		} else if(o1.getMatchMetric() > o2.getMatchMetric()){
+			return -1;
+		} else {
+			return 0;
+		}
+	}	
 }

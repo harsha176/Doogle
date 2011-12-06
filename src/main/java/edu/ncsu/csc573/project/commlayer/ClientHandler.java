@@ -16,12 +16,19 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketAddress;
 import org.apache.log4j.Logger;
+
+import edu.ncsu.csc573.project.common.ByteOperationUtil;
 import edu.ncsu.csc573.project.common.ConfigurationManager;
+import edu.ncsu.csc573.project.common.messages.DownloadUpdateRequest;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
+import edu.ncsu.csc573.project.common.messages.EnumParamsType;
+import edu.ncsu.csc573.project.common.messages.IParameter;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
 import edu.ncsu.csc573.project.common.messages.RequestMessage;
+import edu.ncsu.csc573.project.common.schema.Request;
 import edu.ncsu.csc573.project.controllayer.RequestProcessor;
+import edu.ncsu.csc573.project.controllayer.hashspacemanagement.DigestAdaptor;
 
 /**
  * This class handles individual client request.
@@ -79,11 +86,14 @@ public class ClientHandler implements Runnable {
 				 * Handle file requests 
 				 */
 
-				if(sb.indexOf("File:") != -1) {
+				try {
+				if(sb.indexOf("FileDownload") != -1) {
 					File toBeUploadedFile = new File(ConfigurationManager.getInstance().getPublishDirectory(),getFileName(sb));
 					transferFile(conncetedSocket.getOutputStream(), toBeUploadedFile);
-					//br.read();
+					sendDownloadUpdate(toBeUploadedFile);
 					return ;
+				} }catch(Exception e) {
+					logger.error("Unable to upload file", e);
 				}
 				PrintWriter pw = new PrintWriter(new BufferedWriter(
 						new OutputStreamWriter(
@@ -148,9 +158,30 @@ public class ClientHandler implements Runnable {
 	}
 
 
-	public static String getFileName(StringBuffer sb) {
-		int endIndex = sb.indexOf("</request>")-System.lineSeparator().length();
-		int stIndex = sb.indexOf("File:");
-		return sb.substring(stIndex+"File:".length(), endIndex);
+	public static String getFileName(StringBuffer sb) throws Exception{
+		Request req = RequestMessage.getRequestFromGenXML(sb.toString());
+		return req.getCommand().getFileDownload().getParams().getFileName();
+	}
+	
+	private void sendDownloadUpdate(File toBeUploadedFile) {
+		logger.info("Sending file download update request for file : " + toBeUploadedFile.getName());
+		IRequest downloadUpdateRequest = new DownloadUpdateRequest();
+		IParameter param = new edu.ncsu.csc573.project.common.messages.Parameter();
+		param.add(EnumParamsType.FILENAME, toBeUploadedFile.getName());
+		
+		try {
+			byte[] digest = DigestAdaptor.getInstance().getDigest(toBeUploadedFile);
+			//IPoint dest = new Point(ByteOperationUtil.getCordinates(digest));
+			//logger.debug("File coordinates in hashspace is : " + dest.toString());
+			
+			param.add(EnumParamsType.FILEDIGEST, ByteOperationUtil.convertBytesToString(digest));
+			downloadUpdateRequest.createRequest(EnumOperationType.DOWNLOADUPDATE, param);
+			//String destIP = Router.getInstance().getNextHop(dest);
+			//logger.debug("Destination IP address to send download file update request is " + destIP);
+			IResponse resp = CommunicationServiceFactory.getInstance().executeRequest(downloadUpdateRequest);
+			//logger.debug("Received ACK response " + resp.getRequestInXML());
+		} catch (Exception e) {
+			logger.error("Failed to send download update request" ,e);
+		}	
 	}
 }

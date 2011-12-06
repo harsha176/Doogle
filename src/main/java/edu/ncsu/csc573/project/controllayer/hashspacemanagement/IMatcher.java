@@ -8,4 +8,10 @@ public interface IMatcher {
 	 * @return
 	 */
 	public boolean isMatches(byte[] query, byte[] other);
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public double getMatchFactor();
 }

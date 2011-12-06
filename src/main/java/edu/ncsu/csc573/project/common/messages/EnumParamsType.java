@@ -24,8 +24,10 @@ public enum EnumParamsType {
 	CUSTOM, 
 	STATUSCODE, 
 	MESSAGE,
+	MATCHMETRIC,
         FIRSTNAME,
         LASTNAME,
-        NEWPASSWORD // Used
+        NEWPASSWORD, // Used
+        DOWNLOADCOUNT
 																																						// different.// It can be used for other fields as well.
 }

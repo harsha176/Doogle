@@ -21,13 +21,23 @@ import edu.ncsu.csc573.project.controllayer.hashspacemanagement.DigestAdaptor;
 import edu.ncsu.csc573.project.controllayer.hashspacemanagement.IDigest;
 
 public class PublishRequestMessage extends RequestMessage {
-	private PublishSearchParameter pubParam;
 	private Logger logger;
-
+	private PublishTypeParams pubTypeParams;
+	
+	public List<FileParamType> getFileList() {
+		return pubTypeParams.getFile();
+	}
+	
+	public PublishRequestMessage() {
+		super();
+		pubTypeParams = new PublishTypeParams();
+	} 
+	
+	/*
 	public IParameter getParameter() {
 		return pubParam;
 	}
-
+	
 	public void createRequest(EnumOperationType opType, IParameter parameter) {
 		super.createRequest(opType, parameter);
 		pubParam = (PublishSearchParameter) parameter;
@@ -43,37 +53,17 @@ public class PublishRequestMessage extends RequestMessage {
 			logger.error("Invalid parameter");
 		}
 	}
-
+	*/
 	public String getRequestInXML() throws Exception {
 		Request req = new Request();
 		req.setId(BigInteger.valueOf(System.currentTimeMillis()));
 		CommandRequestType publish = new CommandRequestType();
 		PublishType publishType = new PublishType();
-		PublishTypeParams lpt = new PublishTypeParams();
-
-		pubParam.resetCounter();
-
-		while (pubParam.getParamCount() < pubParam.getSize()) {
-			FileParamType fileParamType = new FileParamType();
-
-			fileParamType.setFilename(pubParam.getParamValue(
-					EnumParamsType.FILENAME).toString());
-			fileParamType.setFiledigest(pubParam.getParamValue(
-					EnumParamsType.FILEDIGEST).toString());
-			fileParamType.setFilesize(pubParam.getParamValue(
-					EnumParamsType.FILESIZE).toString());
-			fileParamType.setAbstract(pubParam.getParamValue(
-					EnumParamsType.ABSTRACT).toString());
-			fileParamType.setIpaddress(pubParam.getParamValue(
-					EnumParamsType.IPADDRESS).toString());
-			pubParam.setNextParam();
-			lpt.getFile().add(fileParamType);
-		}
-
+		PublishTypeParams lpt = pubTypeParams;
+		
 		publishType.setParams(lpt);
 		publish.setPublish(publishType);
 		req.setCommand(publish);
-
 		return getXML(req);
 	}
 
@@ -84,23 +74,9 @@ public class PublishRequestMessage extends RequestMessage {
 
 			CommandRequestType command = req.getCommand();
 			PublishType regType = command.getPublish();
-			PublishTypeParams regparams = regType.getParams();
-			List<FileParamType> fileList = regparams.getFile();
-			IParameter param = new PublishSearchParameter();
-
-			for (FileParamType fileParamType : fileList) {
-				param.add(EnumParamsType.FILENAME, fileParamType.getFilename());
-				param.add(EnumParamsType.FILEDIGEST, ByteOperationUtil
-						.convertStringToBytes(fileParamType.getFiledigest()));
-				param.add(EnumParamsType.FILESIZE, fileParamType.getFilesize());
-				param.add(EnumParamsType.ABSTRACT, fileParamType.getAbstract());
-				param.add(EnumParamsType.IPADDRESS,
-						fileParamType.getIpaddress());
-				param.add(EnumParamsType.DELIMITER, fileParamType.getId());
-			}
-
+			pubTypeParams = regType.getParams();
+			
 			this.setOperationType(EnumOperationType.PUBLISH);
-			this.setParameter(param);
 		} catch (Exception e) {
 			logger.error("Unable to parse request from string", e);
 		}
@@ -130,8 +106,8 @@ public class PublishRequestMessage extends RequestMessage {
 		}
 
 		List<File> files = Arrays.asList(pubDir.listFiles(textFilter));
-		IRequest PublishRequest = new PublishRequestMessage();
-		PublishSearchParameter publishParams = new PublishSearchParameter();
+		PublishRequestMessage PublishRequest = new PublishRequestMessage();
+		List<FileParamType> FileParams = PublishRequest.getFileList();
 		String localIPAddress = ConfigurationManager.getInstance()
 				.getHostInterface();
 
@@ -142,17 +118,17 @@ public class PublishRequestMessage extends RequestMessage {
 		}*/
 		for (File file : files) {
 
-			publishParams.add(EnumParamsType.FILENAME, file.getName());
-			publishParams.add(EnumParamsType.FILEDIGEST, ByteOperationUtil
+			FileParamType fpt = new FileParamType();
+			fpt.setAbstract(getAbstract(file));
+			fpt.setFiledigest(ByteOperationUtil
 					.convertBytesToString(digestUtil.getDigest(file)));
-			publishParams.add(EnumParamsType.FILESIZE,
-					String.valueOf(file.length()));
-			publishParams.add(EnumParamsType.IPADDRESS, localIPAddress);
-			publishParams.add(EnumParamsType.ABSTRACT, getAbstract(file));
-			publishParams.add(EnumParamsType.DELIMITER, null);
-
+			fpt.setFilesize(String.valueOf(file.length()));
+			fpt.setFilename(file.getName());
+			fpt.setIpaddress(localIPAddress);
+			FileParams.add(fpt);
+			
 		}
-		PublishRequest.createRequest(EnumOperationType.PUBLISH, publishParams);
+		PublishRequest.createRequest(EnumOperationType.PUBLISH, null);
 		return PublishRequest;
 	}
 
@@ -167,10 +143,8 @@ public class PublishRequestMessage extends RequestMessage {
 			sb.append(br.readLine());
 			// sb.append(System.lineSeparator());
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return sb.toString();

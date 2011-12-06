@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.math.BigInteger;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -22,7 +23,12 @@ import edu.ncsu.csc573.project.common.ConfigurationManager;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.IRequest;
 import edu.ncsu.csc573.project.common.messages.IResponse;
+import edu.ncsu.csc573.project.common.messages.RequestMessage;
 import edu.ncsu.csc573.project.common.messages.ResponseMessage;
+import edu.ncsu.csc573.project.common.schema.CommandRequestType;
+import edu.ncsu.csc573.project.common.schema.FileDownloadParams;
+import edu.ncsu.csc573.project.common.schema.FileDownloadType;
+import edu.ncsu.csc573.project.common.schema.Request;
 
 /**
  * @author doogle-dev
@@ -286,9 +292,17 @@ public class CommunicationService implements ICommunicationService {
 			pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(ftSoc.getOutputStream())));
 			logger.debug("Successfully opened socket for file transfer");
 			
-			pw.println("<request>");
-			pw.println("File:"+fileName);
-			pw.println("</request>");
+			Request fileDownloadRequest = new Request();
+			fileDownloadRequest.setId(new BigInteger(System.currentTimeMillis()+""));
+			CommandRequestType cmd = new CommandRequestType();
+			FileDownloadType fd = new FileDownloadType();
+			FileDownloadParams fdp = new FileDownloadParams();
+			fdp.setFileName(fileName);
+			fd.setParams(fdp);
+			cmd.setFileDownload(fd);
+			fileDownloadRequest.setCommand(cmd);
+			
+			pw.println(RequestMessage.getXML(fileDownloadRequest));
 			pw.flush();
 			logger.debug("Sent request "+"File:"+fileName);
 			br = new BufferedReader(new InputStreamReader(ftSoc.getInputStream()));

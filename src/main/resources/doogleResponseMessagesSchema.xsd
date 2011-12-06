@@ -2,7 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.doogle.project.csc573.csc.ncsu.edu" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu"
 	elementFormDefault="qualified">
-	<xs:include schemaLocation="doogleRequestMessagesSchema.xsd"/>
+	<xs:include schemaLocation="doogleRequestMessagesSchema.xsd" />
 	<xs:complexType name="Response">
 		<xs:sequence>
 			<!--<xs:element name="Status" type="StatusType"></xs:element> -->
@@ -23,8 +23,50 @@
 			<xs:element name="ForgotPWDResponse" type="ForgotPWDResponseType"></xs:element>
 			<xs:element name="SearchResponse" type="SearchResponseType"></xs:element>
 			<xs:element name="PublishResponse" type="PublishResponseType"></xs:element>
-                        <xs:element name="ChangePasswordResponse" type="ChangePasswordResponseType"></xs:element>
+			<xs:element name="ChangePasswordResponse" type="ChangePasswordResponseType"></xs:element>
+			<xs:element name="InvalidResponse" type="InvalidResponseType"></xs:element>
+			<xs:element name="GetResponse" type="GetResponseType"></xs:element>
+			<xs:element name="ACK" type="ACKType"></xs:element>
 		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="ACKType">
+		<xs:sequence>
+			<xs:element name="Operation" type="xs:string" fixed="ACK" />
+			<xs:element name="params" type="ACKTypeParams">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ACKTypeParams">
+		<xs:sequence>
+			<xs:element name="statuscode" type="xs:integer" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetResponseType">
+		<xs:sequence>
+			<xs:element name="Operation" type="xs:string" fixed="GetResponse" />
+			<xs:element name="params" type="GetResponseTypeParams">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="GetResponseTypeParams">
+		<xs:sequence>
+			<xs:element name="message" type="xs:string" />
+			<xs:element name="statuscode" type="xs:integer" />
+			<xs:element name="File" type="MatchFileParamType"
+				maxOccurs="100" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MatchFileParamType">
+		<xs:complexContent>
+			<xs:extension base="FileParamType">
+				<xs:sequence>
+					<xs:element name="MatchFactor" type="xs:double" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 
 	<xs:complexType name="RegisterResponseType">
@@ -85,7 +127,7 @@
 	</xs:complexType>
 
 
-<xs:complexType name="ChangePasswordResponseType">
+	<xs:complexType name="ChangePasswordResponseType">
 		<xs:sequence>
 			<xs:element name="Operation" type="xs:string" fixed="ChangePasswordResponse" />
 			<xs:element name="params" type="ChangePasswordResponseParamsType">
@@ -98,7 +140,7 @@
 			<xs:element name="message" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
-        
+
 	<xs:complexType name="SearchResponseType">
 		<xs:sequence>
 			<xs:element name="Operation" type="xs:string" fixed="SearchResponse" />
@@ -108,10 +150,11 @@
 	</xs:complexType>
 	<xs:complexType name="SearchResponseTypeParams">
 		<xs:sequence>
-			<xs:element name="File" type="FileParamType" maxOccurs="100" />
+			<xs:element name="File" type="MatchMetricFileParamType"
+				maxOccurs="100" />
 		</xs:sequence>
 	</xs:complexType>
-        
+
 	<xs:complexType name="PublishResponseType">
 		<xs:sequence>
 			<xs:element name="Operation" type="xs:string" fixed="PublishResponse" />
@@ -124,5 +167,28 @@
 			<xs:element name="statuscode" type="xs:integer" />
 			<xs:element name="message" type="xs:string" />
 		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="InvalidResponseType">
+		<xs:sequence>
+			<xs:element name="Operation" type="xs:string" fixed="PublishResponse" />
+			<xs:element name="params" type="PublishResponseTypeParams">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InvalidResponseTypeParams">
+		<xs:sequence>
+			<xs:element name="statuscode" type="xs:integer" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MatchMetricFileParamType">
+		<xs:complexContent>
+			<xs:extension base="FileParamType">
+				<xs:sequence>
+					<xs:element name="MatchMetric" type="xs:double" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 </xs:schema>

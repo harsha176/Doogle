@@ -1,8 +1,13 @@
 package edu.ncsu.csc573.project.controllayer;
 
+import edu.ncsu.csc573.project.common.ByteOperationUtil;
 import edu.ncsu.csc573.project.common.messages.ChangePasswordResponseMessage;
 import java.math.BigInteger;
+import java.util.List;
+
 import org.apache.log4j.Logger;
+
+import edu.ncsu.csc573.project.common.messages.ACKResponse;
 import edu.ncsu.csc573.project.common.messages.EnumOperationType;
 import edu.ncsu.csc573.project.common.messages.EnumParamsType;
 import edu.ncsu.csc573.project.common.messages.ForgotPWDResponseMessage;
@@ -16,6 +21,7 @@ import edu.ncsu.csc573.project.common.messages.PublishRequestMessage;
 import edu.ncsu.csc573.project.common.messages.PublishResponseMessage;
 import edu.ncsu.csc573.project.common.messages.RegisterResponseMessage;
 import edu.ncsu.csc573.project.common.messages.SearchResponseMessage;
+import edu.ncsu.csc573.project.common.schema.MatchMetricFileParamType;
 import edu.ncsu.csc573.project.controllayer.hashspacemanagement.HashSpaceManagerFactory;
 import edu.ncsu.csc573.project.controllayer.hashspacemanagement.IHashSpaceManager;
 import edu.ncsu.csc573.project.controllayer.hashspacemanagement.Query;
@@ -108,11 +114,11 @@ public class RequestProcessor {
 			try {
 				usermanager.userLogout(req.getParameter()
 						.getParamValue(EnumParamsType.USERNAME).toString());
-				
-				hashSpaceManager.removePublishedFiles(username);
+
+				//hashSpaceManager.removePublishedFiles(username);
 				params.add(EnumParamsType.STATUSCODE,
 						new BigInteger(String.valueOf(0)));
-				
+
 			} catch (UserManagementException e1) {
 				params.add(EnumParamsType.STATUSCODE,
 						new BigInteger(String.valueOf(e1.getStatus())));
@@ -183,17 +189,41 @@ public class RequestProcessor {
 
 		case SEARCH:
 			logger.debug("Processing search request");
-			response = new SearchResponseMessage();
-			IParameter searchResponseparams;
-			String query_string = req
-					.getParameter().getParamValue(EnumParamsType.SEARCHKEY)
-					.toString();
-			searchResponseparams = hashSpaceManager.search(new Query(query_string));
-			response.createResponse(EnumOperationType.SEARCHRESPONSE,
-					searchResponseparams);
-
-			response.createResponse(EnumOperationType.SEARCHRESPONSE, searchResponseparams);
+			SearchResponseMessage srm = new SearchResponseMessage();
+			List<MatchMetricFileParamType> searchResponseparams;
+			String query_string = req.getParameter()
+					.getParamValue(EnumParamsType.SEARCHKEY).toString();
+			searchResponseparams = hashSpaceManager.search(new Query(
+					query_string));
+			srm.getFiles().addAll(searchResponseparams);
+			srm.createResponse(EnumOperationType.SEARCHRESPONSE, null);
+			response = srm;
+			logger.info("Done processing search request : searchResults count : "
+					+ searchResponseparams.size());
 			break;
+		case DOWNLOADUPDATE:
+			//logger.info("implemented");
+			hashSpaceManager.updateDownloadCount(ByteOperationUtil
+					.convertBytesToString(((byte[]) req.getParameter()
+							.getParamValue(EnumParamsType.FILEDIGEST))), req
+					.getParameter().getParamValue(EnumParamsType.FILENAME)
+					.toString());
+			logger.info("Done processing download update request");
+			response = new ACKResponse();
+			IParameter ackParams = new Parameter();
+			ackParams.add(EnumParamsType.STATUSCODE, BigInteger.ZERO);
+			ackParams.add(EnumParamsType.MESSAGE, "Successfully updated download count for file ");
+			response.createResponse(EnumOperationType.ACKRESPONSE, ackParams);
+			break;
+		case UNPUBLISH:
+			logger.info("Executing unpublish files");
+			hashSpaceManager.removePublishedFiles(req
+					.getParameter().getParamValue(EnumParamsType.FILENAME)
+					.toString(), ByteOperationUtil
+					.convertBytesToString(((byte[]) req.getParameter()
+							.getParamValue(EnumParamsType.FILEDIGEST))));
+			logger.info("Done with unpublishing the files");
+		break;
 		default:
 			try {
 				logger.error("Invalid request " + req.getRequestInXML());

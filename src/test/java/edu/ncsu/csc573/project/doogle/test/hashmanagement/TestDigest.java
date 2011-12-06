@@ -11,8 +11,7 @@ import edu.ncsu.csc573.project.controllayer.hashspacemanagement.IDigest;
 
 public class TestDigest {
 	
-	
-	@Test 
+	 
 	public void testDigestComputation() {
 		try {
 			IDigest digestUtil = DigestAdaptor.getInstance();

@@ -54,12 +54,6 @@ public abstract class ResponseMessage extends RequestMessage implements
 		createResponse(opType, parameter);
 	}
 
-	@Override
-	public String getXML(Request req) throws Exception {
-		throw new Exception(
-				"Invalid operation getXNL from request on response object");
-	}
-
 	public String getXML(Response req) throws Exception {
 		logger = Logger.getLogger(RequestMessage.class);
 		StringWriter reqXMLWriter = new StringWriter();
@@ -111,6 +105,9 @@ public abstract class ResponseMessage extends RequestMessage implements
 			res.parseXML(XML);
 		} else if (XML.indexOf("Search") != -1) {
 			res = new SearchResponseMessage();
+			res.parseXML(XML);
+		}else if (XML.indexOf("ACK") != -1) {
+			res = new ACKResponse();
 			res.parseXML(XML);
 		}
 		 else {

@@ -18,6 +18,8 @@ public class DefaultMatcher implements IMatcher {
 	 */
 	private static final double THRESHOLD = ConfigurationManager.getInstance().getThresholdValue();
 
+	private double matchFactor = 0;
+	
 	/**
 	 * This method checks if the query digest matches other one.
 	 * It uses configured THRESHOLD_VALUE as a parameter for match.
@@ -30,11 +32,15 @@ public class DefaultMatcher implements IMatcher {
 		
 		int querySetBits = ByteOperationUtil.countSetBits(query);
 		int resultSetBits = ByteOperationUtil.countSetBits(result);
-		double matchFactor = ((resultSetBits * 1.0) / querySetBits);
+		matchFactor = ((resultSetBits * 1.0) / querySetBits);
 		if (matchFactor >= THRESHOLD) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public double getMatchFactor() {
+		return matchFactor;
 	}
 }

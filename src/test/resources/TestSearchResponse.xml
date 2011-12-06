@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response id="1323140555389" xmlns="http://www.doogle.project.csc573.csc.ncsu.edu">
+    <Command>
+        <SearchResponse>
+            <params>
+                <File id="0">
+                    <filename>ip.txt</filename>
+                    <abstract>Classless IP addressingCSC/ECE 573 Internet Protocols</abstract>
+                    <filesize>7483</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>dsa</filedigest>
+                    <MatchMetric>0.67</MatchMetric>
+                </File>
+                <File id="0">
+                    <filename>Metallica.txt</filename>
+                    <abstract>Metallica at the 02 Arena in 2008</abstract>
+                    <filesize>1489</filesize>
+                    <ipaddress>127.0.0.1</ipaddress>
+                    <filedigest>abc</filedigest>
+                    <MatchMetric>0.97</MatchMetric>
+                </File>
+            </params>
+        </SearchResponse>
+    </Command>
+</response>

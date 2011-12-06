@@ -56,7 +56,7 @@ public abstract class RequestMessage implements IRequest {
 	}
 
 	// 
-	public String getXML(Request req) throws Exception{
+	public static String getXML(Request req) throws Exception{
 		logger = Logger.getLogger(RequestMessage.class);
 		StringWriter reqXMLWriter = new StringWriter();
 		try {
@@ -102,6 +102,12 @@ public abstract class RequestMessage implements IRequest {
         } else if(XML.indexOf("ChangePassword") != -1) {
 			req = new ChangePasswordRequestMessage();
 			req.parseXML(XML);
+        }else if(XML.indexOf("DownloadUpdate") != -1) {
+			req = new DownloadUpdateRequest();
+			req.parseXML(XML);
+        } else if(XML.indexOf("Unpublish") != -1) {
+			req = new UnPublishRequestMessage();
+			req.parseXML(XML);
         }
         else {
 			logger.error("Given XML " + XML + " is an invalid request");
@@ -110,7 +116,7 @@ public abstract class RequestMessage implements IRequest {
 		
 	}
 	
-	private static Request getRequestFromGenXML(String XML) throws Exception {
+	public static Request getRequestFromGenXML(String XML) throws Exception {
 		JAXBContext context = JAXBContext.newInstance(Request.class);
 		Unmarshaller unMarsheller = context.createUnmarshaller();
 		Request req = (Request)unMarsheller.unmarshal(new StringReader(XML));
